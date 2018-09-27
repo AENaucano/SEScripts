@@ -13,6 +13,7 @@
             -> maybe better to read the customdata of the pb of ISIs alignement script
             -> PB - ISI.CustomData(dayTimer=(int)Currentclicktime dayLength=(int)MaxClicksPerDay)
         * Implementing Antenna system
+            -> we can not use the antenna system !
         * I need a way of getting control again without the overide of DPM
         TODO get the Cariers Volume and calculate the minimumamount from it 60% van 33750 * 2.7 ratio Kg/L
             -> do we even have a Carier ? Or carier ...
@@ -235,6 +236,7 @@
             }
 
             // If I get my own name it means Antennamaster heard me
+            /*
             if(argument.Contains(SendMessageHeader))
             {
                 var parts = argument.Split(':','=');
@@ -248,6 +250,7 @@
                     RemoveReport(17);
                 }
             }
+            */
 
             switch (argument.ToLower())
             {
@@ -439,21 +442,20 @@
         }   
 
         // I need contact with the Grid Transmitter/Receiver
-        if(!hasContactWAntenna && !hasSend) 
-        {
-            CheckAntennaSystem();
-        }
+        // if(!hasContactWAntenna && !hasSend) 
+        // {
+        //     CheckAntennaSystem();
+        // }
 
-        if(!ProgramRunning && hasContactWAntenna && !hasSend)
-        {
-            SendMessage("Idle");
-        }
+        // if(!ProgramRunning && hasContactWAntenna && !hasSend)
+        if(!hasSend) { SendMessage("Idle"); }
+        
         // 
-        if (NeededOres.Count > 0 )
-        {
+        if (NeededOres.Count > 0 ) {
             GetMines();
             GetCariers(); // Cariers and the like ...
         }
+
         // OreFetching();
 
         // Displaying the comments
@@ -461,8 +463,8 @@
         string OnOff = (ProgramRunning) ? " [ON] " : " [Off] ";
 
         string MessageLine = " Time " + ProgramTick + rotator.GetString() + TicksPerDay + "\n " + Me.CustomName  + " " + OnOff + "\n";
-        if(HasISIPowerPB)
-        {
+        
+        if(HasISIPowerPB) {
             MessageLine = " Time " + GetTimeString(ProgramTick) + "\n " + Me.CustomName  + " " + OnOff + "\n";
         }
 
@@ -478,7 +480,7 @@
     }
 
     // **************************************************************************************************************
-
+/*
 public void CheckAntennaSystem()
 {
     SendMessage();
@@ -496,6 +498,7 @@ public void CheckAntennaSystem()
     
     return;
 }
+*/
 
 public void CheckPBs()
 {
@@ -918,32 +921,6 @@ List<IMyTerminalBlock> Antennas = new List<IMyTerminalBlock>();
 public void SendMessage(string SendMessage="AntennaTest")
 {
     hasSend = false;
-    // do we have an internal PB
-    /*
-    List<IMyTerminalBlock> PB_blocks = new List<IMyTerminalBlock>();
-    GridTerminalSystem.SearchBlocksOfName(PB_Antenna, PB_blocks, b => b is IMyProgrammableBlock);
-
-    if ((PB_blocks != null )&&(PB_blocks.Count != 0))
-    {
-        IMyProgrammableBlock Master = PB_blocks[0] as IMyProgrammableBlock;
-        if(Master.TryRun(SendMessageHeader + "=" + SendMessage)) 
-        {
-            RemoveReport(1);
-            hasSend = true;
-            return;
-        }
-        else
-        {
-            AddReport(4);
-        }
-    }
-    else
-    {
-        AddReport(4);           
-    }
-    */
-
-    // Ok I will try it myself
     GridTerminalSystem.SearchBlocksOfName(MyOwnAntenna, Antennas, block => block is IMyRadioAntenna);
 
     if ((Antennas == null)||(Antennas.Count == 0))
