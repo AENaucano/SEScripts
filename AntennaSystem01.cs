@@ -14,7 +14,9 @@
     * It actually does not matter if it comes through the antenna or internally by a PB.Tryrun()
     * TODO should be handschake(d)
         --> so what should we do when a message arrives?
-    * used ISI's time calculation & if available  
+    * used ISI's time calculation & if available
+     TODO Antennas will not work if the PB is on the grid -> changing
+        --> every PB on the grid is potentially an Actor -> Actors list ?
  */
 
 public Program()    
@@ -36,6 +38,7 @@ const string LCDNAME = "AntennaLCD";
 string MyOwnAntenna = "Antenna @Base Transmitter";
 const string SendMessageHeader = "AntennaMaster";
 
+// some fancy stuff
 public static List<char> SLIDER_ROTATOR = new List<char>(new char[] { '-', '\\', '|', '/'}); 
 public DisplaySlider rotator = new DisplaySlider(Program.SLIDER_ROTATOR); 
 
@@ -61,6 +64,7 @@ List<string> SpamLog = new List<string>();
 List<string> Actors = new List<string>();
 List<string> ReceivedNames = new List<string>();
 List<string> PB_Names = new List<string>();
+List<string> PBOnGrid = new List<string>();
 
 string Actor = "Me";
 
@@ -185,7 +189,6 @@ public void ClearMe()
 }
 
 // Always the same: Look for a PB and send the WhoWhat
-
 public void CallActor(string ActorsName, string Who, string What )
 {
     IMyProgrammableBlock Master;
@@ -214,19 +217,38 @@ public void CallActor(string ActorsName, string Who, string What )
     return;
 }
 
+public string PBOnGrid(string SearchPB){
+    
+    string PBfound="";
+    CheckPBs();
+    // if it exists it is on PBOnGrid list
+    if(PBOnGrid.Count>0){
+        for(int i=0; i<PBOnGrid.Count; i++){
+            if(SearchPB == PBOnGrid[i]) { PBfound=PBOnGrid[i] };
+        }
+    }
 
+    return PBfound;
+}
+
+// Get all the PB on the grid
 public void CheckPBs()
 {
     List<IMyTerminalBlock> PB_blocks = new List<IMyTerminalBlock>();
-    GridTerminalSystem.SearchBlocksOfName( ISIPbName, PB_blocks, b => b is IMyProgrammableBlock);
+    // GridTerminalSystem.SearchBlocksOfName( ISIPbName, PB_blocks, b => b is IMyProgrammableBlock);
+    GridTerminalSystem.GetBlocksOfType<IMyProgrammableBlock>(PB_blocks);
         
     if (PB_blocks == null) return;
     if (PB_blocks.Count < 1) return;
 
-    HasISIPowerPB = true;
- 
-    PBMaster = PB_blocks[0] as IMyProgrammableBlock;
+    for(int i=0; i<PB_blocks.Count; i++) {
+        if (PB_blocks.CustomName.Contains(ISIPbName)) {
+            HasISIPowerPB = true;
+            PBMaster = PB_blocks[i] as IMyProgrammableBlock;
+        }
 
+        PBOnGrid.Add(PB_blocks.CustomName);
+    }
     return;
 }
 
@@ -349,8 +371,13 @@ public void CheckActors(string GotMail)
             var ReceivedMessage = GotMail.Split('=');
             AddItemInLog(Actors[i], ReceivedMessage[1]);
             FoundActor = true;
-            CallActor(PB_Names[i], ReceivedNames[i] ,"Ack");
-            SendMessage(PB_Names[i] + ":Ack");
+            if(PbOnGrid(PB_Names[i]) != ""){
+                // Send its own name back not the Antennas' !
+                CallActor(PB_Names[i], ReceivedNames[i] ,"Ack");
+            }
+            else {
+                SendMessage(PB_Names[i] + ":Ack");
+            }
         }
     }
 }
