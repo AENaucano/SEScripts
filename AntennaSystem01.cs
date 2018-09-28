@@ -64,11 +64,7 @@ List<string> SpamLog = new List<string>();
 List<string> Actors = new List<string>();
 List<string> ReceivedNames = new List<string>();
 List<string> PB_Names = new List<string>();
-<<<<<<< HEAD
 List<string> PBOnGrids = new List<string>();
-=======
-List<string> PBOnGrid = new List<string>();
->>>>>>> 30c914955dc5549eb8f1bc3f55ca2e3933e1ea5b
 
 string Actor = "Me";
 
@@ -247,8 +243,6 @@ public void CheckPBs()
 
     PBMaster = PB_blocks[0] as IMyProgrammableBlock;
 
-        PBOnGrid.Add(PB_blocks.CustomName);
-    }
     return;
 }
 
@@ -620,8 +614,6 @@ public static double PercentOf(double numerator, double denominator)
         return percentage;
     }
 }
-
-
 
 /**************
   Fancy stuff 
