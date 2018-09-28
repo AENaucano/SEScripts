@@ -64,7 +64,11 @@ List<string> SpamLog = new List<string>();
 List<string> Actors = new List<string>();
 List<string> ReceivedNames = new List<string>();
 List<string> PB_Names = new List<string>();
+<<<<<<< HEAD
 List<string> PBOnGrids = new List<string>();
+=======
+List<string> PBOnGrid = new List<string>();
+>>>>>>> 30c914955dc5549eb8f1bc3f55ca2e3933e1ea5b
 
 string Actor = "Me";
 
@@ -222,9 +226,15 @@ public string PBOnGrid(string SearchPB){
     string PBfound="";
     CheckPBs();
     // if it exists it is on PBOnGrid list
+<<<<<<< HEAD
     if(PBOnGrids.Count>0){
         for(int i=0; i<PBOnGrids.Count; i++){
             if(SearchPB == PBOnGrids[i]) { PBfound=PBOnGrids[i]; }
+=======
+    if(PBOnGrid.Count>0){
+        for(int i=0; i<PBOnGrid.Count; i++){
+            if(SearchPB == PBOnGrid[i]) { PBfound=PBOnGrid[i] };
+>>>>>>> 30c914955dc5549eb8f1bc3f55ca2e3933e1ea5b
         }
     }
 
@@ -235,14 +245,29 @@ public string PBOnGrid(string SearchPB){
 public void CheckPBs()
 {
     List<IMyTerminalBlock> PB_blocks = new List<IMyTerminalBlock>();
+<<<<<<< HEAD
     GridTerminalSystem.SearchBlocksOfName( ISIPbName, PB_blocks, b => b is IMyProgrammableBlock);
     // GridTerminalSystem.GetBlocksOfType<IMyProgrammableBlock>(PB_blocks);
+=======
+    // GridTerminalSystem.SearchBlocksOfName( ISIPbName, PB_blocks, b => b is IMyProgrammableBlock);
+    GridTerminalSystem.GetBlocksOfType<IMyProgrammableBlock>(PB_blocks);
+>>>>>>> 30c914955dc5549eb8f1bc3f55ca2e3933e1ea5b
         
     if (PB_blocks == null) return;
     if (PB_blocks.Count < 1) return;
 
+<<<<<<< HEAD
     PBMaster = PB_blocks[0] as IMyProgrammableBlock;
+=======
+    for(int i=0; i<PB_blocks.Count; i++) {
+        if (PB_blocks.CustomName.Contains(ISIPbName)) {
+            HasISIPowerPB = true;
+            PBMaster = PB_blocks[i] as IMyProgrammableBlock;
+        }
+>>>>>>> 30c914955dc5549eb8f1bc3f55ca2e3933e1ea5b
 
+        PBOnGrid.Add(PB_blocks.CustomName);
+    }
     return;
 }
 
@@ -365,7 +390,10 @@ public void CheckActors(string GotMail)
             var ReceivedMessage = GotMail.Split('=');
             AddItemInLog(Actors[i], ReceivedMessage[1]);
             FoundActor = true;
+<<<<<<< HEAD
             /*
+=======
+>>>>>>> 30c914955dc5549eb8f1bc3f55ca2e3933e1ea5b
             if(PbOnGrid(PB_Names[i]) != ""){
                 // Send its own name back not the Antennas' !
                 CallActor(PB_Names[i], ReceivedNames[i] ,"Ack");
@@ -373,7 +401,10 @@ public void CheckActors(string GotMail)
             else {
                 SendMessage(PB_Names[i] + ":Ack");
             }
+<<<<<<< HEAD
             */
+=======
+>>>>>>> 30c914955dc5549eb8f1bc3f55ca2e3933e1ea5b
         }
     }
 }
