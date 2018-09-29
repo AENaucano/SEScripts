@@ -17,19 +17,20 @@
         * I need a way of getting control again without the overide of DPM
         TODO get the Cariers Volume and calculate the minimumamount from it 60% van 33750 * 2.7 ratio Kg/L
             -> do we even have a Carier ? Or carier ...
+            -> if a carier has to wait && other mines goto next mine ( even if we do not "need" that ore)
         * DP should not call the Antenna itself --> AntennaMaster
             -> except perhaps if we do not have a PB with AntennaSystem on ... ?
         * saving/loading ProgramTick & TicksPerDay
         TODO Uranium, Ice(?) and Magnesium are special cases ( NO not stone, stone is a special special case)
             -> uranium ingots are IN the reactors if you have any, they do not count as real "ingot" though.
         TODO We have to figure out if we have mines -> maybe call them by the Nato codes of SAM ?
-            -> mines are just Cargo Constainers designated as "Mine"
-            -> How do we register a new mine ?
+            -> mines are just Cargo Constainers (ships?) designated as "Mine"
+            -> How do we register a new mine ? -> ask to goto a mine
         * Established a report - system
 
     */
 
-    string version = "1.08";
+    string version = "1.09";
 
     // this only runs @the start ie. compile
     public Program()
@@ -97,10 +98,11 @@
     // Alfa = Base ?
     List<string> NATO_CODES = new List<string>(new string[] { "Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliett", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "Xray", "Yankee", "Zulu" }); 
     Dictionary<string, string> Destinations = new Dictionary<string,string>();
-    List<string> NeededOres = new List<string>();
+    List<string> NeededOres = new List<string>(); // this is what we really need
+    List<string> OreFetchings = new List<string>(); // this is what we ( can ) fetch
     List<string> DefMines = new List<string>(); // these are the defined mines, the mines which exists
-    List<string> NATOMines = new List<string>(); // these are the defined mines gps code fro SAM
-    List<string> Cariers = new List<string>(); // Or drone or anythng that can get ore ;)
+    List<string> NATOMines = new List<string>(); // these are the defined mines gps code from SAM
+    List<string> Cariers = new List<string>(); // Or drone or anything that can get ore ;)
     List<string> Waypoints = new List<string>(); // this were those Cariers should go.
 
     // report system
@@ -109,9 +111,9 @@
         " |-[ I have no Antenna\n",
         " °-[ Failed to send message\n",
         " :-] message send\n", 
-        " :-> No Antenna PB\n", 
+        " :-> No Antenna PB\n", // obsolete
         " |-[ I have no mines\n", //5
-        " |-[ I have no Cariers\n",
+        " |-[ I need cariers\n",
         " |-0 I need a Fe mine\n", //7
         " |-0 I need a Ni mine\n",
         " |-0 I need a Si mine\n",
@@ -122,7 +124,8 @@
         " |-0 I need a Au mine\n",
         " |-0 I need a Pt mine\n", //15
         " |-0 I need a Gr mine\n",
-        " :-] Waiting for reply\n"
+        " :-] Waiting for reply\n", // not used for the moment
+        " °-0 Orename does not exist\n"
         };
     int ReportCounter = 0;
     int ReportTimeCounter = 0;
@@ -132,7 +135,7 @@
     string ReportText = "";
     List<String> WhatsWrongs = new List<string> {  
         " :-] Everythings fine! \n", 
-        " > Check the MyOwnAntenna\n or install AntennaMaster\n",
+        " > Check the MyOwnAntenna definition\n",
         " > Is the Antenna active?\n",
         " °-> Antenna should receive\n something ... \n",
         " > Check name of PB\n",
@@ -148,7 +151,8 @@
         " > Build a Au mine\n",
         " > Build a Pt mine\n",
         " > Build a Gr mine\n",
-        " > Do we have contact?\n"       
+        " > Do we have contact?\n",
+        " > Iron, Nickle, ... \n"     
         };
     string WhatsWrong = " °-| I dunno ...\n";
     bool ShowWhatsWrong = false;
@@ -164,8 +168,6 @@
     List<float> NewIngotStock = new List<float>();
     List<float> IngotEquivalentStock = new List<float>();
     
-    List<string> OreFetchings = new List<string>();
-
     // History
     public static int NumberOfData = (int)6;
 
@@ -206,8 +208,6 @@
 
     public void Main(string argument, UpdateType updateSource)
     {
-
-
         Message="";
 
         if (argument.Length > 0)
@@ -215,7 +215,7 @@
             //DEBUG
             Echo("argument: " + argument + "\n" );
             
-            /* This is still work in progress */
+            /// This is still very much work in progress
             Message="";
             if (argument.Contains("Mine"))
             {
@@ -223,8 +223,11 @@
                 if (parts.Length == 4)
                 {
                     string OreName = parts[1];
-                    OreAmount = float.Parse(parts[2]); //Checkcout what is been send is without chars !
-                    string Status = parts[3];                
+                    OreAmount = float.Parse(parts[2]); //Checkout what is been send is without chars !
+                    string Status = parts[3];      
+                    // Status: not configured
+                    //         ore(Iron, Nickle ...) waiting
+                    //         
                 }
 
                 // if mine=finished and Carier=Waiting -> reset Carier
@@ -238,6 +241,7 @@
             }
 
             // If I get my own name it means Antennamaster heard me
+            // no, we can not put two PB's on one Antenna !
             /*
             if(argument.Contains(SendMessageHeader))
             {
@@ -448,15 +452,14 @@
             if(ShowStatus) Message += TempText;   
         }   
 
-        // we could force an Uranium fetching ... ? 
+        // we could force an Uranium fetching ... ?
+        // TODO to whom are we sending this ?
         if(!hasSend) { SendMessage("Idle"); }
         
         // we need something(s) to fetch the bl**dy things
         if (NeededOres.Count > 0 ) {
             oreFetching();
         }
-
-        // OreFetching();
 
         // Displaying the comments
         // Header
@@ -500,7 +503,12 @@ public void CheckAntennaSystem()
 }
 */
 public void toggleForced(string OreName) {
-    if(!SubOreTypeList.Contains(OreName)) return;
+    if(!SubOreTypeList.Contains(OreName)){
+        AddReport(18); // " °-0 Orename does not exist\n"
+        return;
+    }
+    
+    RemoveReport(18);
     if (OreFetchings.Contains(OreName)) {
         OreFetchings.Remove(Orename);
     }else{
@@ -539,8 +547,10 @@ public void RemoveNeededOre(string Ore) {
     return;
 }
 
+// there could be multiple mines for the same ore.
 public void GetMines() {
-    // What miees do we have ?
+    // What mines do we have ?
+    // none
     if(DefMines.Count == 0) AddReport(5); return;
     RemoveReport(5);
 
@@ -548,7 +558,7 @@ public void GetMines() {
     // ok, So what do we need ?
     for(int i=0; i<NeededOres.Count; i++)
     {
-        // there is no mine Yet !
+        // that mine is not yet made !
         if(!DefMines.Contains(NeededOres[i])) 
         {
             int lindex = 7 + i;
@@ -857,8 +867,8 @@ public string CheckReport(bool HelpMe)
     *********************/
     public void OreFetching() {
         // So I need ore ?
-        // Do we have a Mine of the particular ore ?
-                    GetMines();
+        // Do we have a Mine of the particular ores ?                    
+        GetMines();
 
         // -> a mine is a container with an antenna a a drillscript (maybe not configured but with ore ?)
         // what is the Mine doing ? -> MineCar -> MineShip ?
