@@ -163,6 +163,8 @@
     List<float> NewOreStock = new List<float>();
     List<float> NewIngotStock = new List<float>();
     List<float> IngotEquivalentStock = new List<float>();
+    
+    List<string> OreFetchings = new List<string>();
 
     // History
     public static int NumberOfData = (int)6;
@@ -213,7 +215,7 @@
             //DEBUG
             Echo("argument: " + argument + "\n" );
             
-            /* This still is work in progress */
+            /* This is still work in progress */
             Message="";
             if (argument.Contains("Mine"))
             {
@@ -252,8 +254,8 @@
             }
             */
 
-            switch (argument.ToLower())
-            {
+            // Real commands
+            switch (argument.ToLower()) {
                 case "reset":
                     ProgramRunning = false;
                     ProgramTick = 0;
@@ -281,6 +283,11 @@
                 default:
                     // Message += " Commands:\n Run, Reset, Stop ... " + ProgramTick + "\n\n";
                     break;
+            }
+
+            if (argument.Contains("Force")){
+                string[] Lines=argument.Split(' ', '\n');
+                toggleForced(Lines[1]);
             }
         }
 
@@ -325,8 +332,8 @@
                     if(NumberOfPlates > 5000) { TempText += " Abundance\n"; break; }
                     if(NumberOfPlates > 2000) { TempText += " Good\n"; break; } 
                     if(NumberOfPlates > 1000) { TempText += " Not exagerated\n"; break; }                  
-                    if(NumberOfPlates > 500) { TempText += " We need iron\n"; AddNeededOre("Fe"); break; }
-                    if(NumberOfPlates < 250) { TempText += " Critical! \n"; AddNeededOre("Fe"); break; }
+                    if(NumberOfPlates > 500) { TempText += " We need iron\n"; AddNeededOre("Iron"); break; }
+                    if(NumberOfPlates < 250) { TempText += " Critical! \n"; AddNeededOre("Iron"); break; }
 
                     break;
                 case "Nickel":
@@ -337,8 +344,8 @@
                     if(NumberOfThrusters > 48) { TempText += " Abundance\n"; break; }
                     if(NumberOfThrusters > 24) { TempText += " Good\n"; break; }
                     if(NumberOfThrusters > 12) { TempText += " Not exagerated\n"; break; }               
-                    if(NumberOfThrusters > 6) { TempText += " We need Nickle\n"; AddNeededOre("Ni"); break; }
-                    if(NumberOfThrusters < 2) { TempText += " Critical! \n"; AddNeededOre("Ni"); break; }                            
+                    if(NumberOfThrusters > 6) { TempText += " We need Nickle\n"; AddNeededOre("Nickle"); break; }
+                    if(NumberOfThrusters < 2) { TempText += " Critical! \n"; AddNeededOre("Nickle"); break; }                            
     
                     break;
                 case "Silicon":
@@ -348,8 +355,8 @@
                     if(NumberOfSolars > 128) { TempText += " Abundance\n"; break; }
                     if(NumberOfSolars > 64) { TempText += " Good\n"; break; }
                     if(NumberOfSolars > 32) { TempText += " Not exagerated\n"; break; }               
-                    if(NumberOfSolars > 16) { TempText += " We need Silicon\n"; AddNeededOre("Si"); break; }
-                    if(NumberOfSolars < 4) { TempText += " Critical! \n";  AddNeededOre("Si"); break; }
+                    if(NumberOfSolars > 16) { TempText += " We need Silicon\n"; AddNeededOre("Silicon"); break; }
+                    if(NumberOfSolars < 4) { TempText += " Critical! \n";  AddNeededOre("Silicon"); break; }
 
                     break;
                 case "Cobalt":
@@ -359,8 +366,8 @@
                     if(NumberOfHArmor > 2500) { TempText += " Abundance\n"; break; }
                     if(NumberOfHArmor > 1000) { TempText += " Good\n"; break; }
                     if(NumberOfHArmor > 500) { TempText += " Not exagerated\n"; break; }               
-                    if(NumberOfHArmor > 250) { TempText += " We need Cobalt\n"; AddNeededOre("Co"); break; }
-                    if(NumberOfHArmor < 150) { TempText += " Critical! \n"; AddNeededOre("Co"); break; } 
+                    if(NumberOfHArmor > 250) { TempText += " We need Cobalt\n"; AddNeededOre("Cobalt"); break; }
+                    if(NumberOfHArmor < 150) { TempText += " Critical! \n"; AddNeededOre("Cobalt"); break; } 
 
                     break;                                
                 case "Magnesium":
@@ -370,8 +377,8 @@
                     if(NumberOfMunition > 2500) { TempText += " Abundance\n"; break; }
                     if(NumberOfMunition > 1000) { TempText += " Good\n"; break; }
                     if(NumberOfMunition > 500) { TempText += " Not exagerated\n"; break; }               
-                    if(NumberOfMunition > 250) { TempText += " We need Magnesium\n"; AddNeededOre("Mg"); break; }
-                    if(NumberOfMunition < 50) { TempText += " Critical! \n"; AddNeededOre("Mg"); break; }
+                    if(NumberOfMunition > 250) { TempText += " We need Magnesium\n"; AddNeededOre("Magnesium"); break; }
+                    if(NumberOfMunition < 50) { TempText += " Critical! \n"; AddNeededOre("Magnesium"); break; }
 
                     break;
                 case "Uranium":
@@ -389,7 +396,7 @@
                         TempText += " Uranium for " + UTime + " \n"; 
                         TempText += " uranium ore: " + NewOreStock[i].ToString();
                         if(NewOreStock[i] + NumberOfIngots[5] > 5) { TempText += " We are safe\n"; break; }
-                        if(NewOreStock[i] + NumberOfIngots[5] < 1) { TempText += " Uranium needed\n"; AddNeededOre("U"); break; }                                  
+                        if(NewOreStock[i] + NumberOfIngots[5] < 1) { TempText += " Uranium needed\n"; AddNeededOre("Uranium"); break; }                                  
                     break;
                 case "Silver":
                     // a small reactor uses 167 a big one 3333.33
@@ -398,8 +405,8 @@
                     if(NumberOfSReactors > 40) { TempText += " Abundance (Jeezes)\n"; break; }
                     if(NumberOfSReactors > 20) { TempText += " Good(1 big reactor)\n"; break; }
                     if(NumberOfSReactors > 10) { TempText += " No Large Reactor\n";  break; }               
-                    if(NumberOfSReactors > 5) { TempText += " We could use Silver\n"; AddNeededOre("Ag"); break; }
-                    if(NumberOfSReactors < 1) { TempText += " not even 1 small reactor \n"; AddNeededOre("Ag"); break; }                                 
+                    if(NumberOfSReactors > 5) { TempText += " We could use Silver\n"; AddNeededOre("Silver"); break; }
+                    if(NumberOfSReactors < 1) { TempText += " not even 1 small reactor \n"; AddNeededOre("Silver"); break; }                                 
 
                     break;
                 case "Gold":
@@ -410,7 +417,7 @@
                     if(NumberOfLReactors > 4) { TempText += " Nice\n"; break; }
                     if(NumberOfLReactors > 2) { TempText += " Double Power\n"; break; }               
                     if(NumberOfLReactors > 1) { TempText += " You can build 1\n"; break; }
-                    if(NumberOfLReactors < 1) { TempText += " Can not build a large reactor \n"; AddNeededOre("Au");; break; }  
+                    if(NumberOfLReactors < 1) { TempText += " Can not build a large reactor \n"; AddNeededOre("Gold");; break; }  
 
                     break;
                 case "Platinum":
@@ -425,7 +432,7 @@
                     if(NumberOfReactors > 40) { TempText += " Heaps\n"; break; }
                     if(NumberOfReactors > 20) { TempText += " Good(1 big reactor)\n"; break; }
                     if(NumberOfReactors > 10) { TempText += " No Large Reactor\n"; break; }               
-                    if(NumberOfReactors > 5) { TempText += " We could use Gravel\n"; AddNeededOre("Gr"); break; }
+                    if(NumberOfReactors > 5) { TempText += " We could use Gravel\n"; AddNeededOre("Stone"); break; }
 
                     break;
                 default:
@@ -441,19 +448,12 @@
             if(ShowStatus) Message += TempText;   
         }   
 
-        // I need contact with the Grid Transmitter/Receiver
-        // if(!hasContactWAntenna && !hasSend) 
-        // {
-        //     CheckAntennaSystem();
-        // }
-
-        // if(!ProgramRunning && hasContactWAntenna && !hasSend)
+        // we could force an Uranium fetching ... ? 
         if(!hasSend) { SendMessage("Idle"); }
         
-        // 
+        // we need something(s) to fetch the bl**dy things
         if (NeededOres.Count > 0 ) {
-            GetMines();
-            GetCariers(); // Cariers and the like ...
+            oreFetching();
         }
 
         // OreFetching();
@@ -499,9 +499,18 @@ public void CheckAntennaSystem()
     return;
 }
 */
+public void toggleForced(string OreName) {
+    if(!SubOreTypeList.Contains(OreName)) return;
+    if (OreFetchings.Contains(OreName)) {
+        OreFetchings.Remove(Orename);
+    }else{
+        OreFetchings.Add(OreName);
+    }
+    return;
+}
 
-public void CheckPBs()
-{
+
+public void CheckPBs() {
     List<IMyTerminalBlock> PB_blocks = new List<IMyTerminalBlock>();
     GridTerminalSystem.SearchBlocksOfName( ISIPbName, PB_blocks, b => b is IMyProgrammableBlock);
         
@@ -515,8 +524,7 @@ public void CheckPBs()
     return;
 }
 
-public void AddNeededOre(string Ore)
-{
+public void AddNeededOre(string Ore) {
     if(NeededOres.Count == 0) NeededOres.Add(Ore); return;
 
     if(NeededOres.Contains(Ore)) return;
@@ -526,14 +534,12 @@ public void AddNeededOre(string Ore)
 }
 
 // TODO this could become redundant ...
-public void RemoveNeededOre(string Ore)
-{
+public void RemoveNeededOre(string Ore) {
     if(NeededOres.Contains(Ore)) NeededOres.Remove(Ore);
     return;
 }
 
-public void GetMines()
-{
+public void GetMines() {
     // What miees do we have ?
     if(DefMines.Count == 0) AddReport(5); return;
     RemoveReport(5);
@@ -568,7 +574,6 @@ public void GetCariers()
 
 public void CheckCustomData()
 {
-
     // If we have ISI Solar power script put it in our own
     if (HasISIPowerPB)
     {
@@ -850,14 +855,18 @@ public string CheckReport(bool HelpMe)
     /********************
     Ore fetching
     *********************/
-    /*
-    public void OreFetching()
-    {
+    public void OreFetching() {
         // So I need ore ?
+        // Do we have a Mine of the particular ore ?
+                    GetMines();
+
+        // -> a mine is a container with an antenna a a drillscript (maybe not configured but with ore ?)
         // what is the Mine doing ? -> MineCar -> MineShip ?
         // Is there any Ore ?
         if (OreAmount >= MiniAmount){
             // What is the Carier doing ?
+            GetCariers(); // Cariers and the like ...
+
             if(CarierStatus == "Idle")
             {
                 Message += "Action: Sending Carier\n";
@@ -873,7 +882,6 @@ public string CheckReport(bool HelpMe)
 
         return;
     }
-    */
 
     /****************   
         LCD   
