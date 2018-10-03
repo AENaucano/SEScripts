@@ -1,3 +1,4 @@
+/*
 // DrillSequencer
 // Pistons are PistonP
 // Drills are DrillD
@@ -8,8 +9,15 @@
 // Running : Normally drilling
 // Stopping : such as ending the drilling
 // Adapted for Antenna system
-// TODO :  It should say when it is stuck ie. the rotor does not move
-// new Antenna handshake methode.
+/// -> still buggy
+// It should say when it is stuck ie. the rotor does not move
+// 
+/// Depotmasters need to know: What mine and what ore
+    -> we will use CustomData of the PB to designate a Nato Code
+    ->  Station=NATOcode ex 
+    -> there should be a way that DM has control on what code to use
+/// -> this scipt has to send what kind of ore it has ? -> how ?
+*/
 
 string ProgramStatus = "Manual";
 float Next_Position;
@@ -60,19 +68,21 @@ const string Piston_Pattern = "PistonP";
 
 // new Calling the drone system
 const string AntennaName = "Antenna MineShip"; // Change this to the correct name
-const string AntennaMaster = "AntennaMaster";
+const string DepotMasterName = "DepotMaster"; // pattern the DM sends
 
 const string MINECONTAINERPATTERN = "Mine";
-const string SendMessageHeader = "MineStatus";
+string SendMessageHeader = "Zulu"; // NatoCode in string
 int SendTimer = 0;
 
 // connector
 List<IMyTerminalBlock> DroneConnectors = new List<IMyTerminalBlock>();
 const string DRONECONNECTOR = "Connector Mine";
 public IMyShipConnector DroneConnector;
-  
+
+// Rotor  
 const float Rotor_ResetVelocity = 1f;  
 
+// Pistons
 float Pistons_Current_Length = 0f;   
 const float Piston_RetractVelocity = 0.5f;
 
@@ -83,9 +93,24 @@ bool HoustonWeHaveAProblem = false;
 bool NoStone = true;
 bool BaseAck = false; // base has Ackknowledged, don't send anything
 bool sendCall = false;
+bool AskedName = false;
+bool GotName = false;
+bool sendStatusToDM = false;
 
 List<IMyTerminalBlock> MineOreContainers = new List<IMyTerminalBlock>();
 List<IMyTerminalBlock> MineConnectors = new List<IMyTerminalBlock>();
+
+// Containers
+List<string> OreTypes = new List<string>(); // duplicates possible
+
+// From SAM
+static List<string> NATO_CODES = new List<string> { "Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliett", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "Xray", "Yankee", "Zulu" }; 
+// Following SAM -> The string version = MessageHeader
+int NATO_Index = 1; // 0-based 1=Bravo, alfa reserved for Base
+
+// OreControl ... I know scrap is not a ore ... but is important for DM
+static List<String> SubOreTypeList = new List<string> {  "Iron", "Nickel","Silicon", "Cobalt", "Magnesium", "Uranium",  "Silver", "Gold", "Platinum", "Scrap", "Stone" };
+List<float> SubOreTypeAmounts = new List<float> { 0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f };
 
 // Text heading    
 string Message;   
@@ -101,15 +126,46 @@ public void Main(string argument, UpdateType updateSource)
     
     Message = " Automated Drill Sequence - Main loop\n";
 
+    //DEBUG
+    // Echo("Argument: " + argument + "\n");
+
+    if (!CheckCustomdata()){
+        // We use "Zulu" as temp code -> DM knows it is not made yet
+        // if(!AskedName && !GotName){ 
+        ProgramStatus = "Manual";
+
+        Echo("GotName: " + GotName + "\n");
+        if(!GotName){
+            SendStatus(); // sending Zulu=Test
+            if(sendCall){ AskedName = true; }
+        }
+    }
+
     if (argument.Length > 0)
     {
-        //DEBUG
-        // Echo("Argument: " + argument + "\n");
-        if (argument.Contains(SendMessageHeader))
+        // Contact with DepotMaster
+        if (argument.Contains(DepotMasterName))
         {
-            var ReceivedMessage = argument.Split(':', '=');
-            if(ReceivedMessage[1].Contains("Ack")) { BaseAck = true; }
+            var ReceivedMessage = argument.Split(':','>','/','=');
+            if(ReceivedMessage[1].Contains("Ack")) { BaseAck = true; sendStatusToDM=false; }
+
+            if(ReceivedMessage[1].Contains("Station")) {
+                GotName = true;
+                SendMessageHeader = (string) ReceivedMessage[2];
+                Me.CustomData = "Station=" + SendMessageHeader;
+            }
         }
+       
+       // own name is an Ack from DM
+       if (argument.Contains(SendMessageHeader))
+        {
+            //DEBUG
+            Echo("Yesssssssssssssssss\n");
+            var ReceivedMessage = argument.Split(':','>','/','=');
+            if(ReceivedMessage[1].Contains("Ack")) { BaseAck = true; sendStatusToDM=false; }
+        }
+
+
     }
 
     if (ProgramStatus == "Manual")
@@ -159,8 +215,10 @@ public void Main(string argument, UpdateType updateSource)
     if(Pistons_Wanted_Length <= 0f) 
     {
         //DEBUG
-        // Echo("BaseAck: " + BaseAck + "\n");
-        if(!BaseAck) { SendStatus("Not_Configured"); }
+        Echo("BaseAck: " + BaseAck + "\n");
+        Echo("sendStatusToDM: " + sendStatusToDM + "\n");       
+        if(!sendStatusToDM) { SendStatus("Setup"); }
+        // Echo("sendCall: " + sendCall + "\n");
         Message += " --> Check Config\n";
         ShowText(Message, LCD_Pattern, true);           
         return;
@@ -197,12 +255,12 @@ public void Main(string argument, UpdateType updateSource)
 
             // sync storage
             Save();
-            SendStatus("Resetting");
+            if(!sendStatusToDM) { SendStatus("Resetting"); }
             break;
 
         case "Stopping":
             Message += "Holding the horses\n";
-            SendStatus("Stopping");            
+            if(!sendStatusToDM) { SendStatus("Stopping"); }           
             // Get the pistons retract first now
             if (InitPistons())
             {
@@ -241,7 +299,7 @@ public void Main(string argument, UpdateType updateSource)
                     if (Pistons_Done)
                     {
                         ProgramStatus = "Stopping";
-                        SendStatus("Finished");                        
+                        if(!sendStatusToDM) { SendStatus("Finished"); }                        
                     }
                 }
                 else
@@ -253,12 +311,12 @@ public void Main(string argument, UpdateType updateSource)
             // Check container(s) for Ore
             // Message += "Amount Mine " + CheckMine() + "/" + MinimAmount + "\n";
             // Mine Sends always ore Amount so this can be empty  
-            SendStatus(Pistons_Current_Length.ToString("0.00") + "|" + Pistons_Wanted_Length.ToString("0.00") + "m");           
+            if(!sendStatusToDM) { SendStatus(Pistons_Current_Length.ToString("0.00") + "|" + Pistons_Wanted_Length.ToString("0.00") + "m"); }
             // SendStatus(Pistons_Current_Length.ToString("0.00") + "|" + Pistons_Wanted_Length + "m");            
             break;
         case "Manual":
             Message += "You are in control ;) \n";
-            SendStatus("Manual");            
+            if(!sendStatusToDM) { SendStatus("Manual"); }          
             Echo("Mannually controlled ;)\n");
             break;
         default:
@@ -286,6 +344,30 @@ public void Main(string argument, UpdateType updateSource)
 /****************** 
     subroutines  
 *******************/
+
+public bool CheckCustomdata(){
+    string MyData = Me.CustomData;
+
+    if (MyData == "") { 
+        Me.CustomData = "Station=Fill this in\n";
+        return false; 
+    }
+    
+    string[] lines = MyData.Split('\n');
+    foreach(var line in lines){
+        var parts = line.Split(':','>','/','='); 
+
+        if(parts[0].Contains("Station")){
+            if(NATO_CODES.Contains(parts[1])){
+                SendMessageHeader = parts[1];
+            } else {
+                Message += "Check Customdata\n";
+            }
+        }
+    }
+
+    return true;
+}
 
 public bool Run_Piston()
 {
@@ -585,7 +667,7 @@ public bool Turn_Rotor(bool NotNow=false)
     }
     else
     {
-        SendStatus("Stuck");
+        if(!sendStatusToDM) { SendStatus("Stuck"); }
         Message += " |-[ I think I am Stuck\n";
     }
 
@@ -718,36 +800,48 @@ public void ShowText(string Tekst, string LCDName = "LCD ComponentControl",  boo
     containers
  *****************/
 
-List<string> OreTypes = new List<string>();
-
 // Check the inventory of the Mine
 // F**** ! Connectors have inventory too ! they are counted as well
 // and ... stone ?
-public float CheckMine()
-{
+public float CheckMine() {
     float AmountOres = 0f;
+    SubOreTypeAmounts.Clear();
+    OreTypes.Clear();
 
     GridTerminalSystem.SearchBlocksOfName(MINECONTAINERPATTERN, MineOreContainers, c => c.HasInventory);
     if (MineOreContainers == null ) return 0;
 
-    for (int i = 0; i < MineOreContainers.Count; i++)
-    {
-
+    for (int i = 0; i < MineOreContainers.Count; i++) {
         var MineContainer = MineOreContainers[i];
      
         IMyInventory ThisStock = MineContainer.GetInventory(0);    
-        findOre(ThisStock);
-        foreach (var OreType in OreTypes)
-        {
-            if ((OreType != "Stone") && (NoStone))
-            {
+        findOre(ThisStock); // -> Add subOreType to OreTypes
+        
+        foreach (var OreType in OreTypes) {
+            // its up to DM if it wants stone or not
+            // if ((OreType != "Stone") && (NoStone))
+            // {
                 AmountOres += countItem(ThisStock, OreType);
+            // }
+        
+            // sort out by type -> SubOreType
+            int oreIndex = SubOreTypeList.IndexOf(OreType);
+            // it can not be 0, the list is not empty
+            if(oreIndex != 0){
+                // The amounts are in sync with the names
+                float TotalAmountOf = SubOreTypeAmounts[oreIndex];
+                // add the amount of ore to the total
+                TotalAmountOf += AmountOres;
+                // put it back in the correct index
+                SubOreTypeAmounts.Insert(oreIndex, TotalAmountOf);
             }
         }
     }
 
     return AmountOres;
 }
+
+
 
 void MyTransfer(IMyInventory FromStock, IMyInventory ToStock, string type, string subType, float amount)
 {
@@ -774,6 +868,8 @@ void MyTransfer(IMyInventory FromStock, IMyInventory ToStock, string type, strin
     }
 }
 
+// this can be used to check what ore we have if
+// we check the subtype
 public void findOre(IMyInventory inv)
 {
     OreTypes.Clear();
@@ -826,9 +922,14 @@ public void SendStatus(string SendMessage="Test")
     IMyRadioAntenna Antenna = Antennas[0] as IMyRadioAntenna;
 
     // Mine sends ALWAYS if there is ore
+    // Now DepotMaster asks for the name of the ore -> it is in Oretypes
+    // there could be more then one type and stone becomes a valid ore ... or not ?
+    CheckMine();
+
     string MineMessage = "Ore>" + CheckMine().ToString() + "/" + SendMessage;
 
     // sendCall = Antenna.TransmitMessage(SendMessageHeader + "=" + MineMessage, MyTransmitTarget.Everyone);
+
     sendCall = Antenna.TransmitMessage(SendMessageHeader + "=" + MineMessage);
 
     if(sendCall) 
