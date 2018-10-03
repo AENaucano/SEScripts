@@ -1,72 +1,83 @@
-    /****************************
-        Depotmaster Helping out 
-        Ineventoy Manager
-    ******************************/
+/****************************
+    Depotmaster Helping out 
+    Inventory Manager
+******************************/
 
-    /*
-        * first tests are good
-        * Stone <-> gravel
-        * Scrap -> does not have a Ingot -> iron -> TODO ?
-        * Calculated the Ingot Equivalent
-        TODO Building a history of the Subtypes -> Time -> ISI ?
-            -> Seems to me timer block is not working properly, furthermore it uses start not TriggerNow
-            -> maybe better to read the customdata of the pb of ISIs alignement script
-            -> PB - ISI.CustomData(dayTimer=(int)Currentclicktime dayLength=(int)MaxClicksPerDay)
-        * Implementing Antenna system
-            -> we can not use the antenna system !
-        * I need a way of getting control again without the overide of DPM
-        TODO get the Cariers Volume and calculate the minimumamount from it 60% van 33750 * 2.7 ratio Kg/L
-            -> do we even have a Carier ? Or carier ...
-            -> if a carier has to wait && other mines goto next mine ( even if we do not "need" that ore)
-        * DP should not call the Antenna itself --> AntennaMaster
-            -> except perhaps if we do not have a PB with AntennaSystem on ... ?
-        * saving/loading ProgramTick & TicksPerDay
-        TODO Uranium, Ice(?) and Magnesium are special cases ( NO not stone, stone is a special special case)
-            -> uranium ingots are IN the reactors if you have any, they do not count as real "ingot" though.
-        TODO We have to figure out if we have mines -> maybe call them by the Nato codes of SAM ?
-            -> mines are just Cargo Constainers (ships?) designated as "Mine"
-            -> How do we register a new mine ? -> ask to goto a mine
-        * Established a report - system
+/*
+    * first tests are good
+    * Stone <-> gravel
+    * Scrap -> does not have a Ingot -> iron -> TODO ?
+    * Calculated the Ingot Equivalent
+    TODO Building a history of the Subtypes -> Time -> ISI ?
+        -> Seems to me timer block is not working properly, furthermore it uses start not TriggerNow
+        -> maybe better to read the customdata of the pb of ISIs alignement script
+        -> PB - ISI.CustomData(dayTimer=(int)Currentclicktime dayLength=(int)MaxClicksPerDay)
+    * Implementing Antenna system
+        -> we can not use the antenna system if we are on the same grid ?
+    * I need a way of getting control again without the overide of DPM
+    TODO get the Cariers Volume and calculate the minimumamount from it 60% van 33750 * 2.7 ratio Kg/L
+        -> do we even have a Carier ? Or carier ...
+        -> if a carier has to wait && other mines goto next mine ( even if we do not "need" that ore)
+    * DP should not call the Antenna itself --> AntennaMaster
+        -> except perhaps if we do not have a PB with AntennaSystem on ... ?
+    * saving/loading ProgramTick & TicksPerDay
+    TODO Uranium, Ice(?) and Magnesium are special cases ( NO not stone, stone is a special special case)
+        -> uranium ingots are IN the reactors if you have any, they do not count as real "ingot" though.
+    * We have to figure out if we have mines -> maybe call them by the Nato codes of SAM ?
+        -> mines are just Cargo Constainers (ships?) designated as "Mine"
+        -> How do we register a new mine ? -> mine asks DM gives a free code 
+        -> not Alfa and not Zulu.
+    * Established a report - system
 
-    */
+*/
 
-    string version = "1.09";
+string version = "1.09";
 
-    // this only runs @the start ie. compile
-    public Program()
-    {
-        Runtime.UpdateFrequency = UpdateFrequency.Update100;
+// this only runs @the start ie. compile
+public Program() {
+    Runtime.UpdateFrequency = UpdateFrequency.Update100;
 
-        //Loading
-        string[] storedData = Storage.Split(';');
-        if(storedData.Length >= 1)
-        {
-            ProgramStatus = storedData[0];
-        }
+    //Loading
+    string[] storedData = Storage.Split(';');
+    if(storedData.Length >= 1) {
+        ProgramStatus = storedData[0];
+    }
         
-        // place holder
-        if(storedData.Length >= 2)
-        {
-            version = storedData[1];
-        }
-
-        CheckPBs();
-
-        CheckCustomData();
+    // place holder
+    if(storedData.Length >= 2) {
+        version = storedData[1];
     }
 
-    public void Save()
-    {
-        Storage = string.Join(";",
-            ProgramStatus ?? "run",
-            version ?? version);
+    CheckPBs();
 
-        Me.CustomData = "ProgramTick=" + ProgramTick.ToString() + "\nTicksPerDay=" + TicksPerDay.ToString() + "\nAntenna=" + MyOwnAntenna + "\n";
-    }
+    CheckCustomData();
 
-    // static Names
-    const string LCDNAME="DepotLCD";
-    const string ISIPbName = "Solar Power";
+
+    FeStations.MyOreName("Iron");
+    NiStations.MyOreName("Nickle");
+    SiStations.MyOreName("Silicon");
+    CoStations.MyOreName("Cobalt");    
+    MgStations.MyOreName("Magnesium");
+    UStations.MyOreName("Uranium");
+    AgStations.MyOreName("Silver");
+    AuStations.MyOreName("Gold");
+    PtStations.MyOreName("Platinum");
+    GrStations.MyOreName("Stone");
+}
+
+public void Save() {
+    Storage = string.Join(";",
+        ProgramStatus ?? "run",
+        version ?? version);
+
+    Me.CustomData = "ProgramTick=" + ProgramTick.ToString() 
+        + "\nTicksPerDay=" + TicksPerDay.ToString() + "\nAntenna="
+        + MyOwnAntenna + "\nCommand=" + LastReceived + "\n";
+}
+
+// static Names
+const string LCDNAME="DepotLCD";
+const string ISIPbName = "Solar Power";
    
     // constants
     const string OreType = "Ore";
@@ -81,9 +92,10 @@
 
     // Antenna system names
     const string PB_Antenna = "PB - Antenna Master";
-    string MyOwnAntenna = "Antenna @Base Transmitter"; // Change this to the correct name -> Customdata
+    string MyOwnAntenna = "Antenna @Base DepotMaster"; // Change this to the correct name -> Customdata
     const string AntennaMaster = "AntennaMaster";
     const string SendMessageHeader = "DepotMaster";
+    string LastReceived = "";
 
     // Typical SE stuff
     public IMyProgrammableBlock PBMaster;
@@ -93,15 +105,16 @@
     List<IMyTerminalBlock> AllBlocks = new List<IMyTerminalBlock>();
 
     // Needed Lists
-    List<String> SubOreTypeList = new List<string> {  "Iron", "Nickel","Silicon", "Cobalt", "Magnesium", "Uranium",  "Silver", "Gold", "Platinum", "Scrap", "Stone" };
-    List<String> SubIngotTypeList = new List<string> {  "Iron", "Nickel","Silicon", "Cobalt", "Magnesium", "Uranium",  "Silver", "Gold", "Platinum", "ScrapIron", "Gravel" };
+    static List<String> SubOreTypeList = new List<string> {  "Iron", "Nickel","Silicon", "Cobalt", "Magnesium", "Uranium", "Silver", "Gold", "Platinum", "Scrap", "Stone" };
+    static List<String> SubIngotTypeList = new List<string> {  "Iron", "Nickel","Silicon", "Cobalt", "Magnesium", "Uranium", "Silver", "Gold", "Platinum", "ScrapIron", "Gravel" };
     // Alfa = Base ?
-    List<string> NATO_CODES = new List<string>(new string[] { "Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliett", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "Xray", "Yankee", "Zulu" }); 
-    Dictionary<string, string> Destinations = new Dictionary<string,string>();
+    static List<string> NATO_CODES = new List<string>(new string[] { "Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India", "Juliett", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey", "Xray", "Yankee", "Zulu" }); 
+    
     List<string> NeededOres = new List<string>(); // this is what we really need
-    List<string> OreFetchings = new List<string>(); // this is what we ( can ) fetch
-    List<string> DefMines = new List<string>(); // these are the defined mines, the mines which exists
-    List<string> NATOMines = new List<string>(); // these are the defined mines gps code from SAM
+    List<string> OreFetchings = new List<string>(); // this is what we ( forced ) fetch
+    List<string> DefStations = new List<string>(); // these are the defined SAMCodes, the mines which exists -> No ore
+    List<string> StatusStations = new List<string>(); // status of the mines or stations
+
     List<string> Cariers = new List<string>(); // Or drone or anything that can get ore ;)
     List<string> Waypoints = new List<string>(); // this were those Cariers should go.
 
@@ -125,8 +138,12 @@
         " |-0 I need a Pt mine\n", //15
         " |-0 I need a Gr mine\n",
         " :-] Waiting for reply\n", // not used for the moment
-        " °-0 Orename does not exist\n"
+        " °-0 Orename does not exist\n",
+        " |-[ failed station registration\n",
+        " :-] registering new station\n", // 20
+        " --> Testing\n"
         };
+
     int ReportCounter = 0;
     int ReportTimeCounter = 0;
     int ReportTime = 3;
@@ -152,8 +169,12 @@
         " > Build a Pt mine\n",
         " > Build a Gr mine\n",
         " > Do we have contact?\n",
-        " > Iron, Nickle, ... \n"     
+        " > Iron, Nickle, ... \n",
+        " > Check contact w station\n",
+        " > should give a NATO code\n",
+        " > DEBUG\n"    
         };
+
     string WhatsWrong = " °-| I dunno ...\n";
     bool ShowWhatsWrong = false;
 
@@ -168,11 +189,22 @@
     List<float> NewIngotStock = new List<float>();
     List<float> IngotEquivalentStock = new List<float>();
     
-    // History
-    public static int NumberOfData = (int)6;
+    Stationings FeStations = new Stationings();
+    Stationings NiStations = new Stationings();
+    Stationings SiStations = new Stationings();
+    Stationings CoStations = new Stationings();   
+    Stationings MgStations = new Stationings();
+    Stationings UStations = new Stationings();
+    Stationings AgStations = new Stationings();
+    Stationings AuStations = new Stationings();
+    Stationings PtStations = new Stationings();
+    Stationings GrStations = new Stationings();    
 
-    int CurrentDayNumber = 0; // so the last will be indexed NumberOfData - 1 !
-    int NumberReadings = 0; // difference between init 0 and real 0
+    // History
+    // public static int NumberOfData = (int)6;
+
+    // int CurrentDayNumber = 0; // so the last will be indexed NumberOfData - 1 !
+    // int NumberReadings = 0; // difference between init 0 and real 0
 
     // special stuff -> scrap -> gives Fe !
     // Gr(avel) -> stone
@@ -195,10 +227,13 @@
     string ProgramStatus = "Euh";
     string Message=" Huh ? \n";
 
+    string NewStation = "Zulu";
+
     //bools
     bool ShowStatus = false;
     bool hasSend = false;
     bool hasContactWAntenna = false;
+    bool ShowStations = false;
  
     // fancy stuff
     static List<char> SLIDER_ROTATOR = new List<char>(new char[] { '-', '\\', '|', '/'}); 
@@ -206,303 +241,321 @@
 
     // ========================================= Main ================================================
 
-    public void Main(string argument, UpdateType updateSource)
-    {
-        Message="";
+public void Main(string argument, UpdateType updateSource) {
+    Message="";
 
-        if (argument.Length > 0)
-        {
-            //DEBUG
-            Echo("argument: " + argument + "\n" );
+    if (argument.Length > 0) {
+        /// This is still very much work in progress
+        LastReceived = argument;
+
+        var parts= argument.Split(':','>','/','=');
             
-            /// This is still very much work in progress
-            Message="";
-            if (argument.Contains("Mine"))
-            {
-                var parts= argument.Split(':','>','/');
-                if (parts.Length == 4)
-                {
-                    string OreName = parts[1];
-                    OreAmount = float.Parse(parts[2]); //Checkout what is been send is without chars !
-                    string Status = parts[3];      
-                    // Status: not configured
-                    //         ore(Iron, Nickle ...) waiting
-                    //         
+        // "Zulu=Test" means a new station is asking for a code
+        if(parts[0].Contains("Zulu")) {
+            AddReport(20);
+            NewStation = "Zulu";
+            // nevermind the second part ( Test )
+            // Search a new unused code, but not "alfa"[0] -> base and not "Zulu"
+            for(int i=1; i<NATO_CODES.Count - 1; i++) {
+                if(DefStations.Count > 0){
+                    if(DefStations.Contains(NATO_CODES[i])) { continue; }
                 }
-
-                // if mine=finished and Carier=Waiting -> reset Carier
+                NewStation = NATO_CODES[i];
+                break;
             }
 
-            if (argument.Contains("Carier"))
-            {
-                Message += " Intercepted Carier message: \n " + argument + "\n";
-                var parts = argument.Split(':','=');
-                CarierStatus = parts[1];
+            // register the station
+            if(NewStation != "Zulu" ) { 
+                DefStations.Add(NewStation); 
+                StatusStations.Add("New");
             }
-
-            // If I get my own name it means Antennamaster heard me
-            // no, we can not put two PB's on one Antenna !
-            /*
-            if(argument.Contains(SendMessageHeader))
-            {
-                var parts = argument.Split(':','=');
-                //DEBUG
-                // Echo ("Part0: " + parts[0] + " Part1: " + parts[1] + "\n");
-                if(parts[1].Contains("Ack"))
-                {
-                    // Echo("Yes!\n");
-                    hasContactWAntenna = true;
-                    RemoveReport(4);                    
-                    RemoveReport(17);
-                }
-            }
-            */
-
-            // Real commands
-            switch (argument.ToLower()) {
-                case "reset":
-                    ProgramRunning = false;
-                    ProgramTick = 0;
-                    TicksPerDay = 0; 
-                    ProgramStatus = "Stop";
-                    Save();                
-                    break;
-                case "stop":
-                    ProgramRunning = false;
-                    break; 
-                case "run":
-                    // for the moment it is running ;)
-                    ProgramRunning = true;
-                    break;
-                case "time":
-                    TicksPerDay = ProgramTick;
-                    ProgramTick = 0;
-                    break;
-                case "status":
-                    ShowStatus = !ShowStatus;
-                    break;
-                case "help":
-                    ShowWhatsWrong = !ShowWhatsWrong;
-                    break;
-                default:
-                    // Message += " Commands:\n Run, Reset, Stop ... " + ProgramTick + "\n\n";
-                    break;
-            }
-
-            if (argument.Contains("Force")){
-                string[] Lines=argument.Split(' ', '\n');
-                toggleForced(Lines[1]);
+            // send it to the station
+            if(!SendMessage("Station=" + NewStation + "\n")) {
+                AddReport(19);
+            }else{
+                RemoveReport(19);
+                RemoveReport(20);
             }
         }
+        
+        // Stations=Mines will send their NatoCode -> Check in DefStations
+        if(DefStations.Count > 0){
 
-        //DEBUG
-        // Echo("ProgramStatus: " + ProgramStatus + "\n");
+            bool StationFound = false;
+            foreach( string Station in DefStations ){
+                if(argument.Contains(Station)) {StationFound = true; break;}
+            }
 
-        // check config Me.Customdata
-        CheckCustomData();
+            if (StationFound) {
+                // TODO checkout Ack system
+                if (parts.Length == 4) {
+                    string From = parts[0].Trim();
+                    string OreName = parts[1].Trim();
+                    AddOreStations(From, OreName);
+                    // OreAmount = float.Parse(parts[2]); //Checkout what is been send is without chars !
+                    if(StatusStations.Count > 0) {
+                        int StationIdx = DefStations.IndexOf(From);
+                        StatusStations[StationIdx]=parts[3].Trim();
+                    }else{
+                        Echo("StatusStations is wrong\n" );
+                    }
+                    SendMessage("Ack", From);
+                }
+            }
+            // if mine=finished and Carier=Waiting -> reset Carier
+        }
 
-        // clock
-        ProgramTick++;
+        if (argument.Contains("Carier")) {
+            Message += " Intercepted Carier message: \n " + argument + "\n";
+            var Carierparts = argument.Split(':','=');
+            CarierStatus = Carierparts[1];
+        }
 
-        // I need the ore and ingots containers on the base
-        FindOreOnGrid();
+        // Real commands
+        switch (argument.ToLower()) {
+            case "reset":
+                ProgramRunning = false;
+                ProgramTick = 0;
+                TicksPerDay = 0; 
+                ProgramStatus = "Stop";
+                Save();                
+                break;
+            case "stop":
+                ProgramRunning = false;
+                break; 
+            case "run":
+                // for the moment it is running ;)
+                ProgramRunning = true;
+                break;
+            case "time":
+                TicksPerDay = ProgramTick;
+                ProgramTick = 0;
+                break;
+            case "status":
+                ShowStatus = !ShowStatus;
+                break;
+            case "list":
+                ShowStations = !ShowStations;
+                break;
+            case "help":
+                ShowWhatsWrong = !ShowWhatsWrong;
+                break;
+                default:
+                // Message += " Commands:\n Run, Reset, Stop ... " + ProgramTick + "\n\n";
+                break;
+        }
 
-        // right well a Scrap Ingot does not exist -> TODO
-        FindIngotOnGrid();
+        if (argument.ToLower().Contains("force")){
+            string[] Lines=argument.Split(' ', '\n');
+            toggleForced(Lines[1].Trim());
+        }
+    }
 
-        // calculating Ingot_Equivalent from Ore with formula
-        // volume ore * OreIngotRatio * Refinery base Efficency
-        // NumberOfIngots.Clear();
-        Calculate_IE();
-
-        // I need the average consumation of Ore and ingots
-        // -> I need a history but not at every tick !
-            
-        for( int i=0; i<SubOreTypeList.Count; i++)
-        {
-            
-            string TempText = "";
-
-            NeededOres.Clear(); // Yep delete everything
-            
-            switch (SubOreTypeList[i])
-            {
-                case "Iron":
-                    // a large armor block needs typically 25 Ingots
-                    // wiki says 21 Ingots, game says  7 ???
-
-                    int NumberOfPlates = (int) NumberOfIngots[0]/7;
-                    TempText += " Iron: ";
-                    if(NumberOfPlates > 5000) { TempText += " Abundance\n"; break; }
-                    if(NumberOfPlates > 2000) { TempText += " Good\n"; break; } 
-                    if(NumberOfPlates > 1000) { TempText += " Not exagerated\n"; break; }                  
-                    if(NumberOfPlates > 500) { TempText += " We need iron\n"; AddNeededOre("Iron"); break; }
-                    if(NumberOfPlates < 250) { TempText += " Critical! \n"; AddNeededOre("Iron"); break; }
-
-                    break;
-                case "Nickel":
-                    // Message += " Nickle: " + NumberOfIngots[1] + " \n";
-                    // 1 large Atmo Thrusters asks for 1960 Nickle
-                    int NumberOfThrusters = (int) NumberOfIngots[1]/1960;
-                    TempText += " Nickle: ";
-                    if(NumberOfThrusters > 48) { TempText += " Abundance\n"; break; }
-                    if(NumberOfThrusters > 24) { TempText += " Good\n"; break; }
-                    if(NumberOfThrusters > 12) { TempText += " Not exagerated\n"; break; }               
-                    if(NumberOfThrusters > 6) { TempText += " We need Nickle\n"; AddNeededOre("Nickle"); break; }
-                    if(NumberOfThrusters < 2) { TempText += " Critical! \n"; AddNeededOre("Nickle"); break; }                            
     
-                    break;
-                case "Silicon":
-                    // a solar cell asks for 170,80
-                    int NumberOfSolars = (int) NumberOfIngots[2]/171;
-                    TempText += " Silicon: "; 
-                    if(NumberOfSolars > 128) { TempText += " Abundance\n"; break; }
-                    if(NumberOfSolars > 64) { TempText += " Good\n"; break; }
-                    if(NumberOfSolars > 32) { TempText += " Not exagerated\n"; break; }               
-                    if(NumberOfSolars > 16) { TempText += " We need Silicon\n"; AddNeededOre("Silicon"); break; }
-                    if(NumberOfSolars < 4) { TempText += " Critical! \n";  AddNeededOre("Silicon"); break; }
+    //DEBUG
+    // Echo("ProgramStatus: " + ProgramStatus + "\n");
 
-                    break;
-                case "Cobalt":
-                    // Heavy armor needs 50 ingots
-                    int NumberOfHArmor = (int) NumberOfIngots[3]/50;
-                    TempText += " Cobalt: ";
-                    if(NumberOfHArmor > 2500) { TempText += " Abundance\n"; break; }
-                    if(NumberOfHArmor > 1000) { TempText += " Good\n"; break; }
-                    if(NumberOfHArmor > 500) { TempText += " Not exagerated\n"; break; }               
-                    if(NumberOfHArmor > 250) { TempText += " We need Cobalt\n"; AddNeededOre("Cobalt"); break; }
-                    if(NumberOfHArmor < 150) { TempText += " Critical! \n"; AddNeededOre("Cobalt"); break; } 
+    // check config Me.Customdata
+    CheckCustomData();
 
-                    break;                                
-                case "Magnesium":
-                    // Mg is simple Nato 184 uses ... 1.00
-                    int NumberOfMunition = (int)NumberOfIngots[4];
-                    TempText += " Magnesium: ";
-                    if(NumberOfMunition > 2500) { TempText += " Abundance\n"; break; }
-                    if(NumberOfMunition > 1000) { TempText += " Good\n"; break; }
-                    if(NumberOfMunition > 500) { TempText += " Not exagerated\n"; break; }               
-                    if(NumberOfMunition > 250) { TempText += " We need Magnesium\n"; AddNeededOre("Magnesium"); break; }
-                    if(NumberOfMunition < 50) { TempText += " Critical! \n"; AddNeededOre("Magnesium"); break; }
+    // clock
+    ProgramTick++;
 
-                    break;
-                case "Uranium":
-                    // special case
-                    // at full demand a small reactor consumes 1 kg in 4min
-                    // a large reactor 1 kg in 12sec -> TODO do we check what reactors are on the grid ?
-                        int SecondsOfUranium = ( int )NumberOfIngots[5]*4;
-                        TimeSpan t = TimeSpan.FromSeconds( SecondsOfUranium );
+    // I need the ore and ingots containers on the base
+    FindOreOnGrid();
 
-                        string UTime = string.Format("{0:D2}h:{1:D2}m:{2:D2}s", 
+    // right well a Scrap Ingot does not exist -> TODO
+    FindIngotOnGrid();
+
+    // calculating Ingot_Equivalent from Ore with formula
+    // volume ore * OreIngotRatio * Refinery base Efficency
+    // NumberOfIngots.Clear();
+    Calculate_IE();
+
+    // I need the average consumation of Ore and ingots
+    // -> I need a history but not at every tick !
+            
+    for( int i=0; i<SubOreTypeList.Count; i++) {
+        string TempText = "";
+
+        NeededOres.Clear(); // Yep delete everything
+            
+        switch (SubOreTypeList[i]) {
+            case "Iron":
+                // a large armor block needs typically 25 Ingots
+                // wiki says 21 Ingots, game says  7 ???
+
+                int NumberOfPlates = (int) NumberOfIngots[0]/7;
+                TempText += " Iron: ";
+                if(NumberOfPlates > 5000) { TempText += " Abundance\n"; break; }
+                if(NumberOfPlates > 2000) { TempText += " Good\n"; break; } 
+                if(NumberOfPlates > 1000) { TempText += " Not exagerated\n"; break; }                  
+                if(NumberOfPlates > 500) { TempText += " We need iron\n"; AddNeededOre("Iron"); break; }
+                if(NumberOfPlates < 250) { TempText += " Critical! \n"; AddNeededOre("Iron"); break; }
+
+                break;
+            case "Nickel":
+                // Message += " Nickle: " + NumberOfIngots[1] + " \n";
+                // 1 large Atmo Thrusters asks for 1960 Nickle
+                int NumberOfThrusters = (int) NumberOfIngots[1]/1960;
+                TempText += " Nickle: ";
+                if(NumberOfThrusters > 48) { TempText += " Abundance\n"; break; }
+                if(NumberOfThrusters > 24) { TempText += " Good\n"; break; }
+                if(NumberOfThrusters > 12) { TempText += " Not exagerated\n"; break; }               
+                if(NumberOfThrusters > 6) { TempText += " We need Nickle\n"; AddNeededOre("Nickle"); break; }
+                if(NumberOfThrusters < 2) { TempText += " Critical! \n"; AddNeededOre("Nickle"); break; }                            
+    
+                break;
+            case "Silicon":
+                // a solar cell asks for 170,80
+                int NumberOfSolars = (int) NumberOfIngots[2]/171;
+                TempText += " Silicon: "; 
+                if(NumberOfSolars > 128) { TempText += " Abundance\n"; break; }
+                if(NumberOfSolars > 64) { TempText += " Good\n"; break; }
+                if(NumberOfSolars > 32) { TempText += " Not exagerated\n"; break; }               
+                if(NumberOfSolars > 16) { TempText += " We need Silicon\n"; AddNeededOre("Silicon"); break; }
+                if(NumberOfSolars < 4) { TempText += " Critical! \n";  AddNeededOre("Silicon"); break; }
+
+                break;
+            case "Cobalt":
+                // Heavy armor needs 50 ingots
+                int NumberOfHArmor = (int) NumberOfIngots[3]/50;
+                TempText += " Cobalt: ";
+                if(NumberOfHArmor > 2500) { TempText += " Abundance\n"; break; }
+                if(NumberOfHArmor > 1000) { TempText += " Good\n"; break; }
+                if(NumberOfHArmor > 500) { TempText += " Not exagerated\n"; break; }               
+                if(NumberOfHArmor > 250) { TempText += " We need Cobalt\n"; AddNeededOre("Cobalt"); break; }
+                if(NumberOfHArmor < 150) { TempText += " Critical! \n"; AddNeededOre("Cobalt"); break; } 
+
+                break;                                
+            case "Magnesium":
+                // Mg is simple Nato 184 uses ... 1.00
+                int NumberOfMunition = (int)NumberOfIngots[4];
+                TempText += " Magnesium: ";
+                if(NumberOfMunition > 2500) { TempText += " Abundance\n"; break; }
+                if(NumberOfMunition > 1000) { TempText += " Good\n"; break; }
+                if(NumberOfMunition > 500) { TempText += " Not exagerated\n"; break; }               
+                if(NumberOfMunition > 250) { TempText += " We need Magnesium\n"; AddNeededOre("Magnesium"); break; }
+                if(NumberOfMunition < 50) { TempText += " Critical! \n"; AddNeededOre("Magnesium"); break; }
+
+                break;
+            case "Uranium":
+                // special case
+                // at full demand a small reactor consumes 1 kg in 4min
+                // a large reactor 1 kg in 12sec -> TODO do we check what reactors are on the grid ?
+                int SecondsOfUranium = ( int )NumberOfIngots[5]*4;
+                TimeSpan t = TimeSpan.FromSeconds( SecondsOfUranium );
+
+                string UTime = string.Format("{0:D2}h:{1:D2}m:{2:D2}s", 
                                 t.Hours, 
                                 t.Minutes, 
                                 t.Seconds);
 
-                        TempText += " Uranium for " + UTime + " \n"; 
-                        TempText += " uranium ore: " + NewOreStock[i].ToString();
-                        if(NewOreStock[i] + NumberOfIngots[5] > 5) { TempText += " We are safe\n"; break; }
-                        if(NewOreStock[i] + NumberOfIngots[5] < 1) { TempText += " Uranium needed\n"; AddNeededOre("Uranium"); break; }                                  
-                    break;
-                case "Silver":
-                    // a small reactor uses 167 a big one 3333.33
-                    int NumberOfSReactors = (int) NumberOfIngots[6] / 167;
-                    TempText += " Silver: ";
-                    if(NumberOfSReactors > 40) { TempText += " Abundance (Jeezes)\n"; break; }
-                    if(NumberOfSReactors > 20) { TempText += " Good(1 big reactor)\n"; break; }
-                    if(NumberOfSReactors > 10) { TempText += " No Large Reactor\n";  break; }               
-                    if(NumberOfSReactors > 5) { TempText += " We could use Silver\n"; AddNeededOre("Silver"); break; }
-                    if(NumberOfSReactors < 1) { TempText += " not even 1 small reactor \n"; AddNeededOre("Silver"); break; }                                 
+                TempText += " Uranium for " + UTime + " \n"; 
+                TempText += " Uranium ore: " + NewOreStock[i].ToString();
+                if(NewOreStock[i] + NumberOfIngots[5] > 5) { TempText += " We are safe\n"; break; }
+                if(NewOreStock[i] + NumberOfIngots[5] < 1) { TempText += " Uranium needed\n"; AddNeededOre("Uranium"); break; }                                  
+                break;
+            case "Silver":
+                // a small reactor uses 167 a big one 3333.33
+                int NumberOfSReactors = (int) NumberOfIngots[6] / 167;
+                TempText += " Silver: ";
+                if(NumberOfSReactors > 40) { TempText += " Abundance (Jeezes)\n"; break; }
+                if(NumberOfSReactors > 20) { TempText += " Good(1 big reactor)\n"; break; }
+                if(NumberOfSReactors > 10) { TempText += " No Large Reactor\n";  break; }               
+                if(NumberOfSReactors > 5) { TempText += " We could use Silver\n"; AddNeededOre("Silver"); break; }
+                if(NumberOfSReactors < 1) { TempText += " not even 1 small reactor \n"; AddNeededOre("Silver"); break; }                                 
 
-                    break;
-                case "Gold":
-                    // Well only ion thrusters and Large reactor uses gold, so
-                    int NumberOfLReactors = (int)NumberOfIngots[7] / 67;
-                    TempText += " Gold: ";                   
-                    if(NumberOfLReactors > 6) { TempText += " A Miljonair\n"; break; }
-                    if(NumberOfLReactors > 4) { TempText += " Nice\n"; break; }
-                    if(NumberOfLReactors > 2) { TempText += " Double Power\n"; break; }               
-                    if(NumberOfLReactors > 1) { TempText += " You can build 1\n"; break; }
-                    if(NumberOfLReactors < 1) { TempText += " Can not build a large reactor \n"; AddNeededOre("Gold");; break; }  
+                break;
+            case "Gold":
+                // Well only ion thrusters and Large reactor uses gold, so
+                int NumberOfLReactors = (int)NumberOfIngots[7] / 67;
+                TempText += " Gold: ";                   
+                if(NumberOfLReactors > 6) { TempText += " A Miljonair\n"; break; }
+                if(NumberOfLReactors > 4) { TempText += " Nice\n"; break; }
+                if(NumberOfLReactors > 2) { TempText += " Double Power\n"; break; }               
+                if(NumberOfLReactors > 1) { TempText += " You can build 1\n"; break; }
+                if(NumberOfLReactors < 1) { TempText += " Can not build a large reactor \n"; AddNeededOre("Gold");; break; }  
 
-                    break;
-                case "Platinum":
-                    // only on asteroids and moons so no wonder it is hard to find
-                        TempText += " Platinum: " + NumberOfIngots[8] + " \n";                
+                break;
+            case "Platinum":
+                // only on asteroids and moons so no wonder it is hard to find
+                TempText += " Platinum: " + NumberOfIngots[8] + " \n";                
 
-                    break;
-                case "Stone":
-                    // gravel is only used for reactor components so same thing as Silver
-                    int NumberOfReactors = (int) NumberOfIngots[9] / 667;
-                    TempText += " Gravel: "; 
-                    if(NumberOfReactors > 40) { TempText += " Heaps\n"; break; }
-                    if(NumberOfReactors > 20) { TempText += " Good(1 big reactor)\n"; break; }
-                    if(NumberOfReactors > 10) { TempText += " No Large Reactor\n"; break; }               
-                    if(NumberOfReactors > 5) { TempText += " We could use Gravel\n"; AddNeededOre("Stone"); break; }
+                break;
+            case "Stone":
+                // gravel is only used for reactor components so same thing as Silver
+                int NumberOfReactors = (int) NumberOfIngots[9] / 667;
+                TempText += " Gravel: "; 
+                if(NumberOfReactors > 40) { TempText += " Heaps\n"; break; }
+                if(NumberOfReactors > 20) { TempText += " Good(1 big reactor)\n"; break; }
+                if(NumberOfReactors > 10) { TempText += " No Large Reactor\n"; break; }               
+                if(NumberOfReactors > 5) { TempText += " We could use Gravel\n"; AddNeededOre("Stone"); break; }
 
-                    break;
-                default:
-                    // scrap metal will give an error so leave it
-                    if(!ShowStatus) 
-                    {
-                        Message += " Show stock: ";
-                        Message += (ShowStatus) ? "[ON]\n" : "[OFF]\n"; // well he would not say ON would he ?
-                    }
-                    break;  
+                break;
+            default:
+                // scrap metal will give an error so leave it
+                if(!ShowStatus) 
+                {
+                    Message += " Show stock: ";
+                    Message += (ShowStatus) ? "[ON]\n" : "[OFF]\n"; // well he would not say ON would he ?
+                }
+                break;  
+        }
+
+        if(ShowStatus) Message += TempText;   
+        
+    }
+
+    if(ShowStations){
+        if(DefStations.Count > 0){
+            Message += "\n List of " + DefStations.Count + " defined Station(s): \n";
+            foreach( string Station in DefStations) {
+                int StationIndex = DefStations.IndexOf(Station);
+                Message += " >" + Station + ": " + StatusStations[StationIndex] + "\n";
             }
-
-            if(ShowStatus) Message += TempText;   
-        }   
-
-        // we could force an Uranium fetching ... ?
-        // TODO to whom are we sending this ?
-        if(!hasSend) { SendMessage("Idle"); }
-        
-        // we need something(s) to fetch the bl**dy things
-        if (NeededOres.Count > 0 ) {
-            oreFetching();
+        }else{
+            Message += "\n No stations defined\n";
         }
+    }   
 
-        // Displaying the comments
-        // Header
-        string OnOff = (ProgramRunning) ? " [ON] " : " [Off] ";
-
-        string MessageLine = " Time " + ProgramTick + rotator.GetString() + TicksPerDay + "\n " + Me.CustomName  + " " + OnOff + "\n";
+    // we could force an Uranium fetching ... ?
+    // TODO to whom are we sending this ?
+    if(!hasSend) { SendMessage("Idle"); }
         
-        if(HasISIPowerPB) {
-            MessageLine = " Time " + GetTimeString(ProgramTick) + "\n " + Me.CustomName  + " " + OnOff + "\n";
-        }
-
-        // Checking report system
-        ReportText = CheckReport(ShowWhatsWrong);
-
-        MessageLine += ReportText + Message;
-        MessageLine += " Commands:\n Run, Reset, Stop ... \n";
-
-        Save();
-
-        ShowText(MessageLine,LCDNAME, true); 
+    // we need something(s) to fetch the bl**dy things
+    // NeededOres: what DM thinks we need
+    // OreFetchings: forced ore gathering
+    if (NeededOres.Count > 0 || OreFetchings.Count > 0) {
+        OreFetching();
     }
 
-    // **************************************************************************************************************
-/*
-public void CheckAntennaSystem()
-{
-    SendMessage();
-    if(!hasSend) 
-    {
-        AddReport(2);
-        RemoveReport(3);
+    // Displaying the comments
+    // Header
+    string OnOff = (ProgramRunning) ? " [ON] " : " [Off] ";
+
+    string MessageLine = " Time " + ProgramTick + rotator.GetString() + TicksPerDay + "\n " + Me.CustomName  + " " + OnOff + "\n";
+        
+    if(HasISIPowerPB) {
+        MessageLine = " Time " + GetTimeString(ProgramTick) + "\n " + Me.CustomName  + " " + OnOff + "\n";
     }
-    else
-    {
-        RemoveReport(2);
-        AddReport(3);
-        AddReport(17); 
-    }
-    
-    return;
+
+    // Checking report system
+    ReportText = CheckReport(ShowWhatsWrong);
+
+    MessageLine += ReportText + Message;
+    MessageLine += " Commands:\n Run, Reset, Stop ... \n";
+
+    Save();
+
+    ShowText(MessageLine,LCDNAME, true); 
 }
-*/
+
+// **************************************************************************************************************
+
 public void toggleForced(string OreName) {
+    //DEBUG
+    // Echo("Toggle ore: " + OreName + "\n" );
     if(!SubOreTypeList.Contains(OreName)){
         AddReport(18); // " °-0 Orename does not exist\n"
         return;
@@ -510,13 +563,12 @@ public void toggleForced(string OreName) {
     
     RemoveReport(18);
     if (OreFetchings.Contains(OreName)) {
-        OreFetchings.Remove(Orename);
+        OreFetchings.Remove(OreName);
     }else{
         OreFetchings.Add(OreName);
     }
     return;
 }
-
 
 public void CheckPBs() {
     List<IMyTerminalBlock> PB_blocks = new List<IMyTerminalBlock>();
@@ -548,26 +600,48 @@ public void RemoveNeededOre(string Ore) {
 }
 
 // there could be multiple mines for the same ore.
-public void GetMines() {
+public void GetStations() {
     // What mines do we have ?
     // none
-    if(DefMines.Count == 0) AddReport(5); return;
+    if(DefStations.Count == 0) { AddReport(5); return; }
     RemoveReport(5);
 
     Waypoints.Clear();
     // ok, So what do we need ?
-    for(int i=0; i<NeededOres.Count; i++)
-    {
+    for(int i=0; i<NeededOres.Count; i++) {
+        // NOPE !
+        int lindex = SubOreTypeList.IndexOf(NeededOres[i]) + 7;
         // that mine is not yet made !
-        if(!DefMines.Contains(NeededOres[i])) 
-        {
-            int lindex = 7 + i;
-            AddReport(lindex); continue; 
+        if (CountStations(NeededOres[i]) < 1) {
+            AddReport(lindex); 
+            continue; 
+        }else {
+            RemoveReport(lindex);
+            // make a new waypoint
+            string LString = FindStation(NeededOres[i]);
+            if (LString != "Zulu") {
+                if(!Waypoints.Contains(LString))Waypoints.Add(LString);
+            }
         }
-
-        // make a new waypoint
-        if(!Waypoints.Contains(NATOMines[i]))Waypoints.Add(NATOMines[i]);
     }
+
+   for(int i=0; i<OreFetchings.Count; i++) {
+        // find index by subOretype index
+        int lindex = SubOreTypeList.IndexOf(OreFetchings[i]) + 7;
+        // that mine is not yet made !
+        if (CountStations(OreFetchings[i]) < 1) {
+            AddReport(lindex); 
+            continue; 
+        }else {
+            RemoveReport(lindex);
+            // make a new waypoint
+            string LString = FindStation(OreFetchings[i]);
+            if (LString != "Zulu") {
+                if(!Waypoints.Contains(LString))Waypoints.Add(LString);
+            }
+        }
+    }
+
     return;
 }
     
@@ -680,78 +754,61 @@ public void RemoveReport(int Indeks)
     return;
 }
 
-public string CheckReport(bool HelpMe)
-{
+public string CheckReport(bool HelpMe) {
  
     string newMessage="WTF ?";
 
     // check the loop timer
     ReportTimeCounter++;
-    if(ReportTimeCounter > ReportTime)
-    {
+    if(ReportTimeCounter > ReportTime) {
         ReportTimeCounter = 0;
         ReportCounter++;
         if(ReportCounter > ReportIndexes.Count - 1) ReportCounter = 0;
     }
 
-    // Debug
-    // Echo("Reporttime: " + ReportTimeCounter + "\n" );
-
     // Read the list indexes
-    if(ReportIndexes.Count == 0) 
-    {
+    if(ReportIndexes.Count == 0) {
         CurrentIndex = 0;
-    }
-    else
-    {
+    }else {
         CurrentIndex = ReportIndexes[ReportCounter];
     }
 
-        //DEBUG
-        // Echo("CurrentIndex: " + CurrentIndex + " No Reports: " + ReportIndexes.Count + "\n" );
-
-        //Now read the text
-        if(!HelpMe)
-        { 
-            newMessage = ReportTexts[CurrentIndex];
-        }
-        else
-        {
-            WhatsWrong = WhatsWrongs[CurrentIndex];
-            newMessage = ReportTexts[CurrentIndex] + WhatsWrong;
-        }
-
-        return newMessage;
+    //Now read the text
+    if(!HelpMe) { 
+        newMessage = ReportTexts[CurrentIndex];
+    } else {
+        WhatsWrong = WhatsWrongs[CurrentIndex];
+        newMessage = ReportTexts[CurrentIndex] + WhatsWrong;
     }
 
-    public void FindOreOnGrid()
-    {
-        float AmountItems=0;
-        GridTerminalSystem.SearchBlocksOfName("", AllBlocks, i => i.HasInventory);
+    return newMessage;
+}
 
-        if(AllBlocks.Count == 0) return; // as unlikely as it is ...
+public void FindOreOnGrid() {
+    float AmountItems=0;
+    GridTerminalSystem.SearchBlocksOfName("", AllBlocks, i => i.HasInventory);
 
-        NewOreStock.Clear();
-        // iterate through all Subtypes of Ore -> SubOreTypeList
-        for(int j=0; j<SubOreTypeList.Count; j++)
-        {
-            AmountItems=0;
-            // Search in all Inventories
-            for (int i=0; i<AllBlocks.Count; i++)
-            {
-                var ThisContainer = AllBlocks[i];
-                IMyInventory ThisStock = ThisContainer.GetInventory(0);
+    if(AllBlocks.Count == 0) return; // as unlikely as it is ...
+
+    NewOreStock.Clear();
+    // iterate through all Subtypes of Ore -> SubOreTypeList
+    for(int j=0; j<SubOreTypeList.Count; j++) {
+        AmountItems=0;
+        // Search in all Inventories
+        for (int i=0; i<AllBlocks.Count; i++) {
+            var ThisContainer = AllBlocks[i];
+            IMyInventory ThisStock = ThisContainer.GetInventory(0);
     
-                AmountItems += countItem(ThisStock, OreType , SubOreTypeList[j]);
-            } 
+            AmountItems += countItem(ThisStock, OreType , SubOreTypeList[j]);
+        } 
 
-            NewOreStock.Add(AmountItems);
-        }
-
-        return;
+        NewOreStock.Add(AmountItems);
     }
 
-    public void FindIngotOnGrid()
+    return;
+}
+
+public void FindIngotOnGrid()
     {
         float AmountItems=0;
         GridTerminalSystem.SearchBlocksOfName("", AllBlocks, i => i.HasInventory);
@@ -781,121 +838,234 @@ public string CheckReport(bool HelpMe)
     /*
         Ore has an Ingot Equivalent -> easier to keep track
     */
-    void Calculate_IE()
+void Calculate_IE() {
+    IngotEquivalentStock.Clear();
+
+    for( int i=0; i<SubOreTypeList.Count; i++)
     {
-        IngotEquivalentStock.Clear();
 
-        for( int i=0; i<SubOreTypeList.Count; i++)
-        {
+        // volume ore * OreIngotRatio * Refinery base Efficency
+        float IngotEquivalent=0f;
+        float IngotTotal=0f;
 
-            // volume ore * OreIngotRatio * Refinery base Efficency
-            float IngotEquivalent=0f;
-            float IngotTotal=0f;
+        // Scrap gives iron so -> that goes wrong
+        // Read ore the index should be good ?
+        IngotEquivalent = (float)NewOreStock[i] * (float)OreIngotRatio[i] * RefineryBaseEfficency;
+        // Add the Stock of real Ingot
+        IngotTotal = IngotEquivalent + (float)NewIngotStock[i];
 
-            // Scrap gives iron so -> that goes wrong
-            // Read ore the index should be good ?
-            IngotEquivalent = (float)NewOreStock[i] * (float)OreIngotRatio[i] * RefineryBaseEfficency;
-            // Add the Stock of real Ingot
-            IngotTotal = IngotEquivalent + (float)NewIngotStock[i];
+        IngotEquivalentStock.Add(IngotTotal);
 
-            IngotEquivalentStock.Add(IngotTotal);
+        // we have a problem with scrap again 
+        // Both lists should be synchronised   
+        string StockName=SubIngotTypeList[i];
 
-            // we have a problem with scrap again 
-            // Both lists should be synchronised   
-            string StockName=SubIngotTypeList[i];
-
-            switch (StockName)
-            {
-                case "Iron":
-                    NumberOfIngots.Insert(0, IngotTotal);
-                    break;
-                case "Nickel":
-                    NumberOfIngots.Insert(1, IngotTotal);                
-                    break;
-                case "Silicon":
-                    NumberOfIngots.Insert(2, IngotTotal);                
-                    break;
-                case "Cobalt":
-                    NumberOfIngots.Insert(3, IngotTotal);                
-                    break;
-                case "Magnesium":
-                    NumberOfIngots.Insert(4, IngotTotal);                
-                    break;
-                case "Uranium":
-                    // right, now U-ingots are put IN the reactors.
-                    // So what about them ?
-                    NumberOfIngots.Insert(5, IngotTotal);                
-                    break;
-                case "Silver":
-                    NumberOfIngots.Insert(6, IngotTotal);                
-                    break;
-                case "Gold":
-                    NumberOfIngots.Insert(7, IngotTotal);                
-                    break;
-                case "Platinum":
-                    NumberOfIngots.Insert(8, IngotTotal);                
-                    break;
-                case "Scrap":
-                    break;
-                case "Stone":
-                    NumberOfIngots.Insert(9, IngotTotal);                
-                    break;
-                default:
-                    break;  
-            }
+        switch (StockName) {
+            case "Iron":
+                NumberOfIngots.Insert(0, IngotTotal);
+                break;
+            case "Nickel":
+                NumberOfIngots.Insert(1, IngotTotal);                
+                break;
+            case "Silicon":
+                NumberOfIngots.Insert(2, IngotTotal);                
+                break;
+            case "Cobalt":
+                NumberOfIngots.Insert(3, IngotTotal);                
+                break;
+            case "Magnesium":
+                NumberOfIngots.Insert(4, IngotTotal);                
+                break;
+            case "Uranium":
+                // right, now U-ingots are put IN the reactors.
+                // So what about them ?
+                NumberOfIngots.Insert(5, IngotTotal);                
+                break;
+            case "Silver":
+                NumberOfIngots.Insert(6, IngotTotal);                
+                break;
+            case "Gold":
+                NumberOfIngots.Insert(7, IngotTotal);                
+                break;
+            case "Platinum":
+                NumberOfIngots.Insert(8, IngotTotal);                
+                break;
+            case "Scrap":
+                break;
+            case "Stone":
+                NumberOfIngots.Insert(9, IngotTotal);                
+                break;
+            default:
+                break;  
         }
-
-        return;
     }
 
-    float countItem(IMyInventory inv, string Type,string itemSubType)
-    {
-        var items = inv.GetItems();
-        float total = 0.0f;
-        for(int i = 0; i < items.Count; i++)
-        {
-            if(items[i].Content.TypeId.ToString().EndsWith(Type) && items[i].Content.SubtypeId.ToString() == itemSubType)
-            {
-                total += (float)items[i].Amount;
-            }
-        }
-        return total;
+    return;
+}
+
+public void AddOreStations(string FromCode, string OreCode) {
+    switch (OreCode) {
+        case "Iron":
+            FeStations.load(FromCode);
+            break;
+        case "Nickel":
+            NiStations.load(FromCode);               
+            break;
+        case "Silicon":
+            SiStations.load(FromCode);     
+            break;
+        case "Cobalt":
+            CoStations.load(FromCode);                   
+            break;
+        case "Magnesium":
+            MgStations.load(FromCode);                     
+            break;
+        case "Uranium":
+            UStations.load(FromCode);                     
+            break;
+        case "Silver":
+            AgStations.load(FromCode);                     
+            break;
+        case "Gold":
+            AuStations.load(FromCode);                    
+            break;
+        case "Platinum":
+            PtStations.load(FromCode);                    
+            break;
+        case "Stone":
+            GrStations.load(FromCode);                    
+            break;
+        default:
+            break;  
     }
 
-    /********************
+    return;
+}
+
+public int CountStations(string OreCode) {
+    int NumberOfStations=0;
+    switch (OreCode) {
+        case "Iron":
+            NumberOfStations = FeStations.Count();
+            break;
+        case "Nickel":
+            NumberOfStations = NiStations.Count();               
+            break;
+        case "Silicon":
+            NumberOfStations = SiStations.Count();    
+            break;
+        case "Cobalt":
+            NumberOfStations = CoStations.Count();                   
+            break;
+        case "Magnesium":
+            NumberOfStations = MgStations.Count();                     
+            break;
+        case "Uranium":
+            NumberOfStations = UStations.Count();                     
+            break;
+        case "Silver":
+            NumberOfStations = AgStations.Count();                    
+            break;
+        case "Gold":
+            NumberOfStations = AuStations.Count();                    
+            break;
+        case "Platinum":
+            NumberOfStations = PtStations.Count();                   
+            break;
+        case "Stone":
+            NumberOfStations = GrStations.Count();                   
+            break;
+        default:
+            break;  
+    }
+
+    return NumberOfStations;
+}
+
+public string FindStation(string OreCode) {
+    string FoundStation="Zulu";
+    switch (OreCode) {
+        case "Iron":
+            FoundStation = FeStations.FindFirstStation();
+            break;
+        case "Nickel":
+            FoundStation = NiStations.FindFirstStation();              
+            break;
+        case "Silicon":
+            FoundStation = SiStations.FindFirstStation();   
+            break;
+        case "Cobalt":
+            FoundStation = CoStations.FindFirstStation();                  
+            break;
+        case "Magnesium":
+            FoundStation = MgStations.FindFirstStation();                  
+            break;
+        case "Uranium":
+            FoundStation = UStations.FindFirstStation();                   
+            break;
+        case "Silver":
+            FoundStation = AgStations.FindFirstStation();              
+            break;
+        case "Gold":
+            FoundStation = AuStations.FindFirstStation();               
+            break;
+        case "Platinum":
+            FoundStation = PtStations.FindFirstStation();                 
+            break;
+        case "Stone":
+            FoundStation = GrStations.FindFirstStation();               
+            break;
+        default:
+            break;  
+    }
+
+    return FoundStation;
+}
+
+float countItem(IMyInventory inv, string Type,string itemSubType) {
+    var items = inv.GetItems();
+    float total = 0.0f;
+    for(int i = 0; i < items.Count; i++) {
+        if(items[i].Content.TypeId.ToString().EndsWith(Type) && items[i].Content.SubtypeId.ToString() == itemSubType)
+        {
+            total += (float)items[i].Amount;
+        }
+    }
+    return total;
+}
+
+/********************
     Ore fetching
-    *********************/
-    public void OreFetching() {
-        // So I need ore ?
-        // Do we have a Mine of the particular ores ?                    
-        GetMines();
+*********************/
+public void OreFetching() {
+    // So I need ore ?
+    // Do we have a Mine of the particular ores ?  -> Waypoints                  
+    GetStations();
 
-        // -> a mine is a container with an antenna a a drillscript (maybe not configured but with ore ?)
-        // what is the Mine doing ? -> MineCar -> MineShip ?
-        // Is there any Ore ?
-        if (OreAmount >= MiniAmount){
-            // What is the Carier doing ?
-            GetCariers(); // Cariers and the like ...
+    // -> a mine is a container with an antenna a a drillscript (maybe not configured but with ore ?)
+    // what is the Mine doing ? -> MineCar -> MineShip ?
+    // Is there any Ore ?
+    if (OreAmount >= MiniAmount){
+        // What is the Carier doing ?
+        GetCariers(); // Cariers and the like ...
 
-            if(CarierStatus == "Idle")
-            {
-                Message += "Action: Sending Carier\n";
-                if(!SendMessage("Fly Carier")) Echo("Houston we have a problem\n");   
-            }
+        if(CarierStatus == "Idle") {
+            Message += "Action: Sending Carier\n";
+            if(!SendMessage("Fly Carier")) Echo("Houston we have a problem\n");   
         }
-
-        if((OreAmount == 0)&&(CarierStatus == "Waiting"))
-        {
-            Message += "Action: Calling Carier Home\n";
-            if(!SendMessage("Fly Home")) Echo("Houston we have another problem\n");                 
-        }
-
-        return;
     }
 
-    /****************   
-        LCD   
-    ******************/   
+    if((OreAmount == 0)&&(CarierStatus == "Waiting")) {
+        Message += "Action: Calling Carier Home\n";
+        if(!SendMessage("Fly Home")) Echo("Houston we have another problem\n");                 
+    }
+
+    return;
+}
+
+/****************   
+    LCD   
+******************/   
 
     public void ShowText(string Tekst, string LCDName = "LCD ComponentControl",  bool RepeatEcho = false)     
     {     
@@ -936,7 +1106,7 @@ public string CheckReport(bool HelpMe)
     antenna system
     ***************/
 List<IMyTerminalBlock> Antennas = new List<IMyTerminalBlock>();
-public void SendMessage(string SendMessage="AntennaTest")
+public bool SendMessage(string SendMessage="AntennaTest", string Header = SendMessageHeader )
 {
     hasSend = false;
     GridTerminalSystem.SearchBlocksOfName(MyOwnAntenna, Antennas, block => block is IMyRadioAntenna);
@@ -945,7 +1115,7 @@ public void SendMessage(string SendMessage="AntennaTest")
     {
         AddReport(1);
         RemoveReport(4);        
-        return;
+        return hasSend;
     }
     else 
     {
@@ -953,12 +1123,16 @@ public void SendMessage(string SendMessage="AntennaTest")
     }
 
     IMyRadioAntenna Antenna = Antennas[0] as IMyRadioAntenna;
-    Echo("Antenna name: " + Antenna.CustomName + "\n");
+    // Echo("Antenna name: " + Antenna.CustomName + "\n");
+    hasSend = Antenna.TransmitMessage(Header + "=" + SendMessage);
+    if(!hasSend) { 
+        // Echo ("-> Error: message " + Header + "=" + SendMessage + " not send\n");
+        AddReport(3);
+    }else{
+        RemoveReport(3); 
+    }
 
-    hasSend = Antenna.TransmitMessage(SendMessageHeader + "=" + SendMessage);
-    if(!hasSend) { Echo ("-> Error: message " + SendMessageHeader + "=" + SendMessage + " not send\n"); }
-
-    return;
+    return hasSend;
 }
 
 public static double PercentOf(double numerator, double denominator)
@@ -1027,4 +1201,37 @@ string GetTimeString(double timeToEvaluate, bool returnHour = false)
 	} else {
 		return timeString;
 	}
+}
+
+public class Stationings {
+
+    string OreName;
+    List<string> Stations = new List<string>();
+    
+    public Stationings() {
+    }
+
+    public void MyOreName (string Name){
+        OreName = Name;
+    }
+
+    public void load(string NCode) {
+        if(Stations.Count < 1) { Stations.Add(NCode); return; }
+        if(!Stations.Contains(NCode)) Stations.Add(NCode);
+    }
+
+    public void Unload(string NCode) {
+        if(Stations.Count < 1) { return; }   
+        if(Stations.Contains(NCode)) Stations.Remove(NCode);        
+    }
+
+    public int Count() {
+        return Stations.Count;
+    }
+
+    public string FindFirstStation(){
+        string FoundStation = "Zulu"; // zulu can not be = error
+        if(Stations.Count > 0) { FoundStation = Stations[0]; }
+        return FoundStation;
+    }
 }
