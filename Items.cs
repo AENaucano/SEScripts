@@ -1,0 +1,65 @@
+
+/*
+object type is
+MyObjectBuilder_Type/Subtype 
+*/
+
+public void SetupListing()
+            {
+                MyObjects.Add("Component/BulletproofGlass");
+                MyObjects.Add("Component/Computer");
+                MyObjects.Add("Component/ConcreteSlab");
+                MyObjects.Add("Component/Construction");
+                MyObjects.Add("Component/Detector");
+                MyObjects.Add("Component/Display");
+                MyObjects.Add("Component/Explosives");
+                MyObjects.Add("Component/Girder");
+                MyObjects.Add("Component/GravityGenerator");
+                MyObjects.Add("Component/InteriorPlate");
+                MyObjects.Add("Component/LargeTube");
+                MyObjects.Add("Component/Medical");
+                MyObjects.Add("Component/MetalGrid");
+                MyObjects.Add("Component/Motor");
+                MyObjects.Add("Component/PowerCell");
+                MyObjects.Add("Component/RadioCommunication");
+                MyObjects.Add("Component/Reactor");
+                MyObjects.Add("Component/SmallTube");
+                MyObjects.Add("Component/SolarCell");
+                MyObjects.Add("Component/SteelPlate");
+                MyObjects.Add("Component/Superconductor");
+                MyObjects.Add("Component/Thrust");
+                //
+                MyObjects.Add("Ore/Cobalt");
+                MyObjects.Add("Ore/Gold");
+                MyObjects.Add("Ore/Ice");
+                MyObjects.Add("Ore/Iron");
+                MyObjects.Add("Ore/Magnesium");
+                MyObjects.Add("Ore/Nickel");
+                MyObjects.Add("Ore/Scrap");
+                MyObjects.Add("Ore/Silicon");
+                MyObjects.Add("Ore/Stone");
+                //
+                MyObjects.Add("Ingot/Cobalt");
+                MyObjects.Add("Ingot/Gold");
+                MyObjects.Add("Ingot/Iron");
+                MyObjects.Add("Ingot/Magnesium");
+                MyObjects.Add("Ingot/Nickel");
+                MyObjects.Add("Ingot/Platinum");
+                MyObjects.Add("Ingot/Silicon");
+                MyObjects.Add("Ingot/Silver");
+                MyObjects.Add("Ingot/Stone");
+                MyObjects.Add("Ingot/Uranium");
+                //
+                MyObjects.Add("AmmoMagazine/Missile200mm");
+                MyObjects.Add("AmmoMagazine/NATO_25x184mm");
+                MyObjects.Add("AmmoMagazine/NATO_5p56x45mm");
+                MyObjects.Add("AmmoMagazine/PaintGunMag");
+                MyObjects.Add("OxygenContainerObject/OxygenBottle");
+                MyObjects.Add("GasContainerObject/HydrogenBottle");
+                MyObjects.Add("PhysicalGunObject/AngleGrinderItem");
+                MyObjects.Add("PhysicalGunObject/AutomaticRifleItem");
+                MyObjects.Add("PhysicalGunObject/HandDrillItem");
+                MyObjects.Add("PhysicalGunObject/PhysicalPaintGun");
+                MyObjects.Add("PysicalGunObject/UltimateAutomaticRifleItem");
+                MyObjects.Add("PhysicalGunObject/WelderItem");
+            }
