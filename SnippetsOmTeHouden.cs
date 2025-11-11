@@ -249,4 +249,59 @@ public void ScanProgramableBlocks() {
                 break; 
         } 
     } 
+
 } 
+
+
+/*
+void OreTransfer()
+{
+    IMyShipConnector MineOreContainer = GridTerminalSystem.GetBlockWithName(MINECONTAINER) as IMyShipConnector;
+    IMyInventory MineStock = MineOreContainer.GetInventory(0);    
+    IMyCargoContainer FreightContainer = GridTerminalSystem.GetBlockWithName(FREIGHTCONTAINER) as IMyCargoContainer;
+    IMyInventory FreightStock = FreightContainer.GetInventory(0);
+
+    findOre(MineStock);
+    for(int i = 0; i < OreTypes.Count; i++)
+    {
+        float OreAmount = countItem(MineStock, OreTypes[i]);
+        transfer(MineStock, FreightStock, "Ore", OreTypes[i], OreAmount);
+    }
+}
+
+
+public void Transfer(IMyInventory FromStock, IMyInventory ToStock, string LogType, string subType, float amount)
+{
+    var myList = new List<MyInventoryItem>();
+    FromStock.GetItems(myList, null);
+
+    float left = amount;
+    for (int i = myList.Count - 1; i >= 0; i--)
+    {
+        // MyObjectBuilder_Type/Subtype 
+        string[] _invParts = myList[i].ToString().Split('/');
+        string designation = _invParts[0];
+        string ThisSubtype = _invParts[1];
+        string[] _invParts2 = designation.Split('_');
+        string VrageStuff = _invParts[0]; // MyObjectBuilder_
+        string ThisType = _invParts[1];
+
+        if (left > 0 && ThisType.EndsWith(LogType) && ThisSubtype == subType)
+        {
+            if ((float)myList[i].Amount > left)
+            {
+                // transfer remaining and break
+                FromStock.TransferItemTo(ToStock, i, null, true, (VRage.MyFixedPoint)amount);
+                left = 0;
+                break;
+            }
+            else
+            {
+                left -= (float)myList[i].Amount;
+                // transfer all
+                FromStock.TransferItemTo(ToStock, i, null, true, null);
+            }
+        }
+    }
+}
+*/
