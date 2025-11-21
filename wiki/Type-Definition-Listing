@@ -1,0 +1,3318 @@
+https://github.com/malware-dev/MDK-SE/wiki/Type-Definition-Listing
+
+
+Access Panel 1 (IMyTerminalBlock)
+      Large Grid: MyObjectBuilder_TerminalBlock/LargeBlockAccessPanel1
+      Small Grid: MyObjectBuilder_TerminalBlock/SmallBlockAccessPanel1
+
+Access Panel 2 (IMyTerminalBlock)
+      Large Grid: MyObjectBuilder_TerminalBlock/LargeBlockAccessPanel2
+      Small Grid: MyObjectBuilder_TerminalBlock/SmallBlockAccessPanel2
+
+Access Panel 3 (IMyButtonPanel)
+      Large Grid: MyObjectBuilder_ButtonPanel/LargeBlockAccessPanel3
+      Small Grid: MyObjectBuilder_TerminalBlock/SmallBlockAccessPanel3
+
+Access Panel 4 (IMyTerminalBlock)
+      Large Grid: MyObjectBuilder_TerminalBlock/LargeBlockAccessPanel4
+      Small Grid: MyObjectBuilder_TerminalBlock/SmallBlockAccessPanel4
+
+Action Relay (IMyTransponder)
+      Large Grid: MyObjectBuilder_TransponderBlock/LargeBlockTransponder
+      Small Grid: MyObjectBuilder_TransponderBlock/SmallBlockTransponder
+
+Advanced Rotor (IMyMotorAdvancedStator)
+      Large Grid: MyObjectBuilder_MotorAdvancedStator/LargeAdvancedStator
+      Small Grid: MyObjectBuilder_MotorAdvancedStator/SmallAdvancedStatorSmall
+
+Advanced Rotor 3x3 (IMyMotorAdvancedStator)
+      Small Grid: MyObjectBuilder_MotorAdvancedStator/SmallAdvancedStator
+
+Advanced Rotor Part
+      Large Grid: MyObjectBuilder_MotorAdvancedRotor/LargeAdvancedRotor
+      Small Grid: MyObjectBuilder_MotorAdvancedRotor/SmallAdvancedRotorSmall
+
+Advanced Rotor Part 3x3
+      Small Grid: MyObjectBuilder_MotorAdvancedRotor/SmallAdvancedRotor
+
+AI Basic (Task) (IMyBasicMissionBlock)
+      Large Grid: MyObjectBuilder_BasicMissionBlock/LargeBasicMission
+      Small Grid: MyObjectBuilder_BasicMissionBlock/SmallBasicMission
+
+AI Defensive (Combat) (IMyDefensiveCombatBlock)
+      Large Grid: MyObjectBuilder_DefensiveCombatBlock/LargeDefensiveCombat
+      Small Grid: MyObjectBuilder_DefensiveCombatBlock/SmallDefensiveCombat
+
+AI Flight (Move) (IMyFlightMovementBlock)
+      Large Grid: MyObjectBuilder_FlightMovementBlock/LargeFlightMovement
+      Small Grid: MyObjectBuilder_FlightMovementBlock/SmallFlightMovement
+
+AI Offensive (Combat) (IMyOffensiveCombatBlock)
+      Large Grid: MyObjectBuilder_OffensiveCombatBlock/LargeOffensiveCombat
+      Small Grid: MyObjectBuilder_OffensiveCombatBlock/SmallOffensiveCombat
+
+AI Recorder (Task) (IMyPathRecorderBlock)
+      Large Grid: MyObjectBuilder_PathRecorderBlock/LargePathRecorderBlock
+      Small Grid: MyObjectBuilder_PathRecorderBlock/SmallPathRecorderBlock
+
+Air Vent (IMyAirVent)
+      Large Grid: MyObjectBuilder_AirVent/
+      Small Grid: MyObjectBuilder_AirVent/SmallAirVent
+
+Air Vent Fan (IMyAirVent)
+      Large Grid: MyObjectBuilder_AirVent/AirVentFan
+      Small Grid: MyObjectBuilder_AirVent/SmallAirVentFan
+
+Air Vent Fan Full (IMyAirVent)
+      Large Grid: MyObjectBuilder_AirVent/AirVentFanFull
+      Small Grid: MyObjectBuilder_AirVent/SmallAirVentFanFull
+
+Air Vent Full (IMyAirVent)
+      Large Grid: MyObjectBuilder_AirVent/AirVentFull
+      Small Grid: MyObjectBuilder_AirVent/SmallAirVentFull
+
+Airtight Hangar Door (IMyAirtightHangarDoor)
+      Large Grid: MyObjectBuilder_AirtightHangarDoor/
+
+And
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolAnd
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolAnd
+
+Angled Interior Wall A
+      Large Grid: MyObjectBuilder_CubeBlock/AngledInteriorWallA
+
+Angled Interior Wall B
+      Large Grid: MyObjectBuilder_CubeBlock/AngledInteriorWallB
+
+Anniversary Statue
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockStatueEngineer
+
+Antenna (IMyRadioAntenna)
+      Large Grid: MyObjectBuilder_RadioAntenna/LargeBlockRadioAntenna
+      Small Grid: MyObjectBuilder_RadioAntenna/SmallBlockRadioAntenna
+
+Antenna Dish (IMyRadioAntenna)
+      Large Grid: MyObjectBuilder_RadioAntenna/LargeBlockRadioAntennaDish
+
+Apostrophe
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolApostrophe
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolApostrophe
+
+Armory (IMyCargoContainer)
+      Large Grid: MyObjectBuilder_CargoContainer/LargeBlockLockerRoom
+
+Armory Lockers (IMyCargoContainer)
+      Large Grid: MyObjectBuilder_CargoContainer/LargeBlockLockerRoomCorner
+
+Artificial Mass (IMyArtificialMassBlock)
+      Large Grid: MyObjectBuilder_VirtualMass/VirtualMassLarge
+      Small Grid: MyObjectBuilder_VirtualMass/VirtualMassSmall
+
+Artillery (IMySmallMissileLauncher)
+      Large Grid: MyObjectBuilder_SmallMissileLauncher/LargeBlockLargeCalibreGun
+
+Artillery Turret
+      Large Grid: MyObjectBuilder_LargeMissileTurret/LargeCalibreTurret
+
+Assault Cannon (IMySmallMissileLauncherReload)
+      Small Grid: MyObjectBuilder_SmallMissileLauncherReload/SmallBlockMediumCalibreGun
+
+Assault Cannon Turret
+      Large Grid: MyObjectBuilder_LargeMissileTurret/LargeBlockMediumCalibreTurret
+      Small Grid: MyObjectBuilder_LargeMissileTurret/SmallBlockMediumCalibreTurret
+
+Assembler (IMyAssembler)
+      Large Grid: MyObjectBuilder_Assembler/LargeAssembler
+
+ATM (IMyStoreBlock)
+      Large Grid: MyObjectBuilder_StoreBlock/AtmBlock
+
+Atmospheric Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockSmallAtmosphericThrust
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockSmallAtmosphericThrust
+
+Autocannon (IMySmallGatlingGun)
+      Small Grid: MyObjectBuilder_SmallGatlingGun/SmallBlockAutocannon
+
+Autocannon Turret (IMyLargeGatlingTurret)
+      Small Grid: MyObjectBuilder_LargeGatlingTurret/AutoCannonTurret
+
+Automaton Programmable Block (IMyProgrammableBlock)
+      Large Grid: MyObjectBuilder_MyProgrammableBlock/LargeProgrammableBlockReskin
+      Small Grid: MyObjectBuilder_MyProgrammableBlock/SmallProgrammableBlockReskin
+
+Automaton Sensor (IMySensorBlock)
+      Large Grid: MyObjectBuilder_SensorBlock/LargeBlockSensorReskin
+      Small Grid: MyObjectBuilder_SensorBlock/SmallBlockSensorReskin
+
+Automaton Timer Block (IMyTimerBlock)
+      Large Grid: MyObjectBuilder_TimerBlock/TimerBlockReskinLarge
+      Small Grid: MyObjectBuilder_TimerBlock/TimerBlockReskinSmall
+
+Barred Window
+      Small Grid: MyObjectBuilder_CubeBlock/BarredWindow
+
+Barred Window Face
+      Small Grid: MyObjectBuilder_CubeBlock/BarredWindowFace
+
+Barred Window Side
+      Small Grid: MyObjectBuilder_CubeBlock/BarredWindowSide
+
+Barred Window Slope
+      Small Grid: MyObjectBuilder_CubeBlock/BarredWindowSlope
+
+Barrel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBarrel
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBarrel
+
+Basic Assembler (IMyAssembler)
+      Large Grid: MyObjectBuilder_Assembler/BasicAssembler
+
+Basic Refinery (IMyRefinery)
+      Large Grid: MyObjectBuilder_Refinery/Blast Furnace
+
+Bathroom (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockBathroom
+
+Battery (IMyBatteryBlock)
+      Large Grid: MyObjectBuilder_BatteryBlock/LargeBlockBatteryBlock
+      Small Grid: MyObjectBuilder_BatteryBlock/SmallBlockBatteryBlock
+
+Bay Window
+      Large Grid: MyObjectBuilder_CubeBlock/ExtendedWindow
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockExtendedWindow
+
+Bay Window Corner
+      Large Grid: MyObjectBuilder_CubeBlock/ExtendedWindowCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockExtendedWindowCorner
+
+Bay Window Corner Inverted
+      Large Grid: MyObjectBuilder_CubeBlock/ExtendedWindowCornerInverted
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockExtendedWindowCornerInverted
+
+Bay Window Corner Inverted Railing
+      Large Grid: MyObjectBuilder_CubeBlock/ExtendedWindowCornerInvertedRailing
+
+Bay Window Diagonal
+      Large Grid: MyObjectBuilder_CubeBlock/ExtendedWindowDiagonal
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockExtendedWindowDiagonal
+
+Bay Window Diagonal Railing
+      Large Grid: MyObjectBuilder_CubeBlock/ExtendedWindowDiagonalRailing
+
+Bay Window Dome
+      Large Grid: MyObjectBuilder_CubeBlock/ExtendedWindowDome
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockExtendedWindowDome
+
+Bay Window End
+      Large Grid: MyObjectBuilder_CubeBlock/ExtendedWindowEnd
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockExtendedWindowEnd
+
+Bay Window Railing
+      Large Grid: MyObjectBuilder_CubeBlock/ExtendedWindowRailing
+
+Beacon (IMyBeacon)
+      Large Grid: MyObjectBuilder_Beacon/LargeBlockBeacon
+      Small Grid: MyObjectBuilder_Beacon/SmallBlockBeacon
+
+Beam Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeGridBeamBlock
+      Small Grid: MyObjectBuilder_CubeBlock/SmallGridBeamBlock
+
+Beam Block End
+      Large Grid: MyObjectBuilder_CubeBlock/LargeGridBeamBlockEnd
+      Small Grid: MyObjectBuilder_CubeBlock/SmallGridBeamBlockEnd
+
+Beam Block Half
+      Large Grid: MyObjectBuilder_CubeBlock/LargeGridBeamBlockHalf
+      Small Grid: MyObjectBuilder_CubeBlock/SmallGridBeamBlockHalf
+
+Beam Block Half Slope
+      Large Grid: MyObjectBuilder_CubeBlock/LargeGridBeamBlockHalfSlope
+      Small Grid: MyObjectBuilder_CubeBlock/SmallGridBeamBlockHalfSlope
+
+Beam Block Junction
+      Large Grid: MyObjectBuilder_CubeBlock/LargeGridBeamBlockJunction
+      Small Grid: MyObjectBuilder_CubeBlock/SmallGridBeamBlockJunction
+
+Beam Block Round
+      Large Grid: MyObjectBuilder_CubeBlock/LargeGridBeamBlockRound
+      Small Grid: MyObjectBuilder_CubeBlock/SmallGridBeamBlockRound
+
+Beam Block Slope
+      Large Grid: MyObjectBuilder_CubeBlock/LargeGridBeamBlockSlope
+      Small Grid: MyObjectBuilder_CubeBlock/SmallGridBeamBlockSlope
+
+Beam Block T-Junction
+      Large Grid: MyObjectBuilder_CubeBlock/LargeGridBeamBlockTJunction
+      Small Grid: MyObjectBuilder_CubeBlock/SmallGridBeamBlockTJunction
+
+Beam Block2x1 Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeGridBeamBlockSlope2x1Base
+      Small Grid: MyObjectBuilder_CubeBlock/SmallGridBeamBlockSlope2x1Base
+
+Beam Block2x1 Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeGridBeamBlockSlope2x1Tip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallGridBeamBlockSlope2x1Tip
+
+Bed (IMyCryoChamber)
+      Large Grid: MyObjectBuilder_CryoChamber/LargeBlockBed
+
+Blast Door Corner
+      Large Grid: MyObjectBuilder_CubeBlock/ArmorCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorCorner
+
+Blast Door Corner Inverted
+      Large Grid: MyObjectBuilder_CubeBlock/ArmorInvCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorInvCorner
+
+Blast Door Edge
+      Large Grid: MyObjectBuilder_CubeBlock/ArmorSide
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorSide
+
+Blast Doors
+      Large Grid: MyObjectBuilder_CubeBlock/ArmorCenter
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorCenter
+
+Bridge Button Panel (IMyButtonPanel)
+      Large Grid: MyObjectBuilder_ButtonPanel/LargeBlockModularBridgeButtonPanel
+
+Bridge Corner 2x1 Base L
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockModularBridgeCorner2x1BaseL
+
+Bridge Corner 2x1 Base R
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockModularBridgeCorner2x1BaseR
+
+Bridge Floor
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockModularBridgeFloor
+
+Bridge Floorless
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockModularBridgeEmpty
+
+Bridge Half Sloped Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockModularBridgeHalfSlopedCorner
+
+Bridge Helm (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockModularBridgeCockpit
+
+Bridge Raised Sloped Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockModularBridgeRaisedSlopedCorner
+
+Bridge Side L
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockModularBridgeSideL
+
+Bridge Side R
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockModularBridgeSideR
+
+Bridge Sloped Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockModularBridgeCorner
+
+Bridge Window Face
+      Large Grid: MyObjectBuilder_CubeBlock/BridgeWindow1x1Face
+
+Bridge Window Face Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/BridgeWindow1x1FaceInverted
+
+Bridge Window Slope
+      Large Grid: MyObjectBuilder_CubeBlock/BridgeWindow1x1Slope
+
+Broadcast Controller (IMyBroadcastController)
+      Large Grid: MyObjectBuilder_BroadcastController/LargeBlockBroadcastController
+      Small Grid: MyObjectBuilder_BroadcastController/SmallBlockBroadcastController
+
+Buggy Cockpit (IMyCockpit)
+      Small Grid: MyObjectBuilder_Cockpit/BuggyCockpit
+
+Bunk (IMyCryoChamber)
+      Small Grid: MyObjectBuilder_CryoChamber/SmallBlockBunkBed
+
+Button Panel (IMyButtonPanel)
+      Large Grid: MyObjectBuilder_ButtonPanel/ButtonPanelLarge
+      Small Grid: MyObjectBuilder_ButtonPanel/ButtonPanelSmall
+
+Button Panel Pedestal (IMyButtonPanel)
+      Large Grid: MyObjectBuilder_ButtonPanel/LargeButtonPanelPedestal
+      Small Grid: MyObjectBuilder_ButtonPanel/SmallButtonPanelPedestal
+
+Cab Cockpit (IMyCockpit)
+      Small Grid: MyObjectBuilder_Cockpit/SmallBlockCapCockpit
+
+Camera (IMyCameraBlock)
+      Large Grid: MyObjectBuilder_CameraBlock/LargeCameraBlock
+      Small Grid: MyObjectBuilder_CameraBlock/SmallCameraBlock
+
+Captain's Desk (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockCaptainDesk
+
+Cargo Crate (IMyTerminalBlock)
+      Large Grid: MyObjectBuilder_TerminalBlock/LargeCrate
+
+Chairless Desk
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockDeskChairless
+
+Chairless Desk Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockDeskChairlessCorner
+
+Chairless Desk Corner Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockDeskChairlessCornerInv
+
+Cockpit (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockCockpitSeat
+      Small Grid: MyObjectBuilder_Cockpit/SmallBlockCockpit
+
+Coffee Machine
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockKitchenCoffeeMachine
+
+Collector (IMyCollector)
+      Large Grid: MyObjectBuilder_Collector/Collector
+      Small Grid: MyObjectBuilder_Collector/CollectorSmall
+
+Colon
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolColon
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolColon
+
+Colorable Solar Panel (IMySolarPanel)
+      Large Grid: MyObjectBuilder_SolarPanel/LargeBlockColorableSolarPanel
+      Small Grid: MyObjectBuilder_SolarPanel/SmallBlockColorableSolarPanel
+
+Colorable Solar Panel Slope Left (IMySolarPanel)
+      Large Grid: MyObjectBuilder_SolarPanel/LargeBlockColorableSolarPanelCorner
+      Small Grid: MyObjectBuilder_SolarPanel/SmallBlockColorableSolarPanelCorner
+
+Colorable Solar Panel Slope Right (IMySolarPanel)
+      Large Grid: MyObjectBuilder_SolarPanel/LargeBlockColorableSolarPanelCornerInverted
+      Small Grid: MyObjectBuilder_SolarPanel/SmallBlockColorableSolarPanelCornerInverted
+
+Compact Antenna (IMyRadioAntenna)
+      Large Grid: MyObjectBuilder_RadioAntenna/LargeBlockCompactRadioAntenna
+
+Connector (IMyShipConnector)
+      Large Grid: MyObjectBuilder_ShipConnector/Connector
+      Small Grid: MyObjectBuilder_ShipConnector/ConnectorMedium
+
+Console Block (IMyProjector)
+      Large Grid: MyObjectBuilder_Projector/LargeBlockConsole
+
+Console Module
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockConsoleModule
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockConsoleModule
+
+Console Module Buttons (IMyButtonPanel)
+      Large Grid: MyObjectBuilder_ButtonPanel/LargeBlockConsoleModuleButtons
+      Small Grid: MyObjectBuilder_ButtonPanel/SmallBlockConsoleModuleButtons
+
+Console Module Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockConsoleModuleCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockConsoleModuleCorner
+
+Console Module Corner Inv. (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockConsoleModuleInvertedCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockConsoleModuleInvertedCorner
+
+Console Module LCD (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockConsoleModuleScreens
+      Small Grid: MyObjectBuilder_TextPanel/SmallBlockConsoleModuleScreens
+
+Contracts
+      Large Grid: MyObjectBuilder_ContractBlock/ContractBlock
+
+Control Panel (IMyTerminalBlock)
+      Large Grid: MyObjectBuilder_TerminalBlock/ControlPanel
+      Small Grid: MyObjectBuilder_TerminalBlock/SmallControlPanel
+
+Control Panel Pedestal (IMyTerminalBlock)
+      Large Grid: MyObjectBuilder_TerminalBlock/LargeControlPanelPedestal
+      Small Grid: MyObjectBuilder_TerminalBlock/SmallControlPanelPedestal
+
+Control Seat (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/OpenCockpitLarge
+      Small Grid: MyObjectBuilder_Cockpit/OpenCockpitSmall
+
+Control Station (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockCockpit
+
+Conveyor Cap
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockConveyorCap
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockConveyorCap
+
+Conveyor Cap Medium
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockConveyorCapMedium
+
+Conveyor Converter
+      Small Grid: MyObjectBuilder_Conveyor/SmallBlockConveyorConverter
+
+Conveyor Frame
+      Small Grid: MyObjectBuilder_ConveyorConnector/ConveyorFrameMedium
+
+Conveyor Junction
+      Large Grid: MyObjectBuilder_Conveyor/LargeBlockConveyor
+      Small Grid: MyObjectBuilder_Conveyor/SmallShipConveyorHub
+
+Conveyor Pipe
+      Large Grid: MyObjectBuilder_ConveyorConnector/LargeBlockConveyorPipeSeamless
+
+Conveyor Pipe Cap
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockConveyorPipeCap
+
+Conveyor Pipe Cross
+      Large Grid: MyObjectBuilder_Conveyor/LargeBlockConveyorPipeIntersection
+
+Conveyor Pipe Curved
+      Large Grid: MyObjectBuilder_ConveyorConnector/LargeBlockConveyorPipeCorner
+
+Conveyor Pipe End
+      Large Grid: MyObjectBuilder_ConveyorConnector/LargeBlockConveyorPipeEnd
+
+Conveyor Pipe Flanged
+      Large Grid: MyObjectBuilder_ConveyorConnector/LargeBlockConveyorPipeFlange
+
+Conveyor Pipe Junction
+      Large Grid: MyObjectBuilder_Conveyor/LargeBlockConveyorPipeJunction
+
+Conveyor Pipe T Junction
+      Large Grid: MyObjectBuilder_Conveyor/LargeBlockConveyorPipeT
+
+Conveyor Sorter (IMyConveyorSorter)
+      Large Grid: MyObjectBuilder_ConveyorSorter/LargeBlockConveyorSorter
+      Small Grid: MyObjectBuilder_ConveyorSorter/MediumBlockConveyorSorter
+
+Conveyor Tube
+      Large Grid: MyObjectBuilder_ConveyorConnector/ConveyorTube
+
+Conveyor Tube T Junction
+      Large Grid: MyObjectBuilder_Conveyor/ConveyorTubeT
+
+Corner Couch (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockCouchCorner
+
+Corner LCD Bottom (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeBlockCorner_LCD_2
+      Small Grid: MyObjectBuilder_TextPanel/SmallBlockCorner_LCD_2
+
+Corner LCD Flat Bottom (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeBlockCorner_LCD_Flat_2
+      Small Grid: MyObjectBuilder_TextPanel/SmallBlockCorner_LCD_Flat_2
+
+Corner LCD Flat Top (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeBlockCorner_LCD_Flat_1
+      Small Grid: MyObjectBuilder_TextPanel/SmallBlockCorner_LCD_Flat_1
+
+Corner LCD Top (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeBlockCorner_LCD_1
+      Small Grid: MyObjectBuilder_TextPanel/SmallBlockCorner_LCD_1
+
+Corner Light (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/LargeBlockLight_1corner
+      Small Grid: MyObjectBuilder_InteriorLight/SmallBlockLight_1corner
+
+Corner Light - Double (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/LargeBlockLight_2corner
+      Small Grid: MyObjectBuilder_InteriorLight/SmallBlockLight_2corner
+
+Corner Medical Room (IMyMedicalRoom)
+      Large Grid: MyObjectBuilder_MedicalRoom/LargeMedicalRoomReskin
+
+Corridor
+      Large Grid: MyObjectBuilder_CubeBlock/Corridor
+
+Corridor Corner
+      Large Grid: MyObjectBuilder_CubeBlock/CorridorCorner
+
+Corridor Double Windowed Sides
+      Large Grid: MyObjectBuilder_CubeBlock/CorridorDoubleWindow
+
+Corridor Light (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/CorridorLight
+
+Corridor Narrow
+      Large Grid: MyObjectBuilder_CubeBlock/CorridorNarrow
+
+Corridor Narrow Stowage (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/CorridorNarrowStowage
+
+Corridor T Intersection
+      Large Grid: MyObjectBuilder_CubeBlock/CorridorT
+
+Corridor Windowed Roof
+      Large Grid: MyObjectBuilder_CubeBlock/CorridorWindowRoof
+
+Corridor Windowed Side
+      Large Grid: MyObjectBuilder_CubeBlock/CorridorWindow
+
+Corridor X Intersection
+      Large Grid: MyObjectBuilder_CubeBlock/CorridorX
+
+Couch (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockCouch
+
+Cover Walls
+      Large Grid: MyObjectBuilder_CubeBlock/LargeCoverWall
+
+Cryo Chamber (IMyCryoChamber)
+      Large Grid: MyObjectBuilder_CryoChamber/LargeBlockCryoChamber
+      Small Grid: MyObjectBuilder_CryoChamber/SmallBlockCryoChamber
+
+Curved Conveyor Tube
+      Large Grid: MyObjectBuilder_ConveyorConnector/ConveyorTubeCurved
+      Small Grid: MyObjectBuilder_ConveyorConnector/ConveyorTubeCurvedMedium
+
+Curved LCD Panel (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeCurvedLCDPanel
+      Small Grid: MyObjectBuilder_TextPanel/SmallCurvedLCDPanel
+
+Custom Turret Controller (IMyTurretControlBlock)
+      Large Grid: MyObjectBuilder_TurretControlBlock/LargeTurretControlBlock
+      Small Grid: MyObjectBuilder_TurretControlBlock/SmallTurretControlBlock
+
+Cylindrical Column
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockCylindricalColumn
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockCylindricalColumn
+
+Dead Engineer 1
+      Large Grid: MyObjectBuilder_CubeBlock/DeadBody01
+
+Dead Engineer 2
+      Large Grid: MyObjectBuilder_CubeBlock/DeadBody02
+
+Dead Engineer 3
+      Large Grid: MyObjectBuilder_CubeBlock/DeadBody03
+
+Dead Engineer 4
+      Large Grid: MyObjectBuilder_CubeBlock/DeadBody04
+
+Dead Engineer 5
+      Large Grid: MyObjectBuilder_CubeBlock/DeadBody05
+
+Dead Engineer 6
+      Large Grid: MyObjectBuilder_CubeBlock/DeadBody06
+
+Decoy (IMyDecoy)
+      Large Grid: MyObjectBuilder_Decoy/LargeDecoy
+      Small Grid: MyObjectBuilder_Decoy/SmallDecoy
+
+Desk (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockDesk
+
+Desk Corner (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockDeskCorner
+
+Desk Corner Inv. (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockDeskCornerInv
+
+Diagonal Window
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWindowEdge
+
+Dispenser
+      Large Grid: MyObjectBuilder_VendingMachine/FoodDispenser
+
+Door (IMyDoor)
+      Large Grid: MyObjectBuilder_Door/
+      Small Grid: MyObjectBuilder_Door/SmallDoor
+
+Dot
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolDot
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolDot
+
+Drill (IMyShipDrill)
+      Large Grid: MyObjectBuilder_Drill/LargeBlockDrill
+      Small Grid: MyObjectBuilder_Drill/SmallBlockDrill
+
+Embrasure
+      Large Grid: MyObjectBuilder_CubeBlock/Embrasure
+
+Emotion Controller (IMyEmotionControllerBlock)
+      Large Grid: MyObjectBuilder_EmotionControllerBlock/EmotionControllerLarge
+      Small Grid: MyObjectBuilder_EmotionControllerBlock/EmotionControllerSmall
+
+Engineer Plushie
+      Small Grid: MyObjectBuilder_CubeBlock/EngineerPlushie
+
+Event Controller (IMyEventControllerBlock)
+      Large Grid: MyObjectBuilder_EventControllerBlock/EventControllerLarge
+      Small Grid: MyObjectBuilder_EventControllerBlock/EventControllerSmall
+
+Exclamationmark
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolExclamationMark
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolExclamationMark
+
+Exhaust Pipe
+      Large Grid: MyObjectBuilder_ExhaustBlock/LargeExhaustPipe
+      Small Grid: MyObjectBuilder_ExhaustBlock/SmallExhaustPipe
+
+Explosive Barrel (IMyWarhead)
+      Large Grid: MyObjectBuilder_Warhead/LargeExplosiveBarrel
+      Small Grid: MyObjectBuilder_Warhead/SmallExplosiveBarrel
+
+Fighter Cockpit (IMyCockpit)
+      Small Grid: MyObjectBuilder_Cockpit/DBSmallBlockFighterCockpit
+
+Fire Cover
+      Large Grid: MyObjectBuilder_CubeBlock/FireCover
+
+Fire Cover Corner
+      Large Grid: MyObjectBuilder_CubeBlock/FireCoverCorner
+
+Firework Launcher (IMySmallMissileLauncher)
+      Large Grid: MyObjectBuilder_SmallMissileLauncher/LargeFlareLauncher
+      Small Grid: MyObjectBuilder_SmallMissileLauncher/SmallFlareLauncher
+
+First Aid Cabinet (IMyTerminalBlock)
+      Small Grid: MyObjectBuilder_TerminalBlock/SmallBlockFirstAidCabinet
+
+Flat Atmospheric Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockSmallFlatAtmosphericThrust
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockSmallFlatAtmosphericThrust
+
+Flat Atmospheric Thruster D Shape (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockSmallFlatAtmosphericThrustDShape
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockSmallFlatAtmosphericThrustDShape
+
+Flight Seat (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/CockpitOpen
+
+Floodlight (IMyReflectorLight)
+      Large Grid: MyObjectBuilder_ReflectorLight/LargeBlockFloodlight
+      Small Grid: MyObjectBuilder_ReflectorLight/SmallBlockFloodlight
+
+Floodlight Angled (IMyReflectorLight)
+      Large Grid: MyObjectBuilder_ReflectorLight/LargeBlockFloodlightAngled
+      Small Grid: MyObjectBuilder_ReflectorLight/SmallBlockFloodlightAngled
+
+Floodlight Corner L (IMyReflectorLight)
+      Large Grid: MyObjectBuilder_ReflectorLight/LargeBlockFloodlightCornerL
+      Small Grid: MyObjectBuilder_ReflectorLight/SmallBlockFloodlightCornerL
+
+Floodlight Corner R (IMyReflectorLight)
+      Large Grid: MyObjectBuilder_ReflectorLight/LargeBlockFloodlightCornerR
+      Small Grid: MyObjectBuilder_ReflectorLight/SmallBlockFloodlightCornerR
+
+Floodlight Diagonal (IMyReflectorLight)
+      Small Grid: MyObjectBuilder_ReflectorLight/SmallBlockFloodlightAngledRotated
+
+Floodlight Down (IMyReflectorLight)
+      Small Grid: MyObjectBuilder_ReflectorLight/SmallBlockFloodlightDown
+
+Flush Cockpit (IMyCockpit)
+      Small Grid: MyObjectBuilder_Cockpit/SmallBlockFlushCockpit
+
+Freight 1
+      Large Grid: MyObjectBuilder_CubeBlock/Freight1
+
+Freight 2
+      Large Grid: MyObjectBuilder_CubeBlock/Freight2
+
+Freight 3
+      Large Grid: MyObjectBuilder_CubeBlock/Freight3
+
+Fridge (IMyTerminalBlock)
+      Small Grid: MyObjectBuilder_TerminalBlock/SmallBlockKitchenFridge
+
+Gate (IMyDoor)
+      Large Grid: MyObjectBuilder_Door/LargeBlockGate
+
+Gatling Gun (IMySmallGatlingGun)
+      Small Grid: MyObjectBuilder_SmallGatlingGun/
+
+Gatling Turret (IMyLargeGatlingTurret)
+      Large Grid: MyObjectBuilder_LargeGatlingTurret/
+      Small Grid: MyObjectBuilder_LargeGatlingTurret/SmallGatlingTurret
+
+Gatling Turret Type II (IMyLargeGatlingTurret)
+      Large Grid: MyObjectBuilder_LargeGatlingTurret/LargeGatlingTurretReskin
+      Small Grid: MyObjectBuilder_LargeGatlingTurret/SmallGatlingTurretReskin
+
+Grated Catwalk
+      Large Grid: MyObjectBuilder_CubeBlock/Catwalk
+
+Grated Catwalk Corner
+      Large Grid: MyObjectBuilder_CubeBlock/CatwalkCorner
+
+Grated Catwalk End
+      Large Grid: MyObjectBuilder_CubeBlock/CatwalkRailingEnd
+
+Grated Catwalk Half Left
+      Large Grid: MyObjectBuilder_CubeBlock/CatwalkRailingHalfLeft
+
+Grated Catwalk Half Right
+      Large Grid: MyObjectBuilder_CubeBlock/CatwalkRailingHalfRight
+
+Grated Catwalk Straight
+      Large Grid: MyObjectBuilder_CubeBlock/CatwalkStraight
+
+Grated Catwalk Wall
+      Large Grid: MyObjectBuilder_CubeBlock/CatwalkWall
+
+Grated Half Stairs
+      Large Grid: MyObjectBuilder_CubeBlock/GratedHalfStairs
+
+Grated Half Stairs Mirrored
+      Large Grid: MyObjectBuilder_CubeBlock/GratedHalfStairsMirrored
+
+Grated Stairs
+      Large Grid: MyObjectBuilder_CubeBlock/GratedStairs
+
+Gravity Generator (IMyGravityGenerator)
+      Large Grid: MyObjectBuilder_GravityGenerator/
+
+Grinder (IMyShipGrinder)
+      Large Grid: MyObjectBuilder_ShipGrinder/LargeShipGrinder
+      Small Grid: MyObjectBuilder_ShipGrinder/SmallShipGrinder
+
+Gyroscope (IMyGyro)
+      Large Grid: MyObjectBuilder_Gyro/LargeBlockGyro
+      Small Grid: MyObjectBuilder_Gyro/SmallBlockGyro
+
+Half Bed (IMyCryoChamber)
+      Large Grid: MyObjectBuilder_CryoChamber/LargeBlockHalfBed
+
+Half Bed Open (IMyCryoChamber)
+      Large Grid: MyObjectBuilder_CryoChamber/LargeBlockHalfBedOffset
+
+Half Cover Wall
+      Large Grid: MyObjectBuilder_CubeBlock/LargeCoverWallHalf
+
+Half Cover Wall Mirrored
+      Large Grid: MyObjectBuilder_CubeBlock/LargeCoverWallHalfMirrored
+
+Half Grated Catwalk
+      Large Grid: MyObjectBuilder_CubeBlock/CatwalkHalf
+
+Half Grated Catwalk Center Railing
+      Large Grid: MyObjectBuilder_CubeBlock/CatwalkHalfCenterRailing
+
+Half Grated Catwalk Railing
+      Large Grid: MyObjectBuilder_CubeBlock/CatwalkHalfOuterRailing
+
+Half Grated Catwalk Straight
+      Large Grid: MyObjectBuilder_CubeBlock/CatwalkHalfRailing
+
+Half Heavy Armor Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyHalfArmorBlock
+      Small Grid: MyObjectBuilder_CubeBlock/HeavyHalfArmorBlock
+
+Half Light Armor Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHalfArmorBlock
+      Small Grid: MyObjectBuilder_CubeBlock/HalfArmorBlock
+
+Half Scaffold Block
+      Large Grid: MyObjectBuilder_CubeBlock/TrussHalf
+      Small Grid: MyObjectBuilder_CubeBlock/TrussHalfSmall
+
+Half Sliding Hatch Door (IMyDoor)
+      Large Grid: MyObjectBuilder_Door/SlidingHatchDoorHalf
+
+Half Slope Corner Heavy Armor
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorHalfSlopeCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorHalfSlopeCorner
+
+Half Slope Corner Inv. Heavy Armor
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorHalfSlopeCornerInverted
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorHalfSlopeCornerInverted
+
+Half Slope Corner Inv. Light Armor
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorHalfSlopeCornerInverted
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorHalfSlopeCornerInverted
+
+Half Slope Corner Light Armor
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorHalfSlopeCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorHalfSlopeCorner
+
+Half Slope Heavy Armor Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyHalfSlopeArmorBlock
+      Small Grid: MyObjectBuilder_CubeBlock/HeavyHalfSlopeArmorBlock
+
+Half Slope Inv. Heavy Armor
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorHalfSlopeInverted
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorHalfSlopeInverted
+
+Half Slope Inv. Light Armor
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorHalfSlopeInverted
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorHalfSlopeInverted
+
+Half Slope Light Armor Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHalfSlopeArmorBlock
+      Small Grid: MyObjectBuilder_CubeBlock/HalfSlopeArmorBlock
+
+Half Window
+      Large Grid: MyObjectBuilder_CubeBlock/HalfWindow
+
+Half Window Corner
+      Large Grid: MyObjectBuilder_CubeBlock/HalfWindowCorner
+
+Half Window Corner Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/HalfWindowCornerInv
+
+Half Window Diagonal
+      Large Grid: MyObjectBuilder_CubeBlock/HalfWindowDiagonal
+
+Half Window Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/HalfWindowInv
+
+Half Window Round
+      Large Grid: MyObjectBuilder_CubeBlock/HalfWindowRound
+
+Heat Vent (IMyHeatVent)
+      Large Grid: MyObjectBuilder_HeatVentBlock/LargeHeatVentBlock
+      Small Grid: MyObjectBuilder_HeatVentBlock/SmallHeatVentBlock
+
+Heavy Armor Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorBlock
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorBlock
+
+Heavy Armor Centered Half Panel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorHalfCenterPanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorHalfCenterPanelHeavy
+
+Heavy Armor Centered Panel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorCenterPanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorCenterPanelHeavy
+
+Heavy Armor Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorCorner
+
+Heavy Armor Corner 2x1x1 Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorCorner2Base
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorCorner2Base
+
+Heavy Armor Corner 2x1x1 Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorCorner2Tip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorCorner2Tip
+
+Heavy Armor Corner Square Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorCornerSquare
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorCornerSquare
+
+Heavy Armor Corner Square Inv. Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorCornerSquareInverted
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorCornerSquareInverted
+
+Heavy Armor Half Corner Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorHalfCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorHalfCorner
+
+Heavy Armor Half Panel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorHalfPanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorHalfPanelHeavy
+
+Heavy Armor Half Panel 2x1 Base Left
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1HalfSlopedPanelHeavyLeft
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1HalfSlopedPanelHeavyLeft
+
+Heavy Armor Half Panel 2x1 Base Right
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1HalfSlopedPanelHeavyRight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1HalfSlopedPanelHeavyRight
+
+Heavy Armor Half Panel 2x1 Tip Left
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1HalfSlopedTipPanelHeavyLeft
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1HalfSlopedTipPanelHeavyLeft
+
+Heavy Armor Half Panel 2x1 Tip Right
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1HalfSlopedTipPanelHeavyRight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1HalfSlopedTipPanelHeavyRight
+
+Heavy Armor Half Sloped Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorHalfSlopedCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorHalfSlopedCorner
+
+Heavy Armor Half Sloped Corner Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorHalfSlopedCornerBase
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorHalfSlopedCornerBase
+
+Heavy Armor Inv. Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorCornerInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorCornerInv
+
+Heavy Armor Inv. Corner 2x1x1 Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorInvCorner2Base
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorInvCorner2Base
+
+Heavy Armor Inv. Corner 2x1x1 Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorInvCorner2Tip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorInvCorner2Tip
+
+Heavy Armor Panel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorPanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorPanelHeavy
+
+Heavy Armor Panel 2x1 Base Left
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedSideBasePanelHeavyInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedSideBasePanelHeavyInv
+
+Heavy Armor Panel 2x1 Base Right
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedSideBasePanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedSideBasePanelHeavy
+
+Heavy Armor Panel 2x1 Slope Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedPanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedPanelHeavy
+
+Heavy Armor Panel 2x1 Slope Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedPanelTipHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedPanelTipHeavy
+
+Heavy Armor Panel 2x1 Tip Left
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedSideTipPanelHeavyInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedSideTipPanelHeavyInv
+
+Heavy Armor Panel 2x1 Tip Right
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedSideTipPanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedSideTipPanelHeavy
+
+Heavy Armor Panel Half Slope
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorHalfSlopedPanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorHalfSlopedPanelHeavy
+
+Heavy Armor Panel Round
+      Large Grid: MyObjectBuilder_CubeBlock/LargeRoundArmorPanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallRoundArmorPanelHeavy
+
+Heavy Armor Panel Round Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeRoundArmorPanelCornerHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallRoundArmorPanelCornerHeavy
+
+Heavy Armor Panel Round Face
+      Large Grid: MyObjectBuilder_CubeBlock/LargeRoundArmorPanelFaceHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallRoundArmorPanelFaceHeavy
+
+Heavy Armor Panel Round Inverted Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeRoundArmorPanelInvertedCornerHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallRoundArmorPanelInvertedCornerHeavy
+
+Heavy Armor Panel Side
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorSlopedSidePanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorSlopedSidePanelHeavy
+
+Heavy Armor Panel Slope
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorSlopedPanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorSlopedPanelHeavy
+
+Heavy Armor Quarter Panel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorQuarterPanelHeavy
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorQuarterPanelHeavy
+
+Heavy Armor Raised Sloped Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorRaisedSlopedCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorRaisedSlopedCorner
+
+Heavy Armor Round Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorRoundCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorRoundCorner
+
+Heavy Armor Round Inv. Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorRoundCornerInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorRoundCornerInv
+
+Heavy Armor Round Slope
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorRoundSlope
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorRoundSlope
+
+Heavy Armor Slope
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorSlope
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorSlope
+
+Heavy Armor Slope 2x1x1 Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorSlope2Base
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorSlope2Base
+
+Heavy Armor Slope 2x1x1 Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeHeavyBlockArmorSlope2Tip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallHeavyBlockArmorSlope2Tip
+
+Heavy Armor Slope Transition
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSlopeTransition
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSlopeTransition
+
+Heavy Armor Slope Transition Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSlopeTransitionBase
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSlopeTransitionBase
+
+Heavy Armor Slope Transition Base Mirrored
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSlopeTransitionBaseMirrored
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSlopeTransitionBaseMirrored
+
+Heavy Armor Slope Transition Mirrored
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSlopeTransitionMirrored
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSlopeTransitionMirrored
+
+Heavy Armor Slope Transition Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSlopeTransitionTip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSlopeTransitionTip
+
+Heavy Armor Slope Transition Tip Mirrored
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSlopeTransitionTipMirrored
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSlopeTransitionTipMirrored
+
+Heavy Armor Sloped Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSlopedCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSlopedCorner
+
+Heavy Armor Sloped Corner Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSlopedCornerBase
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSlopedCornerBase
+
+Heavy Armor Square Sloped Corner Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSquareSlopedCornerBase
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSquareSlopedCornerBase
+
+Heavy Armor Square Sloped Corner Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSquareSlopedCornerTip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSquareSlopedCornerTip
+
+Heavy Armor Square Sloped Corner Tip Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSquareSlopedCornerTipInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSquareSlopedCornerTipInv
+
+Helm (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockStandingCockpit
+      Small Grid: MyObjectBuilder_Cockpit/SmallBlockStandingCockpit
+
+Hinge (IMyMotorAdvancedStator)
+      Large Grid: MyObjectBuilder_MotorAdvancedStator/LargeHinge
+      Small Grid: MyObjectBuilder_MotorAdvancedStator/SmallHinge
+
+Hinge 3x3 (IMyMotorAdvancedStator)
+      Small Grid: MyObjectBuilder_MotorAdvancedStator/MediumHinge
+
+Hinge Part
+      Large Grid: MyObjectBuilder_MotorAdvancedRotor/LargeHingeHead
+      Small Grid: MyObjectBuilder_MotorAdvancedRotor/SmallHingeHead
+
+Hinge Part 3x3
+      Small Grid: MyObjectBuilder_MotorAdvancedRotor/MediumHingeHead
+
+Holo LCD (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/HoloLCDLarge
+      Small Grid: MyObjectBuilder_TextPanel/HoloLCDSmall
+
+Hydrogen Engine
+      Large Grid: MyObjectBuilder_HydrogenEngine/LargeHydrogenEngine
+      Small Grid: MyObjectBuilder_HydrogenEngine/SmallHydrogenEngine
+
+Hydrogen Tank (IMyGasTank)
+      Large Grid: MyObjectBuilder_OxygenTank/LargeHydrogenTank
+      Small Grid: MyObjectBuilder_OxygenTank/SmallHydrogenTank
+
+Hydrogen Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockSmallHydrogenThrust
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockSmallHydrogenThrust
+
+Hyphen
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolHyphen
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolHyphen
+
+Industrial Assembler (IMyAssembler)
+      Large Grid: MyObjectBuilder_Assembler/LargeAssemblerIndustrial
+
+Industrial Cockpit (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockCockpitIndustrial
+      Small Grid: MyObjectBuilder_Cockpit/SmallBlockCockpitIndustrial
+
+Industrial Conveyor Sorter (IMyConveyorSorter)
+      Large Grid: MyObjectBuilder_ConveyorSorter/LargeBlockConveyorSorterIndustrial
+
+Industrial Hydrogen Tank (IMyGasTank)
+      Large Grid: MyObjectBuilder_OxygenTank/LargeHydrogenTankIndustrial
+
+Industrial Hydrogen Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockSmallHydrogenThrustIndustrial
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockSmallHydrogenThrustIndustrial
+
+Industrial Large Hydrogen Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockLargeHydrogenThrustIndustrial
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockLargeHydrogenThrustIndustrial
+
+Industrial Refinery (IMyRefinery)
+      Large Grid: MyObjectBuilder_Refinery/LargeRefineryIndustrial
+
+Inset Aquarium (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/LargeBlockInsetAquarium
+
+Inset Bed (IMyCryoChamber)
+      Large Grid: MyObjectBuilder_CryoChamber/LargeBlockInsetBed
+
+Inset Bookshelf (IMyCargoContainer)
+      Large Grid: MyObjectBuilder_CargoContainer/LargeBlockInsetBookshelf
+
+Inset Button Panel (IMyButtonPanel)
+      Large Grid: MyObjectBuilder_ButtonPanel/LargeBlockInsetButtonPanel
+
+Inset Connector (IMyShipConnector)
+      Large Grid: MyObjectBuilder_ShipConnector/LargeBlockInsetConnector
+      Small Grid: MyObjectBuilder_ShipConnector/SmallBlockInsetConnectorMedium
+
+Inset Couch (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockInsetPlantCouch
+
+Inset Cryo Room (IMyCryoChamber)
+      Large Grid: MyObjectBuilder_CryoChamber/LargeBlockCryoRoom
+
+Inset Entertainment Corner
+      Large Grid: MyObjectBuilder_Jukebox/LargeBlockInsetEntertainmentCorner
+
+Inset Kitchen (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/LargeBlockInsetKitchen
+
+Inset LCD Panel (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeFullBlockLCDPanel
+      Small Grid: MyObjectBuilder_TextPanel/SmallFullBlockLCDPanel
+
+Inset Light (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/LargeBlockInsetLight
+      Small Grid: MyObjectBuilder_InteriorLight/SmallBlockInsetLight
+
+**Inset Wall **
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockInsetWall
+
+Inset Wall Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockInsetWallCorner
+
+Inset Wall Corner Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockInsetWallCornerInverted
+
+Inset Wall Diagonal
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockInsetWallSlope
+
+Inset Wall Light (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/LargeBlockInsetWallLight
+
+Inset Wall Pillar
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockInsetWallPillar
+
+Interior Light (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/SmallLight
+      Small Grid: MyObjectBuilder_InteriorLight/SmallBlockSmallLight
+
+Interior Pillar
+      Large Grid: MyObjectBuilder_CubeBlock/LargeInteriorPillar
+
+Interior Turret (IMyLargeInteriorTurret)
+      Large Grid: MyObjectBuilder_InteriorTurret/LargeInteriorTurret
+
+Interior Wall
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockInteriorWall
+
+Ion Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockSmallThrust
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockSmallThrust
+
+Jukebox
+      Large Grid: MyObjectBuilder_Jukebox/Jukebox
+
+Jump Drive (IMyJumpDrive)
+      Large Grid: MyObjectBuilder_JumpDrive/LargeJumpDrive
+
+Kitchen
+      Large Grid: MyObjectBuilder_Kitchen/LargeBlockKitchen
+
+Lab Equipment
+      Large Grid: MyObjectBuilder_LCDPanelsBlock/LabEquipment
+
+Ladder
+      Large Grid: MyObjectBuilder_Ladder2/
+      Small Grid: MyObjectBuilder_Ladder2/LadderSmall
+
+Ladder Shaft
+      Large Grid: MyObjectBuilder_Ladder2/LadderShaft
+
+Landing Gear (IMyLandingGear)
+      Large Grid: MyObjectBuilder_LandingGear/LargeBlockLandingGear
+      Small Grid: MyObjectBuilder_LandingGear/SmallBlockLandingGear
+
+Large Atmospheric Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockLargeAtmosphericThrust
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockLargeAtmosphericThrust
+
+Large Cargo Container (IMyCargoContainer)
+      Large Grid: MyObjectBuilder_CargoContainer/LargeBlockLargeContainer
+      Small Grid: MyObjectBuilder_CargoContainer/SmallBlockLargeContainer
+
+Large Flat Atmospheric Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockLargeFlatAtmosphericThrust
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockLargeFlatAtmosphericThrust
+
+Large Flat Atmospheric Thruster D Shape (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockLargeFlatAtmosphericThrustDShape
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockLargeFlatAtmosphericThrustDShape
+
+Large Hydrogen Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockLargeHydrogenThrust
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockLargeHydrogenThrust
+
+Large Industrial Cargo Container (IMyCargoContainer)
+      Large Grid: MyObjectBuilder_CargoContainer/LargeBlockLargeIndustrialContainer
+
+Large Ion Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockLargeThrust
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockLargeThrust
+
+Large Magnetic Plate (IMyLandingGear)
+      Large Grid: MyObjectBuilder_LandingGear/LargeBlockMagneticPlate
+      Small Grid: MyObjectBuilder_LandingGear/SmallBlockMagneticPlate
+
+Large Reactor (IMyReactor)
+      Large Grid: MyObjectBuilder_Reactor/LargeBlockLargeGenerator
+      Small Grid: MyObjectBuilder_Reactor/SmallBlockLargeGenerator
+
+Large Warfare Ion Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockLargeModularThruster
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockLargeModularThruster
+
+Large Warfare Reactor (IMyReactor)
+      Large Grid: MyObjectBuilder_Reactor/LargeBlockLargeGeneratorWarfare2
+      Small Grid: MyObjectBuilder_Reactor/SmallBlockLargeGeneratorWarfare2
+
+Laser Antenna (IMyLaserAntenna)
+      Large Grid: MyObjectBuilder_LaserAntenna/LargeBlockLaserAntenna
+      Small Grid: MyObjectBuilder_LaserAntenna/SmallBlockLaserAntenna
+
+LCD Panel (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeLCDPanel
+      Small Grid: MyObjectBuilder_TextPanel/SmallLCDPanel
+
+Letter A
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolA
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolA
+
+Letter B
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolB
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolB
+
+Letter C
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolC
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolC
+
+Letter D
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolD
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolD
+
+Letter E
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolE
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolE
+
+Letter F
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolF
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolF
+
+Letter G
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolG
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolG
+
+Letter H
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolH
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolH
+
+Letter I
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolI
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolI
+
+Letter J
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolJ
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolJ
+
+Letter K
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolK
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolK
+
+Letter L
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolL
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolL
+
+Letter M
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolM
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolM
+
+Letter N
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolN
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolN
+
+Letter O
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolO
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolO
+
+Letter P
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolP
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolP
+
+Letter Q
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolQ
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolQ
+
+Letter R
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolR
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolR
+
+Letter S
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolS
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolS
+
+Letter T
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolT
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolT
+
+Letter U
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolU
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolU
+
+Letter V
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolV
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolV
+
+Letter W
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolW
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolW
+
+Letter X
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolX
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolX
+
+Letter Y
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolY
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolY
+
+Letter Z
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolZ
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolZ
+
+Light Armor Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorBlock
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorBlock
+
+Light Armor Centered Half Panel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorHalfCenterPanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorHalfCenterPanelLight
+
+Light Armor Centered Panel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorCenterPanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorCenterPanelLight
+
+Light Armor Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorCorner
+
+Light Armor Corner 2x1x1 Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorCorner2Base
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorCorner2Base
+
+Light Armor Corner 2x1x1 Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorCorner2Tip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorCorner2Tip
+
+Light Armor Corner Square Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorCornerSquare
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorCornerSquare
+
+Light Armor Corner Square Inv. Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorCornerSquareInverted
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorCornerSquareInverted
+
+Light Armor Half Corner Block
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorHalfCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorHalfCorner
+
+Light Armor Half Panel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorHalfPanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorHalfPanelLight
+
+Light Armor Half Panel 2x1 Base Left
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1HalfSlopedPanelLightLeft
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1HalfSlopedPanelLightLeft
+
+Light Armor Half Panel 2x1 Base Right
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1HalfSlopedPanelLightRight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1HalfSlopedPanelLightRight
+
+Light Armor Half Panel 2x1 Tip Left
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1HalfSlopedTipPanelLightLeft
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1HalfSlopedTipPanelLightLeft
+
+Light Armor Half Panel 2x1 Tip Right
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1HalfSlopedTipPanelLightRight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1HalfSlopedTipPanelLightRight
+
+Light Armor Half Sloped Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorHalfSlopedCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorHalfSlopedCorner
+
+Light Armor Half Sloped Corner Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorHalfSlopedCornerBase
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorHalfSlopedCornerBase
+
+Light Armor Inv. Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorCornerInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorCornerInv
+
+Light Armor Inv. Corner 2x1x1 Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorInvCorner2Base
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorInvCorner2Base
+
+Light Armor Inv. Corner 2x1x1 Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorInvCorner2Tip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorInvCorner2Tip
+
+Light Armor Panel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorPanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorPanelLight
+
+Light Armor Panel 2x1 Base Left
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedSideBasePanelLightInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedSideBasePanelLightInv
+
+Light Armor Panel 2x1 Base Right
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedSideBasePanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedSideBasePanelLight
+
+Light Armor Panel 2x1 Slope Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedPanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedPanelLight
+
+Light Armor Panel 2x1 Slope Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedPanelTipLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedPanelTipLight
+
+Light Armor Panel 2x1 Tip Left
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedSideTipPanelLightInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedSideTipPanelLightInv
+
+Light Armor Panel 2x1 Tip Right
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmor2x1SlopedSideTipPanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmor2x1SlopedSideTipPanelLight
+
+Light Armor Panel Half Slope
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorHalfSlopedPanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorHalfSlopedPanelLight
+
+Light Armor Panel Round
+      Large Grid: MyObjectBuilder_CubeBlock/LargeRoundArmorPanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallRoundArmorPanelLight
+
+Light Armor Panel Round Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeRoundArmorPanelCornerLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallRoundArmorPanelCornerLight
+
+Light Armor Panel Round Face
+      Large Grid: MyObjectBuilder_CubeBlock/LargeRoundArmorPanelFaceLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallRoundArmorPanelFaceLight
+
+Light Armor Panel Round Inverted Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeRoundArmorPanelInvertedCornerLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallRoundArmorPanelInvertedCornerLight
+
+Light Armor Panel Side
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorSlopedSidePanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorSlopedSidePanelLight
+
+**Light Armor Panel Slope **
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorSlopedPanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorSlopedPanelLight
+
+Light Armor Quarter Panel
+      Large Grid: MyObjectBuilder_CubeBlock/LargeArmorQuarterPanelLight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallArmorQuarterPanelLight
+
+Light Armor Raised Sloped Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorRaisedSlopedCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorRaisedSlopedCorner
+
+Light Armor Slope
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlope
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlope
+
+Light Armor Slope 2x1x1 Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlope2Base
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlope2Base
+
+Light Armor Slope 2x1x1 Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlope2Tip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlope2Tip
+
+Light Armor Slope Transition
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlopeTransition
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlopeTransition
+
+Light Armor Slope Transition Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlopeTransitionBase
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlopeTransitionBase
+
+Light Armor Slope Transition Base Mirrored
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlopeTransitionBaseMirrored
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlopeTransitionBaseMirrored
+
+Light Armor Slope Transition Mirrored
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlopeTransitionMirrored
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlopeTransitionMirrored
+
+Light Armor Slope Transition Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlopeTransitionTip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlopeTransitionTip
+
+Light Armor Slope Transition Tip Mirrored
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlopeTransitionTipMirrored
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlopeTransitionTipMirrored
+
+Light Armor Sloped Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlopedCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlopedCorner
+
+Light Armor Sloped Corner Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlopedCornerBase
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlopedCornerBase
+
+Light Armor Square Sloped Corner Base
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSquareSlopedCornerBase
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSquareSlopedCornerBase
+
+Light Armor Square Sloped Corner Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSquareSlopedCornerTip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSquareSlopedCornerTip
+
+Light Armor Square Sloped Corner Tip Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSquareSlopedCornerTipInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSquareSlopedCornerTipInv
+
+Light Panel (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/LargeLightPanel
+      Small Grid: MyObjectBuilder_InteriorLight/SmallLightPanel
+
+Lockers (IMyCargoContainer)
+      Large Grid: MyObjectBuilder_CargoContainer/LargeBlockLockers
+
+Magnetic Plate (IMyLandingGear)
+      Large Grid: MyObjectBuilder_LandingGear/LargeBlockSmallMagneticPlate
+      Small Grid: MyObjectBuilder_LandingGear/SmallBlockSmallMagneticPlate
+
+Media Player
+      Small Grid: MyObjectBuilder_Jukebox/SmallBlockJukeboxReskin
+
+Medical Room (IMyMedicalRoom)
+      Large Grid: MyObjectBuilder_MedicalRoom/LargeMedicalRoom
+
+Medical Station
+      Large Grid: MyObjectBuilder_LCDPanelsBlock/MedicalStation
+
+Medium Cargo Container (IMyCargoContainer)
+      Small Grid: MyObjectBuilder_CargoContainer/SmallBlockMediumContainer
+
+Medium Conveyor Tube
+      Small Grid: MyObjectBuilder_ConveyorConnector/ConveyorTubeMedium
+
+Merge Block (IMyShipMergeBlock)
+      Large Grid: MyObjectBuilder_MergeBlock/LargeShipMergeBlock
+      Small Grid: MyObjectBuilder_MergeBlock/SmallShipMergeBlock
+
+Microwave (IMyTerminalBlock)
+      Small Grid: MyObjectBuilder_TerminalBlock/SmallBlockKitchenMicrowave
+
+Modular Cargo Container (IMyCargoContainer)
+      Small Grid: MyObjectBuilder_CargoContainer/SmallBlockModularContainer
+
+Narrow Door (IMyDoor)
+      Large Grid: MyObjectBuilder_Door/LargeBlockNarrowDoor
+
+Narrow Door Half (IMyDoor)
+      Large Grid: MyObjectBuilder_Door/LargeBlockNarrowDoorHalf
+
+Neon Tubes 1
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesStraight1
+      Small Grid: MyObjectBuilder_EmissiveBlock/SmallNeonTubesStraight1
+
+Neon Tubes 2
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesStraight2
+      Small Grid: MyObjectBuilder_EmissiveBlock/SmallNeonTubesStraight2
+
+Neon Tubes Circle
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesCircle
+      Small Grid: MyObjectBuilder_EmissiveBlock/SmallNeonTubesCircle
+
+Neon Tubes Corner
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesCorner
+      Small Grid: MyObjectBuilder_EmissiveBlock/SmallNeonTubesCorner
+
+Neon Tubes Down
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesBendDown
+      Small Grid: MyObjectBuilder_EmissiveBlock/SmallNeonTubesBendDown
+
+Neon Tubes Down 2
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesStraightDown
+      Small Grid: MyObjectBuilder_EmissiveBlock/SmallNeonTubesStraightDown
+
+Neon Tubes End 1
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesStraightEnd1
+      Small Grid: MyObjectBuilder_EmissiveBlock/SmallNeonTubesStraightEnd1
+
+Neon Tubes End 2
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesStraightEnd2
+
+Neon Tubes T Shape
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesT
+      Small Grid: MyObjectBuilder_EmissiveBlock/SmallNeonTubesT
+
+Neon Tubes U Shape
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesU
+      Small Grid: MyObjectBuilder_EmissiveBlock/SmallNeonTubesU
+
+Neon Tubes Up
+      Large Grid: MyObjectBuilder_EmissiveBlock/LargeNeonTubesBendUp
+      Small Grid: MyObjectBuilder_EmissiveBlock/SmallNeonTubesBendUp
+
+Number 0
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbol0
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbol0
+
+Number 1
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbol1
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbol1
+
+Number 2
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbol2
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbol2
+
+Number 3
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbol3
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbol3
+
+Number 4
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbol4
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbol4
+
+Number 5
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbol5
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbol5
+
+Number 6
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbol6
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbol6
+
+Number 7
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbol7
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbol7
+
+Number 8
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbol8
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbol8
+
+Number 9
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbol9
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbol9
+
+O2/H2 Generator (IMyGasGenerator)
+      Large Grid: MyObjectBuilder_OxygenGenerator/
+      Small Grid: MyObjectBuilder_OxygenGenerator/OxygenGeneratorSmall
+
+Offroad Short Wheel Suspension 1x1 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadShortSuspension1x1mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallShortSuspension1x1mirrored
+
+Offroad Short Wheel Suspension 1x1 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadShortSuspension1x1
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallShortSuspension1x1
+
+Offroad Short Wheel Suspension 2x2 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadShortSuspension2x2Mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallShortSuspension2x2Mirrored
+
+Offroad Short Wheel Suspension 2x2 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadShortSuspension2x2
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallShortSuspension2x2
+
+Offroad Short Wheel Suspension 3x3 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadShortSuspension3x3mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallShortSuspension3x3mirrored
+
+Offroad Short Wheel Suspension 3x3 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadShortSuspension3x3
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallShortSuspension3x3
+
+Offroad Short Wheel Suspension 5x5 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadShortSuspension5x5mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallShortSuspension5x5mirrored
+
+Offroad Short Wheel Suspension 5x5 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadShortSuspension5x5
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallShortSuspension5x5
+
+Offroad Wheel 1x1
+      Large Grid: MyObjectBuilder_Wheel/OffroadWheel1x1
+      Small Grid: MyObjectBuilder_Wheel/OffroadSmallWheel1x1
+
+Offroad Wheel 2x2
+      Large Grid: MyObjectBuilder_Wheel/OffroadWheel2x2
+      Small Grid: MyObjectBuilder_Wheel/OffroadSmallWheel2x2
+
+Offroad Wheel 3x3
+      Large Grid: MyObjectBuilder_Wheel/OffroadWheel3x3
+      Small Grid: MyObjectBuilder_Wheel/OffroadSmallWheel3x3
+
+Offroad Wheel 5x5
+      Large Grid: MyObjectBuilder_Wheel/OffroadWheel5x5
+      Small Grid: MyObjectBuilder_Wheel/OffroadSmallWheel5x5
+
+Offroad Wheel Suspension 1x1 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadSuspension1x1mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallSuspension1x1mirrored
+
+Offroad Wheel Suspension 1x1 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadSuspension1x1
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallSuspension1x1
+
+Offroad Wheel Suspension 2x2 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadSuspension2x2Mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallSuspension2x2Mirrored
+
+Offroad Wheel Suspension 2x2 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadSuspension2x2
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallSuspension2x2
+
+Offroad Wheel Suspension 3x3 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadSuspension3x3mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallSuspension3x3mirrored
+
+Offroad Wheel Suspension 3x3 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadSuspension3x3
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallSuspension3x3
+
+Offroad Wheel Suspension 5x5 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadSuspension5x5mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallSuspension5x5mirrored
+
+Offroad Wheel Suspension 5x5 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/OffroadSuspension5x5
+      Small Grid: MyObjectBuilder_MotorSuspension/OffroadSmallSuspension5x5
+
+Offset Door (IMyDoor)
+      Large Grid: MyObjectBuilder_Door/LargeBlockOffsetDoor
+
+Offset Light (IMyInteriorLight)
+      Small Grid: MyObjectBuilder_InteriorLight/OffsetLight
+
+Offset Spotlight (IMyReflectorLight)
+      Small Grid: MyObjectBuilder_ReflectorLight/OffsetSpotlight
+
+Ore Detector (IMyOreDetector)
+      Large Grid: MyObjectBuilder_OreDetector/LargeOreDetector
+      Small Grid: MyObjectBuilder_OreDetector/SmallBlockOreDetector
+
+Oven (IMyTerminalBlock)
+      Small Grid: MyObjectBuilder_TerminalBlock/SmallBlockKitchenOven
+
+Oxygen Farm (IMyOxygenFarm)
+      Large Grid: MyObjectBuilder_OxygenFarm/LargeBlockOxygenFarm
+
+Oxygen Tank (IMyGasTank)
+      Large Grid: MyObjectBuilder_OxygenTank/
+      Small Grid: MyObjectBuilder_OxygenTank/OxygenTankSmall
+
+Parabolic Antenna (IMyRadioAntenna)
+      Large Grid: MyObjectBuilder_RadioAntenna/LargeBlockCompactRadioAntennaReskin
+      Small Grid: MyObjectBuilder_RadioAntenna/SmallBlockCompactRadioAntennaReskin
+
+Parachute Hatch (IMyParachute)
+      Large Grid: MyObjectBuilder_Parachute/LgParachute
+      Small Grid: MyObjectBuilder_Parachute/SmParachute
+
+Passage
+      Large Grid: MyObjectBuilder_Passage/
+
+Passage 2
+      Large Grid: MyObjectBuilder_CubeBlock/Passage2
+
+Passage 2 Side
+      Large Grid: MyObjectBuilder_CubeBlock/Passage2Wall
+
+Passage 3
+      Large Grid: MyObjectBuilder_CubeBlock/PassageSciFi
+
+Passage 3 Corner
+      Large Grid: MyObjectBuilder_CubeBlock/PassageScifiCorner
+
+Passage 3 Cross
+      Large Grid: MyObjectBuilder_CubeBlock/PassageSciFiIntersection
+
+Passage 3 Frame
+      Large Grid: MyObjectBuilder_CubeBlock/PassageSciFiGate
+
+Passage 3 Light (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/PassageSciFiLight
+
+Passage 3 T-junction
+      Large Grid: MyObjectBuilder_CubeBlock/PassageSciFiTjunction
+
+Passage 3 Wall
+      Large Grid: MyObjectBuilder_CubeBlock/PassageSciFiWall
+
+Passage 3 Windowed
+      Large Grid: MyObjectBuilder_CubeBlock/PassageSciFiWindow
+
+Passenger Bench (IMyCockpit)
+      Small Grid: MyObjectBuilder_Cockpit/PassengerBench
+
+Passenger Seat (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/PassengerSeatLarge
+      Small Grid: MyObjectBuilder_Cockpit/PassengerSeatSmallNew
+
+Passenger Seat Offset (IMyCockpit)
+      Small Grid: MyObjectBuilder_Cockpit/PassengerSeatSmallOffset
+
+Pipeworks A
+      Large Grid: MyObjectBuilder_CubeBlock/PipeWorkBlockA
+
+Pipeworks B
+      Large Grid: MyObjectBuilder_CubeBlock/PipeWorkBlockB
+
+Piston (IMyExtendedPistonBase)
+      Large Grid: MyObjectBuilder_ExtendedPistonBase/LargePistonBase
+      Small Grid: MyObjectBuilder_ExtendedPistonBase/SmallPistonBase
+
+Planters
+      Large Grid: MyObjectBuilder_Planter/LargeBlockPlanters
+
+Power Efficiency Module (IMyUpgradeModule)
+      Large Grid: MyObjectBuilder_UpgradeModule/LargeEnergyModule
+
+Programmable Block (IMyProgrammableBlock)
+      Large Grid: MyObjectBuilder_MyProgrammableBlock/LargeProgrammableBlock
+      Small Grid: MyObjectBuilder_MyProgrammableBlock/SmallProgrammableBlock
+
+Projector
+      Large Grid: MyObjectBuilder_Projector/LargeProjector
+      Small Grid: MyObjectBuilder_Projector/SmallProjector
+
+Prototech Assembler (IMyAssembler)
+      Large Grid: MyObjectBuilder_Assembler/LargePrototechAssembler
+
+Prototech Battery (IMyBatteryBlock)
+      Large Grid: MyObjectBuilder_BatteryBlock/LargeBlockPrototechBattery
+      Small Grid: MyObjectBuilder_BatteryBlock/SmallBlockPrototechBattery
+
+Prototech Drill (IMyShipDrill)
+      Large Grid: MyObjectBuilder_Drill/LargeBlockPrototechDrill
+
+Prototech Gyroscope (IMyGyro)
+      Large Grid: MyObjectBuilder_Gyro/LargeBlockPrototechGyro
+      Small Grid: MyObjectBuilder_Gyro/SmallBlockPrototechGyro
+
+Prototech Jump Drive (IMyJumpDrive)
+      Large Grid: MyObjectBuilder_JumpDrive/LargePrototechJumpDrive
+      Small Grid: MyObjectBuilder_JumpDrive/SmallPrototechJumpDrive
+
+Prototech Refinery (IMyRefinery)
+      Large Grid: MyObjectBuilder_Refinery/LargePrototechRefinery
+      Small Grid: MyObjectBuilder_Refinery/SmallPrototechRefinery
+
+Prototech Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockPrototechThruster
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockPrototechThruster
+
+Questionmark
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolQuestionMark
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolQuestionMark
+
+Railgun (IMySmallMissileLauncherReload)
+      Large Grid: MyObjectBuilder_SmallMissileLauncherReload/LargeRailgun
+      Small Grid: MyObjectBuilder_SmallMissileLauncherReload/SmallRailgun
+
+Railing 2x1 Left
+      Large Grid: MyObjectBuilder_CubeBlock/Railing2x1Left
+
+Railing 2x1 Right
+      Large Grid: MyObjectBuilder_CubeBlock/Railing2x1Right
+
+Railing Center
+      Large Grid: MyObjectBuilder_CubeBlock/RailingCenter
+
+Railing Corner
+      Large Grid: MyObjectBuilder_CubeBlock/RailingCorner
+
+Railing Diagonal
+      Large Grid: MyObjectBuilder_CubeBlock/RailingDiagonal
+
+Railing Double
+      Large Grid: MyObjectBuilder_CubeBlock/RailingDouble
+
+Railing Half Left
+      Large Grid: MyObjectBuilder_CubeBlock/RailingHalfLeft
+
+Railing Half Right
+      Large Grid: MyObjectBuilder_CubeBlock/RailingHalfRight
+
+Railing Straight
+      Large Grid: MyObjectBuilder_CubeBlock/RailingStraight
+
+Ramp
+      Large Grid: MyObjectBuilder_CubeBlock/LargeRamp
+
+Refinery (IMyRefinery)
+      Large Grid: MyObjectBuilder_Refinery/LargeRefinery
+
+Reinforced Conveyor Tube
+      Large Grid: MyObjectBuilder_ConveyorConnector/ConveyorTubeDuct
+
+Reinforced Conveyor Tube T Junction
+      Large Grid: MyObjectBuilder_Conveyor/ConveyorTubeDuctT
+
+Reinforced Curved Conveyor Tube
+      Large Grid: MyObjectBuilder_ConveyorConnector/ConveyorTubeDuctCurved
+
+Reloadable Rocket Launcher (IMySmallMissileLauncherReload)
+      Small Grid: MyObjectBuilder_SmallMissileLauncherReload/SmallRocketLauncherReload
+
+Remote Control (IMyRemoteControl)
+      Large Grid: MyObjectBuilder_RemoteControl/LargeBlockRemoteControl
+      Small Grid: MyObjectBuilder_RemoteControl/SmallBlockRemoteControl
+
+Rocket Launcher (IMySmallMissileLauncher)
+      Large Grid: MyObjectBuilder_SmallMissileLauncher/LargeMissileLauncher
+      Small Grid: MyObjectBuilder_SmallMissileLauncher/
+
+Rocket Turret
+      Large Grid: MyObjectBuilder_LargeMissileTurret/
+      Small Grid: MyObjectBuilder_LargeMissileTurret/SmallMissileTurret
+
+Rocket Turret Type II
+      Large Grid: MyObjectBuilder_LargeMissileTurret/LargeMissileTurretReskin
+      Small Grid: MyObjectBuilder_LargeMissileTurret/SmallMissileTurretReskin
+
+Rotating Light (IMyReflectorLight)
+      Large Grid: MyObjectBuilder_ReflectorLight/RotatingLightLarge
+      Small Grid: MyObjectBuilder_ReflectorLight/RotatingLightSmall
+
+Rotor
+      Large Grid: MyObjectBuilder_MotorStator/LargeStator
+      Small Grid: MyObjectBuilder_MotorStator/SmallStator
+
+Rotor Part
+      Large Grid: MyObjectBuilder_MotorRotor/LargeRotor
+      Small Grid: MyObjectBuilder_MotorRotor/SmallRotor
+
+Round Armor Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorRoundCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorRoundCorner
+
+Round Armor Inv. Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorRoundCornerInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorRoundCornerInv
+
+Round Armor Slope
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorRoundSlope
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorRoundSlope
+
+Round Beacon (IMyBeacon)
+      Large Grid: MyObjectBuilder_Beacon/LargeBlockBeaconReskin
+      Small Grid: MyObjectBuilder_Beacon/SmallBlockBeaconReskin
+
+Round Window
+      Large Grid: MyObjectBuilder_CubeBlock/WindowRound
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindowRound
+
+Round Window Corner
+      Large Grid: MyObjectBuilder_CubeBlock/WindowRoundCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindowRoundCorner
+
+Round Window Corner Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/WindowRoundCornerInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindowRoundCornerInv
+
+Round Window Face
+      Large Grid: MyObjectBuilder_CubeBlock/WindowRoundFace
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindowRoundFace
+
+Round Window Face Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/WindowRoundFaceInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindowRoundFaceInv
+
+Round Window Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/WindowRoundInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindowRoundInv
+
+Round Window Inwards Corner
+      Large Grid: MyObjectBuilder_CubeBlock/WindowRoundInwardsCorner
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindowRoundInwardsCorner
+
+Round Window Inwards Corner Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/WindowRoundInwardsCornerInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindowRoundInwardsCornerInv
+
+Rover Cockpit (IMyCockpit)
+      Small Grid: MyObjectBuilder_Cockpit/RoverCockpit
+
+Saberoid Plushie
+      Small Grid: MyObjectBuilder_CubeBlock/SabiroidPlushie
+
+Saddle Cockpit (IMyCockpit)
+      Small Grid: MyObjectBuilder_Cockpit/SpeederCockpit
+
+Saddle Cockpit Compact (IMyCockpit)
+      Small Grid: MyObjectBuilder_Cockpit/SpeederCockpitCompact
+
+Safe Zone (IMySafeZoneBlock)
+      Large Grid: MyObjectBuilder_SafeZoneBlock/SafeZoneBlock
+
+Scaffold Block
+      Large Grid: MyObjectBuilder_CubeBlock/Truss
+      Small Grid: MyObjectBuilder_CubeBlock/TrussSmall
+
+Scaffold Block Corner
+      Large Grid: MyObjectBuilder_CubeBlock/TrussAngled
+      Small Grid: MyObjectBuilder_CubeBlock/TrussAngledSmall
+
+Scaffold Block Ladder
+      Large Grid: MyObjectBuilder_Ladder2/TrussLadder
+
+Scaffold Block Slope
+      Large Grid: MyObjectBuilder_CubeBlock/TrussSloped
+      Small Grid: MyObjectBuilder_CubeBlock/TrussSlopedSmall
+
+Scaffold Frame
+      Large Grid: MyObjectBuilder_CubeBlock/TrussFrame
+
+Scaffold Sloped Frame
+      Large Grid: MyObjectBuilder_CubeBlock/TrussSlopedFrame
+
+Sci-Fi Atmospheric Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockSmallAtmosphericThrustSciFi
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockSmallAtmosphericThrustSciFi
+
+Sci-Fi Bar Counter
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockBarCounter
+
+Sci-Fi Bar Counter Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockBarCounterCorner
+
+Sci-Fi Control Panel (IMyTerminalBlock)
+      Large Grid: MyObjectBuilder_TerminalBlock/LargeBlockSciFiTerminal
+
+Sci-Fi Four-Button Panel (IMyButtonPanel)
+      Large Grid: MyObjectBuilder_ButtonPanel/LargeSciFiButtonPanel
+
+Sci-Fi Interior Wall
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockSciFiWall
+
+Sci-Fi Ion Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockSmallThrustSciFi
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockSmallThrustSciFi
+
+Sci-Fi Large Atmospheric Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockLargeAtmosphericThrustSciFi
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockLargeAtmosphericThrustSciFi
+
+Sci-Fi Large Ion Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockLargeThrustSciFi
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockLargeThrustSciFi
+
+Sci-Fi LCD Panel 3x3 (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeLCDPanel3x3
+
+Sci-Fi LCD Panel 5x3 (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeLCDPanel5x3
+
+Sci-Fi LCD Panel 5x5 (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeLCDPanel5x5
+
+Sci-Fi One-Button Terminal (IMyButtonPanel)
+      Large Grid: MyObjectBuilder_ButtonPanel/LargeSciFiButtonTerminal
+
+Sci-Fi Sliding Door (IMyDoor)
+      Small Grid: MyObjectBuilder_Door/SmallSideDoor
+
+Searchlight (IMySearchlight)
+      Large Grid: MyObjectBuilder_Searchlight/LargeSearchlight
+      Small Grid: MyObjectBuilder_Searchlight/SmallSearchlight
+
+Sensor (IMySensorBlock)
+      Large Grid: MyObjectBuilder_SensorBlock/LargeBlockSensor
+      Small Grid: MyObjectBuilder_SensorBlock/SmallBlockSensor
+
+Short Wheel Suspension 1x1 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/ShortSuspension1x1mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallShortSuspension1x1mirrored
+
+Short Wheel Suspension 1x1 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/ShortSuspension1x1
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallShortSuspension1x1
+
+Short Wheel Suspension 2x2 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/ShortSuspension2x2Mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallShortSuspension2x2Mirrored
+
+Short Wheel Suspension 2x2 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/ShortSuspension2x2
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallShortSuspension2x2
+
+Short Wheel Suspension 3x3 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/ShortSuspension3x3mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallShortSuspension3x3mirrored
+
+Short Wheel Suspension 3x3 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/ShortSuspension3x3
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallShortSuspension3x3
+
+Short Wheel Suspension 5x5 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/ShortSuspension5x5mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallShortSuspension5x5mirrored
+
+Short Wheel Suspension 5x5 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/ShortSuspension5x5
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallShortSuspension5x5
+
+Shower
+      Large Grid: MyObjectBuilder_CubeBlock/Shower
+
+Sink
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockKitchenSink
+
+Sliding Door (IMyAirtightSlideDoor)
+      Large Grid: MyObjectBuilder_AirtightSlideDoor/LargeBlockSlideDoor
+
+Sliding Hatch Door (IMyDoor)
+      Large Grid: MyObjectBuilder_Door/SlidingHatchDoor
+
+Sloped Corner Heavy Armor Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockHeavyArmorSlopedCornerTip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockHeavyArmorSlopedCornerTip
+
+Sloped Corner Light Armor Tip
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBlockArmorSlopedCornerTip
+      Small Grid: MyObjectBuilder_CubeBlock/SmallBlockArmorSlopedCornerTip
+
+Sloped LCD Panel (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeDiagonalLCDPanel
+      Small Grid: MyObjectBuilder_TextPanel/SmallDiagonalLCDPanel
+
+Small Battery (IMyBatteryBlock)
+      Small Grid: MyObjectBuilder_BatteryBlock/SmallBlockSmallBatteryBlock
+
+Small Cargo Container (IMyCargoContainer)
+      Large Grid: MyObjectBuilder_CargoContainer/LargeBlockSmallContainer
+      Small Grid: MyObjectBuilder_CargoContainer/SmallBlockSmallContainer
+
+Small Connector (IMyShipConnector)
+      Small Grid: MyObjectBuilder_ShipConnector/ConnectorSmall
+
+Small Conveyor
+      Small Grid: MyObjectBuilder_Conveyor/SmallBlockConveyor
+
+Small Conveyor Sorter (IMyConveyorSorter)
+      Small Grid: MyObjectBuilder_ConveyorSorter/SmallBlockConveyorSorter
+
+Small Conveyor Tube
+      Small Grid: MyObjectBuilder_ConveyorConnector/ConveyorTubeSmall
+
+Small Conveyor Tube T Junction
+      Small Grid: MyObjectBuilder_Conveyor/ConveyorTubeSmallT
+
+Small Curved Conveyor Tube
+      Small Grid: MyObjectBuilder_ConveyorConnector/ConveyorTubeSmallCurved
+
+Small Gate Tall (IMyDoor)
+      Large Grid: MyObjectBuilder_Door/LargeBlockSmallGate
+
+Small Gate Wide (IMyDoor)
+      Large Grid: MyObjectBuilder_Door/LargeBlockEvenWideDoor
+
+Small Hydrogen Tank (IMyGasTank)
+      Large Grid: MyObjectBuilder_OxygenTank/LargeHydrogenTankSmall
+      Small Grid: MyObjectBuilder_OxygenTank/SmallHydrogenTankSmall
+
+Small Inset Connector (IMyShipConnector)
+      Small Grid: MyObjectBuilder_ShipConnector/SmallBlockInsetConnector
+
+Small Merge Block (IMyShipMergeBlock)
+      Small Grid: MyObjectBuilder_MergeBlock/SmallShipSmallMergeBlock
+
+Small Reactor (IMyReactor)
+      Large Grid: MyObjectBuilder_Reactor/LargeBlockSmallGenerator
+      Small Grid: MyObjectBuilder_Reactor/SmallBlockSmallGenerator
+
+Small Reinforced Conveyor Tube
+      Small Grid: MyObjectBuilder_ConveyorConnector/ConveyorTubeDuctSmall
+
+Small Reinforced Conveyor Tube T Junction
+      Small Grid: MyObjectBuilder_Conveyor/ConveyorTubeDuctSmallT
+
+Small Reinforced Curved Conveyor Tube
+      Small Grid: MyObjectBuilder_ConveyorConnector/ConveyorTubeDuctSmallCurved
+
+Small Warfare Reactor (IMyReactor)
+      Large Grid: MyObjectBuilder_Reactor/LargeBlockSmallGeneratorWarfare2
+      Small Grid: MyObjectBuilder_Reactor/SmallBlockSmallGeneratorWarfare2
+
+Solar Panel (IMySolarPanel)
+      Large Grid: MyObjectBuilder_SolarPanel/LargeBlockSolarPanel
+      Small Grid: MyObjectBuilder_SolarPanel/SmallBlockSolarPanel
+
+Sound Block (IMySoundBlock)
+      Large Grid: MyObjectBuilder_SoundBlock/LargeBlockSoundBlock
+      Small Grid: MyObjectBuilder_SoundBlock/SmallBlockSoundBlock
+
+Space Ball (IMySpaceBall)
+      Large Grid: MyObjectBuilder_SpaceBall/SpaceBallLarge
+      Small Grid: MyObjectBuilder_SpaceBall/SpaceBallSmall
+
+Speed Module (IMyUpgradeModule)
+      Large Grid: MyObjectBuilder_UpgradeModule/LargeProductivityModule
+
+Spherical Gravity Generator (IMyGravityGeneratorSphere)
+      Large Grid: MyObjectBuilder_GravityGeneratorSphere/
+
+Spotlight (IMyReflectorLight)
+      Large Grid: MyObjectBuilder_ReflectorLight/LargeBlockFrontLight
+      Small Grid: MyObjectBuilder_ReflectorLight/SmallBlockFrontLight
+
+Square Piston (IMyExtendedPistonBase)
+      Large Grid: MyObjectBuilder_ExtendedPistonBase/LargePistonBaseReskin
+      Small Grid: MyObjectBuilder_ExtendedPistonBase/SmallPistonBaseReskin
+
+Stacked Barrels
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBarrelStack
+
+Stairs
+      Large Grid: MyObjectBuilder_CubeBlock/LargeStairs
+
+Steel Catwalk
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSteelCatwalk
+
+Steel Catwalk Corner
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSteelCatwalkCorner
+
+Steel Catwalk Plate
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSteelCatwalkPlate
+
+Steel Catwalk Two Sides
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSteelCatwalk2Sides
+
+Storage Shelf 1
+      Large Grid: MyObjectBuilder_CubeBlock/StorageShelf1
+
+Storage Shelf 2
+      Large Grid: MyObjectBuilder_CubeBlock/StorageShelf2
+
+Storage Shelf 3
+      Large Grid: MyObjectBuilder_CubeBlock/StorageShelf3
+
+Store (IMyStoreBlock)
+      Large Grid: MyObjectBuilder_StoreBlock/StoreBlock
+
+Survival Kit
+      Large Grid: MyObjectBuilder_SurvivalKit/SurvivalKitLarge
+      Small Grid: MyObjectBuilder_SurvivalKit/SurvivalKit
+
+Target Dummy (IMyTargetDummyBlock)
+      Large Grid: MyObjectBuilder_TargetDummyBlock/TargetDummy
+
+Text Panel (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeTextPanel
+      Small Grid: MyObjectBuilder_TextPanel/SmallTextPanel
+
+Three Barrels
+      Large Grid: MyObjectBuilder_CubeBlock/LargeBarrelThree
+
+Timer Block (IMyTimerBlock)
+      Large Grid: MyObjectBuilder_TimerBlock/TimerBlockLarge
+      Small Grid: MyObjectBuilder_TimerBlock/TimerBlockSmall
+
+Toilet (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockBathroomOpen
+
+Toilet Seat (IMyCockpit)
+      Large Grid: MyObjectBuilder_Cockpit/LargeBlockToilet
+
+Top Mounted Camera (IMyCameraBlock)
+      Large Grid: MyObjectBuilder_CameraBlock/LargeCameraTopMounted
+      Small Grid: MyObjectBuilder_CameraBlock/SmallCameraTopMounted
+
+Top Piston Part
+      Large Grid: MyObjectBuilder_PistonTop/LargePistonTop
+      Small Grid: MyObjectBuilder_PistonTop/SmallPistonTop
+
+Top Square Piston Part
+      Large Grid: MyObjectBuilder_PistonTop/LargePistonTopReskin
+      Small Grid: MyObjectBuilder_PistonTop/SmallPistonTopReskin
+
+Transparent LCD (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/TransparentLCDLarge
+      Small Grid: MyObjectBuilder_TextPanel/TransparentLCDSmall
+
+Truss Decoy (IMyDecoy)
+      Large Grid: MyObjectBuilder_Decoy/TrussPillarDecoy
+
+Truss Light (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/TrussPillarLight
+      Small Grid: MyObjectBuilder_InteriorLight/TrussPillarLightSmall
+
+Truss Pillar
+      Large Grid: MyObjectBuilder_CubeBlock/TrussPillar
+      Small Grid: MyObjectBuilder_CubeBlock/TrussPillarSmall
+
+Truss Pillar Corner
+      Large Grid: MyObjectBuilder_CubeBlock/TrussPillarCorner
+
+Truss Pillar Offset
+      Large Grid: MyObjectBuilder_CubeBlock/TrussPillarOffset
+
+Truss Pillar Offset Corner
+      Large Grid: MyObjectBuilder_CubeBlock/TrussPillarDiagonal
+
+Truss Pillar Slanted
+      Large Grid: MyObjectBuilder_CubeBlock/TrussPillarSlanted
+
+Truss Pillar T
+      Large Grid: MyObjectBuilder_CubeBlock/TrussPillarT
+
+Truss Pillar X
+      Large Grid: MyObjectBuilder_CubeBlock/TrussPillarX
+
+Twin-blade Wind Turbine (IMyWindTurbine)
+      Large Grid: MyObjectBuilder_WindTurbine/LargeBlockWindTurbineReskin
+
+Underscore
+      Large Grid: MyObjectBuilder_CubeBlock/LargeSymbolUnderscore
+      Small Grid: MyObjectBuilder_CubeBlock/SmallSymbolUnderscore
+
+Vending Machine
+      Large Grid: MyObjectBuilder_VendingMachine/VendingMachine
+
+Vertical Button Panel (IMyButtonPanel)
+      Large Grid: MyObjectBuilder_ButtonPanel/VerticalButtonPanelLarge
+      Small Grid: MyObjectBuilder_ButtonPanel/VerticalButtonPanelSmall
+
+Vertical Window
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWindowSquare
+
+Viewport 1
+      Large Grid: MyObjectBuilder_CubeBlock/Viewport1
+
+Viewport 2
+      Large Grid: MyObjectBuilder_CubeBlock/Viewport2
+
+Walkable Half Scaffold Block
+      Large Grid: MyObjectBuilder_CubeBlock/TrussFloorHalf
+
+Walkable Scaffold Block
+      Large Grid: MyObjectBuilder_CubeBlock/TrussFloor
+
+Walkable Scaffold Block Corner
+      Large Grid: MyObjectBuilder_CubeBlock/TrussFloorAngled
+
+Walkable Scaffold Block Corner Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/TrussFloorAngledInverted
+
+Walkable Scaffold Block T
+      Large Grid: MyObjectBuilder_CubeBlock/TrussFloorT
+
+Walkable Scaffold Block X
+      Large Grid: MyObjectBuilder_CubeBlock/TrussFloorX
+
+Warfare Battery (IMyBatteryBlock)
+      Large Grid: MyObjectBuilder_BatteryBlock/LargeBlockBatteryBlockWarfare2
+      Small Grid: MyObjectBuilder_BatteryBlock/SmallBlockBatteryBlockWarfare2
+
+Warfare Gatling Gun (IMySmallGatlingGun)
+      Small Grid: MyObjectBuilder_SmallGatlingGun/SmallGatlingGunWarfare2
+
+Warfare Hangar Door (IMyAirtightHangarDoor)
+      Large Grid: MyObjectBuilder_AirtightHangarDoor/AirtightHangarDoorWarfare2A
+
+Warfare Hangar Door 2 (IMyAirtightHangarDoor)
+      Large Grid: MyObjectBuilder_AirtightHangarDoor/AirtightHangarDoorWarfare2C
+
+Warfare Hangar Door Windowed (IMyAirtightHangarDoor)
+      Large Grid: MyObjectBuilder_AirtightHangarDoor/AirtightHangarDoorWarfare2B
+
+Warfare Ion Thruster (IMyThrust)
+      Large Grid: MyObjectBuilder_Thrust/LargeBlockSmallModularThruster
+      Small Grid: MyObjectBuilder_Thrust/SmallBlockSmallModularThruster
+
+Warfare Rocket Launcher (IMySmallMissileLauncher)
+      Small Grid: MyObjectBuilder_SmallMissileLauncher/SmallMissileLauncherWarfare2
+
+Warhead (IMyWarhead)
+      Large Grid: MyObjectBuilder_Warhead/LargeWarhead
+      Small Grid: MyObjectBuilder_Warhead/SmallWarhead
+
+Warning Sign Access
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign2
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign2
+
+Warning Sign AI Powered
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSignEaster10
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSignEaster10
+
+Warning Sign Airlock
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign12
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign12
+
+Warning Sign Arrow
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSignEaster9
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSignEaster9
+
+Warning Sign Atmosphere
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign9
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign9
+
+Warning Sign Caution
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign8
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign8
+
+Warning Sign Construction
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign10
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign10
+
+Warning Sign Explosive
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign5
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign5
+
+Warning Sign GoodAI
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSignEaster11
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSignEaster11
+
+Warning Sign Gravity
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign11
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign11
+
+Warning Sign Grid AI
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSignEaster3
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSignEaster3
+
+Warning Sign Hazard
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign13
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign13
+
+Warning Sign Medical
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign7
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign7
+
+Warning Sign Memetic Badger 1
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSignEaster13
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSignEaster13
+
+Warning Sign Memetic Badger 2
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSignEaster2
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSignEaster2
+
+Warning Sign Notice
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign6
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign6
+
+Warning Sign Safety
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign3
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign3
+
+Warning Sign Storage
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign4
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign4
+
+Warning Sign Trade
+      Large Grid: MyObjectBuilder_CubeBlock/LargeWarningSign1
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWarningSign1
+
+Weapon Rack (IMyCargoContainer)
+      Large Grid: MyObjectBuilder_CargoContainer/LargeBlockWeaponRack
+      Small Grid: MyObjectBuilder_CargoContainer/SmallBlockWeaponRack
+
+Welder (IMyShipWelder)
+      Large Grid: MyObjectBuilder_ShipWelder/LargeShipWelder
+      Small Grid: MyObjectBuilder_ShipWelder/SmallShipWelder
+
+Wheel 1x1
+      Large Grid: MyObjectBuilder_Wheel/Wheel1x1
+      Small Grid: MyObjectBuilder_Wheel/SmallWheel1x1
+
+Wheel 2x2
+      Large Grid: MyObjectBuilder_Wheel/Wheel2x2
+      Small Grid: MyObjectBuilder_Wheel/SmallWheel2x2
+
+Wheel 3x3
+      Large Grid: MyObjectBuilder_Wheel/Wheel3x3
+      Small Grid: MyObjectBuilder_Wheel/SmallWheel3x3
+
+Wheel 5x5
+      Large Grid: MyObjectBuilder_Wheel/Wheel5x5
+      Small Grid: MyObjectBuilder_Wheel/SmallWheel5x5
+
+Wheel Suspension 1x1 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/Suspension1x1mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallSuspension1x1mirrored
+
+Wheel Suspension 1x1 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/Suspension1x1
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallSuspension1x1
+
+Wheel Suspension 2x2 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/Suspension2x2Mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallSuspension2x2Mirrored
+
+Wheel Suspension 2x2 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/Suspension2x2
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallSuspension2x2
+
+Wheel Suspension 3x3 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/Suspension3x3mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallSuspension3x3mirrored
+
+Wheel Suspension 3x3 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/Suspension3x3
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallSuspension3x3
+
+Wheel Suspension 5x5 Left (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/Suspension5x5mirrored
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallSuspension5x5mirrored
+
+Wheel Suspension 5x5 Right (IMyMotorSuspension)
+      Large Grid: MyObjectBuilder_MotorSuspension/Suspension5x5
+      Small Grid: MyObjectBuilder_MotorSuspension/SmallSuspension5x5
+
+Wide LCD Panel (IMyTextPanel)
+      Large Grid: MyObjectBuilder_TextPanel/LargeLCDPanelWide
+      Small Grid: MyObjectBuilder_TextPanel/SmallLCDPanelWide
+
+Willis Duct
+      Large Grid: MyObjectBuilder_CubeBlock/AirDuct1
+
+Willis Duct 2
+      Large Grid: MyObjectBuilder_CubeBlock/AirDuct2
+
+Willis Duct Corner
+      Large Grid: MyObjectBuilder_CubeBlock/AirDuctCorner
+
+Willis Duct Grate
+      Large Grid: MyObjectBuilder_CubeBlock/AirDuctGrate
+
+Willis Duct Light (IMyInteriorLight)
+      Large Grid: MyObjectBuilder_InteriorLight/AirDuctLight
+
+Willis Duct Ramp
+      Large Grid: MyObjectBuilder_CubeBlock/AirDuctRamp
+
+Willis Duct T Junction
+      Large Grid: MyObjectBuilder_CubeBlock/AirDuctT
+
+Willis Duct X Junction
+      Large Grid: MyObjectBuilder_CubeBlock/AirDuctX
+
+Wind Turbine (IMyWindTurbine)
+      Large Grid: MyObjectBuilder_WindTurbine/LargeBlockWindTurbine
+
+Window 1x1 Face
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x1Face
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x1Face
+
+Window 1x1 Face Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x1Inv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x1Inv
+
+Window 1x1 Flat
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x1Flat
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x1Flat
+
+Window 1x1 Flat Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x1FlatInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x1FlatInv
+
+Window 1x1 Side
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x1Side
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x1Side
+
+Window 1x1 Side Inv
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x1SideInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x1SideInv
+
+Window 1x1 Slope
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x1Slope
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x1Slope
+
+Window 1x2 Face
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x2Face
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x2Face
+
+Window 1x2 Face Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x2Inv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x2Inv
+
+Window 1x2 Flat
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x2Flat
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x2Flat
+
+Window 1x2 Flat Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x2FlatInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x2FlatInv
+
+Window 1x2 Side Left
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x2SideLeft
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x2SideLeft
+
+Window 1x2 Side Left Inv
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x2SideLeftInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x2SideLeftInv
+
+Window 1x2 Side Right
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x2SideRight
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x2SideRight
+
+Window 1x2 Side Right Inv
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x2SideRightInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x2SideRightInv
+
+Window 1x2 Slope
+      Large Grid: MyObjectBuilder_CubeBlock/Window1x2Slope
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow1x2Slope
+
+Window 2x3 Flat
+      Large Grid: MyObjectBuilder_CubeBlock/Window2x3Flat
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow2x3Flat
+
+Window 2x3 Flat Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/Window2x3FlatInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow2x3FlatInv
+
+Window 3x3 Flat
+      Large Grid: MyObjectBuilder_CubeBlock/Window3x3Flat
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow3x3Flat
+
+Window 3x3 Flat Inv.
+      Large Grid: MyObjectBuilder_CubeBlock/Window3x3FlatInv
+      Small Grid: MyObjectBuilder_CubeBlock/SmallWindow3x3FlatInv
+
+Window Wall
+      Large Grid: MyObjectBuilder_CubeBlock/WindowWall
+
+Window Wall Left
+      Large Grid: MyObjectBuilder_CubeBlock/WindowWallLeft
+
+Window Wall Right
+      Large Grid: MyObjectBuilder_CubeBlock/WindowWallRight
+
+Yield Module (IMyUpgradeModule)
+      Large Grid: MyObjectBuilder_UpgradeModule/LargeEffectivenessModule
+
+Ammo Magazines
+5.56x45mm NATO magazine
+      MyObjectBuilder_AmmoMagazine/NATO_5p56x45mm
+
+Artillery Shell
+      MyObjectBuilder_AmmoMagazine/LargeCalibreAmmo
+
+Assault Cannon Shell
+      MyObjectBuilder_AmmoMagazine/MediumCalibreAmmo
+
+Autocannon Magazine
+      MyObjectBuilder_AmmoMagazine/AutocannonClip
+
+Fireworks Blue
+      MyObjectBuilder_AmmoMagazine/FireworksBoxBlue
+
+Fireworks Green
+      MyObjectBuilder_AmmoMagazine/FireworksBoxGreen
+
+Fireworks Pink
+      MyObjectBuilder_AmmoMagazine/FireworksBoxPink
+
+Fireworks Rainbow
+      MyObjectBuilder_AmmoMagazine/FireworksBoxRainbow
+
+Fireworks Red
+      MyObjectBuilder_AmmoMagazine/FireworksBoxRed
+
+Fireworks Yellow
+      MyObjectBuilder_AmmoMagazine/FireworksBoxYellow
+
+Flare Gun Clip
+      MyObjectBuilder_AmmoMagazine/FlareClip
+
+Gatling Ammo Box
+      MyObjectBuilder_AmmoMagazine/NATO_25x184mm
+
+Large Railgun Sabot
+      MyObjectBuilder_AmmoMagazine/LargeRailgunAmmo
+
+MR-20 Rifle Magazine
+      MyObjectBuilder_AmmoMagazine/AutomaticRifleGun_Mag_20rd
+
+MR-30E Rifle Magazine
+      MyObjectBuilder_AmmoMagazine/UltimateAutomaticRifleGun_Mag_30rd
+
+MR-50A Rifle Magazine
+      MyObjectBuilder_AmmoMagazine/RapidFireAutomaticRifleGun_Mag_50rd
+
+MR-8P Rifle Magazine
+      MyObjectBuilder_AmmoMagazine/PreciseAutomaticRifleGun_Mag_5rd
+
+Rocket
+      MyObjectBuilder_AmmoMagazine/Missile200mm
+
+S-10 Pistol Magazine
+      MyObjectBuilder_AmmoMagazine/SemiAutoPistolMagazine
+
+S-10E Pistol Magazine
+      MyObjectBuilder_AmmoMagazine/ElitePistolMagazine
+
+S-20A Pistol Magazine
+      MyObjectBuilder_AmmoMagazine/FullAutoPistolMagazine
+
+Small Railgun Sabot
+      MyObjectBuilder_AmmoMagazine/SmallRailgunAmmo
+
+Blueprints
+Artillery Shell
+      MyObjectBuilder_BlueprintDefinition/Position0120_LargeCalibreAmmo
+
+Assault Cannon Shell
+      MyObjectBuilder_BlueprintDefinition/Position0110_MediumCalibreAmmo
+
+Autocannon Magazine
+      MyObjectBuilder_BlueprintDefinition/Position0090_AutocannonClip
+
+Bulletproof Glass
+      MyObjectBuilder_BlueprintDefinition/BulletproofGlass
+
+Canvas
+      MyObjectBuilder_BlueprintDefinition/Position0030_Canvas
+
+Cobalt Ingot
+      MyObjectBuilder_BlueprintDefinition/CobaltOreToIngot
+
+Computer
+      MyObjectBuilder_BlueprintDefinition/ComputerComponent
+
+Construction Comp.
+      MyObjectBuilder_BlueprintDefinition/ConstructionComponent
+
+Datapad
+      MyObjectBuilder_BlueprintDefinition/Position0040_Datapad
+
+Detector Comp.
+      MyObjectBuilder_BlueprintDefinition/DetectorComponent
+
+Display
+      MyObjectBuilder_BlueprintDefinition/Display
+
+DisplayName_Item_EngineerPlushie
+      MyObjectBuilder_BlueprintDefinition/EngineerPlushie
+
+DisplayName_Item_SabiroidPlushie
+      MyObjectBuilder_BlueprintDefinition/SabiroidPlushie
+
+Elite Grinder
+      MyObjectBuilder_BlueprintDefinition/Position0040_AngleGrinder4
+
+Elite Hand Drill
+      MyObjectBuilder_BlueprintDefinition/Position0080_HandDrill4
+
+Elite Welder
+      MyObjectBuilder_BlueprintDefinition/Position0120_Welder4
+
+Enhanced Grinder
+      MyObjectBuilder_BlueprintDefinition/Position0020_AngleGrinder2
+
+Enhanced Hand Drill
+      MyObjectBuilder_BlueprintDefinition/Position0060_HandDrill2
+
+Enhanced Welder
+      MyObjectBuilder_BlueprintDefinition/Position0100_Welder2
+
+Explosives
+      MyObjectBuilder_BlueprintDefinition/ExplosivesComponent
+
+Fireworks Blue
+      MyObjectBuilder_BlueprintDefinition/Position0007_FireworksBoxBlue
+
+Fireworks Green
+      MyObjectBuilder_BlueprintDefinition/Position00071_FireworksBoxGreen
+
+Fireworks Pink
+      MyObjectBuilder_BlueprintDefinition/Position00074_FireworksBoxPink
+
+Fireworks Rainbow
+      MyObjectBuilder_BlueprintDefinition/Position00075_FireworksBoxRainbow
+
+Fireworks Red
+      MyObjectBuilder_BlueprintDefinition/Position00072_FireworksBoxRed
+
+Fireworks Yellow
+      MyObjectBuilder_BlueprintDefinition/Position00073_FireworksBoxYellow
+
+Flare Gun
+      MyObjectBuilder_BlueprintDefinition/Position0005_FlareGun
+
+Flare Gun Clip
+      MyObjectBuilder_BlueprintDefinition/Position0005_FlareGunMagazine
+
+Gatling Ammo Box
+      MyObjectBuilder_BlueprintDefinition/Position0080_NATO_25x184mmMagazine
+
+Girder
+      MyObjectBuilder_BlueprintDefinition/GirderComponent
+
+Gold Ingot
+      MyObjectBuilder_BlueprintDefinition/GoldOreToIngot
+
+Gravel
+      MyObjectBuilder_BlueprintDefinition/StoneOreToIngot_Deconstruction
+
+Gravity Comp.
+      MyObjectBuilder_BlueprintDefinition/GravityGeneratorComponent
+
+Grinder
+      MyObjectBuilder_BlueprintDefinition/Position0010_AngleGrinder
+
+Hand Drill
+      MyObjectBuilder_BlueprintDefinition/Position0050_HandDrill
+
+Hydrogen Bottle
+      MyObjectBuilder_BlueprintDefinition/Position0020_HydrogenBottle
+
+Hydrogen Bottles
+      MyObjectBuilder_BlueprintDefinition/HydrogenBottlesRefill
+
+Ingots
+      MyObjectBuilder_BlueprintDefinition/StoneOreToIngot
+
+Ingots
+      MyObjectBuilder_BlueprintDefinition/Position0010_StoneOreToIngotBasic
+
+Interior Plate
+      MyObjectBuilder_BlueprintDefinition/InteriorPlate
+
+Iron Ingot
+      MyObjectBuilder_BlueprintDefinition/IronOreToIngot
+
+Iron Ingot
+      MyObjectBuilder_BlueprintDefinition/ScrapIngotToIronIngot
+
+Iron Ingot
+      MyObjectBuilder_BlueprintDefinition/ScrapToIronIngot
+
+Large Railgun Sabot
+      MyObjectBuilder_BlueprintDefinition/Position0140_LargeRailgunAmmo
+
+Large Steel Tube
+      MyObjectBuilder_BlueprintDefinition/LargeTube
+
+Magnesium Powder
+      MyObjectBuilder_BlueprintDefinition/MagnesiumOreToIngot
+
+Medical Comp.
+      MyObjectBuilder_BlueprintDefinition/MedicalComponent
+
+Metal Grid
+      MyObjectBuilder_BlueprintDefinition/MetalGrid
+
+Motor
+      MyObjectBuilder_BlueprintDefinition/MotorComponent
+
+MR-20 Rifle
+      MyObjectBuilder_BlueprintDefinition/Position0040_AutomaticRifle
+
+MR-20 Rifle Magazine
+      MyObjectBuilder_BlueprintDefinition/Position0040_AutomaticRifleGun_Mag_20rd
+
+MR-30E Rifle
+      MyObjectBuilder_BlueprintDefinition/Position0070_UltimateAutomaticRifle
+
+MR-30E Rifle Magazine
+      MyObjectBuilder_BlueprintDefinition/Position0070_UltimateAutomaticRifleGun_Mag_30rd
+
+MR-50A Rifle
+      MyObjectBuilder_BlueprintDefinition/Position0050_RapidFireAutomaticRifle
+
+MR-50A Rifle Magazine
+      MyObjectBuilder_BlueprintDefinition/Position0050_RapidFireAutomaticRifleGun_Mag_50rd
+
+MR-8P Rifle
+      MyObjectBuilder_BlueprintDefinition/Position0060_PreciseAutomaticRifle
+
+MR-8P Rifle Magazine
+      MyObjectBuilder_BlueprintDefinition/Position0060_PreciseAutomaticRifleGun_Mag_5rd
+
+Nickel Ingot
+      MyObjectBuilder_BlueprintDefinition/NickelOreToIngot
+
+Oxygen
+      MyObjectBuilder_BlueprintDefinition/IceToOxygen
+
+Oxygen Bottle
+      MyObjectBuilder_BlueprintDefinition/Position0010_OxygenBottle
+
+Oxygen Bottles
+      MyObjectBuilder_BlueprintDefinition/OxygenBottlesRefill
+
+Platinum Ingot
+      MyObjectBuilder_BlueprintDefinition/PlatinumOreToIngot
+
+Power Cell
+      MyObjectBuilder_BlueprintDefinition/PowerCell
+
+PRO-1 Rocket Launcher
+      MyObjectBuilder_BlueprintDefinition/Position0090_AdvancedHandHeldLauncher
+
+Proficient Grinder
+      MyObjectBuilder_BlueprintDefinition/Position0030_AngleGrinder3
+
+Proficient Hand Drill
+      MyObjectBuilder_BlueprintDefinition/Position0070_HandDrill3
+
+Proficient Welder
+      MyObjectBuilder_BlueprintDefinition/Position0110_Welder3
+
+Prototech Capacitor
+      MyObjectBuilder_BlueprintDefinition/PrototechCapacitor
+
+Prototech Circuitry
+      MyObjectBuilder_BlueprintDefinition/PrototechCircuitry
+
+Prototech Cooling Unit
+      MyObjectBuilder_BlueprintDefinition/PrototechCoolingUnit
+
+Prototech Machinery
+      MyObjectBuilder_BlueprintDefinition/PrototechMachinery
+
+Prototech Panel
+      MyObjectBuilder_BlueprintDefinition/PrototechScrap
+
+Prototech Panel
+      MyObjectBuilder_BlueprintDefinition/PrototechFrame
+
+Prototech Panel
+      MyObjectBuilder_BlueprintDefinition/PrototechPanel
+
+Prototech Propulsion Unit
+      MyObjectBuilder_BlueprintDefinition/PrototechPropulsionUnit
+
+Radio-comm Comp.
+      MyObjectBuilder_BlueprintDefinition/RadioCommunicationComponent
+
+Reactor Comp.
+      MyObjectBuilder_BlueprintDefinition/ReactorComponent
+
+RO-1 Rocket Launcher
+      MyObjectBuilder_BlueprintDefinition/Position0080_BasicHandHeldLauncher
+
+Rocket
+      MyObjectBuilder_BlueprintDefinition/Position0100_Missile200mm
+
+S-10 Pistol
+      MyObjectBuilder_BlueprintDefinition/Position0010_SemiAutoPistol
+
+S-10 Pistol Magazine
+      MyObjectBuilder_BlueprintDefinition/Position0010_SemiAutoPistolMagazine
+
+S-10E Pistol
+      MyObjectBuilder_BlueprintDefinition/Position0030_EliteAutoPistol
+
+S-10E Pistol Magazine
+      MyObjectBuilder_BlueprintDefinition/Position0030_ElitePistolMagazine
+
+S-20A Pistol
+      MyObjectBuilder_BlueprintDefinition/Position0020_FullAutoPistol
+
+S-20A Pistol Magazine
+      MyObjectBuilder_BlueprintDefinition/Position0020_FullAutoPistolMagazine
+
+Silicon Wafer
+      MyObjectBuilder_BlueprintDefinition/SiliconOreToIngot
+
+Silver Ingot
+      MyObjectBuilder_BlueprintDefinition/SilverOreToIngot
+
+Small Railgun Sabot
+      MyObjectBuilder_BlueprintDefinition/Position0130_SmallRailgunAmmo
+
+Small Steel Tube
+      MyObjectBuilder_BlueprintDefinition/SmallTube
+
+Solar Cell
+      MyObjectBuilder_BlueprintDefinition/SolarCell
+
+Steel Plate
+      MyObjectBuilder_BlueprintDefinition/SteelPlate
+
+Superconductor
+      MyObjectBuilder_BlueprintDefinition/Superconductor
+
+Thruster Comp.
+      MyObjectBuilder_BlueprintDefinition/ThrustComponent
+
+Uranium Ingot
+      MyObjectBuilder_BlueprintDefinition/UraniumOreToIngot
+
+Welder
+      MyObjectBuilder_BlueprintDefinition/Position0090_Welder
+
+Zone Chip
+      MyObjectBuilder_BlueprintDefinition/ZoneChip
+
+Components
+Bulletproof Glass
+      MyObjectBuilder_Component/BulletproofGlass
+
+Canvas
+      MyObjectBuilder_Component/Canvas
+
+Computer
+      MyObjectBuilder_Component/Computer
+
+Construction Comp.
+      MyObjectBuilder_Component/Construction
+
+Detector Comp.
+      MyObjectBuilder_Component/Detector
+
+Display
+      MyObjectBuilder_Component/Display
+
+Engineer Plushie
+      MyObjectBuilder_Component/EngineerPlushie
+
+Explosives
+      MyObjectBuilder_Component/Explosives
+
+Girder
+      MyObjectBuilder_Component/Girder
+
+Gravity Comp.
+      MyObjectBuilder_Component/GravityGenerator
+
+Interior Plate
+      MyObjectBuilder_Component/InteriorPlate
+
+Large Steel Tube
+      MyObjectBuilder_Component/LargeTube
+
+Medical Comp.
+      MyObjectBuilder_Component/Medical
+
+Metal Grid
+      MyObjectBuilder_Component/MetalGrid
+
+Motor
+      MyObjectBuilder_Component/Motor
+
+Power Cell
+      MyObjectBuilder_Component/PowerCell
+
+Prototech Capacitor
+      MyObjectBuilder_Component/PrototechCapacitor
+
+Prototech Circuitry
+      MyObjectBuilder_Component/PrototechCircuitry
+
+Prototech Cooling Unit
+      MyObjectBuilder_Component/PrototechCoolingUnit
+
+Prototech Frame
+      MyObjectBuilder_Component/PrototechFrame
+
+Prototech Machinery
+      MyObjectBuilder_Component/PrototechMachinery
+
+Prototech Panel
+      MyObjectBuilder_Component/PrototechPanel
+
+Prototech Propulsion Unit
+      MyObjectBuilder_Component/PrototechPropulsionUnit
+
+Radio-comm Comp.
+      MyObjectBuilder_Component/RadioCommunication
+
+Reactor Comp.
+      MyObjectBuilder_Component/Reactor
+
+Saberoid Plushie
+      MyObjectBuilder_Component/SabiroidPlushie
+
+Small Steel Tube
+      MyObjectBuilder_Component/SmallTube
+
+Solar Cell
+      MyObjectBuilder_Component/SolarCell
+
+Steel Plate
+      MyObjectBuilder_Component/SteelPlate
+
+Superconductor
+      MyObjectBuilder_Component/Superconductor
+
+Thruster Comp.
+      MyObjectBuilder_Component/Thrust
+
+Zone Chip
+      MyObjectBuilder_Component/ZoneChip
+
+Gas
+Hydrogen
+      MyObjectBuilder_GasProperties/Hydrogen
+
+Oxygen
+      MyObjectBuilder_GasProperties/Oxygen
+
+Ingots
+Cobalt Ingot
+      MyObjectBuilder_Ingot/Cobalt
+
+Gold Ingot
+      MyObjectBuilder_Ingot/Gold
+
+Gravel
+      MyObjectBuilder_Ingot/Stone
+
+Iron Ingot
+      MyObjectBuilder_Ingot/Iron
+
+Magnesium Powder
+      MyObjectBuilder_Ingot/Magnesium
+
+Nickel Ingot
+      MyObjectBuilder_Ingot/Nickel
+
+Old Scrap Metal
+      MyObjectBuilder_Ingot/Scrap
+
+Platinum Ingot
+      MyObjectBuilder_Ingot/Platinum
+
+Prototech Scrap
+      MyObjectBuilder_Ingot/PrototechScrap
+
+Silicon Wafer
+      MyObjectBuilder_Ingot/Silicon
+
+Silver Ingot
+      MyObjectBuilder_Ingot/Silver
+
+Uranium Ingot
+      MyObjectBuilder_Ingot/Uranium
+
+Ores
+Cobalt Ore
+      MyObjectBuilder_Ore/Cobalt
+
+Gold Ore
+      MyObjectBuilder_Ore/Gold
+
+Ice
+      MyObjectBuilder_Ore/Ice
+
+Iron Ore
+      MyObjectBuilder_Ore/Iron
+
+Magnesium Ore
+      MyObjectBuilder_Ore/Magnesium
+
+Nickel Ore
+      MyObjectBuilder_Ore/Nickel
+
+Organic
+      MyObjectBuilder_Ore/Organic
+
+Platinum Ore
+      MyObjectBuilder_Ore/Platinum
+
+Scrap Metal
+      MyObjectBuilder_Ore/Scrap
+
+Silicon Ore
+      MyObjectBuilder_Ore/Silicon
+
+Silver Ore
+      MyObjectBuilder_Ore/Silver
+
+Stone
+      MyObjectBuilder_Ore/Stone
+
+Uranium Ore
+      MyObjectBuilder_Ore/Uranium
+
+Other
+Clang Kola
+      MyObjectBuilder_ConsumableItem/ClangCola
+
+Cosmic Coffee
+      MyObjectBuilder_ConsumableItem/CosmicCoffee
+
+Datapad
+      MyObjectBuilder_Datapad/Datapad
+
+Medkit
+      MyObjectBuilder_ConsumableItem/Medkit
+
+Package
+      MyObjectBuilder_Package/Package
+
+Powerkit
+      MyObjectBuilder_ConsumableItem/Powerkit
+
+Space Credit
+      MyObjectBuilder_PhysicalObject/SpaceCredit
+
+Tools
+Elite Grinder
+      MyObjectBuilder_PhysicalGunObject/AngleGrinder4Item
+
+Elite Hand Drill
+      MyObjectBuilder_PhysicalGunObject/HandDrill4Item
+
+Elite Welder
+      MyObjectBuilder_PhysicalGunObject/Welder4Item
+
+Enhanced Grinder
+      MyObjectBuilder_PhysicalGunObject/AngleGrinder2Item
+
+Enhanced Hand Drill
+      MyObjectBuilder_PhysicalGunObject/HandDrill2Item
+
+Enhanced Welder
+      MyObjectBuilder_PhysicalGunObject/Welder2Item
+
+Flare Gun
+      MyObjectBuilder_PhysicalGunObject/FlareGunItem
+
+Grinder
+      MyObjectBuilder_PhysicalGunObject/AngleGrinderItem
+
+Hand Drill
+      MyObjectBuilder_PhysicalGunObject/HandDrillItem
+
+Hydrogen Bottle
+      MyObjectBuilder_GasContainerObject/HydrogenBottle
+
+MR-20 Rifle
+      MyObjectBuilder_PhysicalGunObject/AutomaticRifleItem
+
+MR-30E Rifle
+      MyObjectBuilder_PhysicalGunObject/UltimateAutomaticRifleItem
+
+MR-50A Rifle
+      MyObjectBuilder_PhysicalGunObject/RapidFireAutomaticRifleItem
+
+MR-8P Rifle
+      MyObjectBuilder_PhysicalGunObject/PreciseAutomaticRifleItem
+
+Oxygen Bottle
+      MyObjectBuilder_OxygenContainerObject/OxygenBottle
+
+PRO-1 Rocket Launcher
+      MyObjectBuilder_PhysicalGunObject/AdvancedHandHeldLauncherItem
+
+Proficient Grinder
+      MyObjectBuilder_PhysicalGunObject/AngleGrinder3Item
+
+Proficient Hand Drill
+      MyObjectBuilder_PhysicalGunObject/HandDrill3Item
+
+Proficient Welder
+      MyObjectBuilder_PhysicalGunObject/Welder3Item
+
+RO-1 Rocket Launcher
+      MyObjectBuilder_PhysicalGunObject/BasicHandHeldLauncherItem
+
+S-10 Pistol
+      MyObjectBuilder_PhysicalGunObject/SemiAutoPistolItem
+
+S-10E Pistol
+      MyObjectBuilder_PhysicalGunObject/ElitePistolItem
+
+S-20A Pistol
+      MyObjectBuilder_PhysicalGunObject/FullAutoPistolItem
+
+Welder
+      MyObjectBuilder_PhysicalGunObject/WelderItem
+
