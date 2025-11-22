@@ -21,3 +21,5 @@ private List<KeyValuePair<string, int>> GetTotalComponents(IMyProjector projecto
 	list.Sort((x, y) => string.Compare(TranslateDef(x.Key), TranslateDef(y.Key)));
 	return list;
 }
+
+private string TranslateDef(string d) => componentTranslation[d.Replace("MyObjectBuilder_BlueprintDefinition/", "")];
