@@ -303,5 +303,129 @@ public void Transfer(IMyInventory FromStock, IMyInventory ToStock, string LogTyp
             }
         }
     }
+    */
+///////////////////////////////////// Stuff
+       public class Stuff
+        {
+            private string Tag="MyObjectBuilder_"; // tag to identify items
+            private string typeId = ""; // the full TypeId (e.g., MyObjectBuilder_Component)
+            private string subtypeId = "";
+            private float Amount = 0;
+            private char separator = "/";
+
+            // A HashSet automatically handles duplicates for us
+            HashSet<string> typeList = new HashSet<string>();
+            List<IMyTerminalBlock> Inventories = new List<IMyTerminalBlock>();
+            List<Stuff> myStuff = new List<Stuff>();
+
+            public stuff(string _type, string _subType,float _Amount=0)
+            {
+                typeId = _type;
+                subtypeId = _subType;
+                Amount = _Amount
+            }
+
+            public stuff{ string _Name, float Amount=0}
+            {
+                if(_Name.Contains(Tag)) _Name.Replace(Tag, "");
+                string[] _parts = Split(_Name, "/");
+                Stuff (_parts[0], _parts[1], Amount);
+            }
+
+            public addStuff(string _type, string _subType, float _amount=0)
+            {
+                Stuff _newStuff = new Stuff( _type, _subType, _amount);
+                // TypeList
+                string _fullID = $"{_type}/{_subType}";
+                typeList.Add(_fullID);
+                // Current Items list
+                if(!myStuff.Exists(_newStuff) myStuff.Add(_newStuff);
+            }
+
+            public void GetTypeIds() 
+            {
+                // are you freaking mad ? We will not be doing that each time !
+                MyGrid.GetBlocksOfType<IMyTerminalBlock>(Inventories, b => b.HasInventory);
+    
+                foreach (var block in Inventories) 
+                {
+                    for (int i = 0; i < block.InventoryCount; i++) 
+                    {
+                        IMyInventory inv = block.GetInventory(i);
+                        List<MyInventoryItem> items = new List<MyInventoryItem>();
+                        inv.GetItems(items);
+            
+                        foreach (var item in items) {
+                        // This retrieves the full TypeId (e.g., MyObjectBuilder_Component)
+                        string type = item.Type.TypeId.ToString();
+                        string subtype = item.Type.SubtypeId;
+                        typeList.Add($"{type}/{subtype}");
+                    }
+                }
+            }
+
+            public void TransferItems(string source_name, string dest_name) 
+            {
+                // 1. Get the blocks
+                var sourceBlock = GridTerminalSystem.GetBlockWithName(source_name) as IMyTerminalBlock;
+                var destBlock = GridTerminalSystem.GetBlockWithName(dest_name) as IMyTerminalBlock;
+
+                if (sourceBlock == null || destBlock == null) 
+                {
+                    ScriptLog.addLog("Transfer", "One or both containers not found!", "Fatal");
+                    return;
+                }
+
+                IMyInventory sourceInv = sourceBlock.GetInventory(0);
+                IMyInventory destInv = destBlock.GetInventory(0);
+
+                List<MyInventoryItem> items = new List<MyInventoryItem>();
+                sourceInv.GetItems(items);
+
+                if (items.Count == 0) { ScriptLog.addLog("Transfer", ""Source is empty."", "Error"); return;}
+
+                // 4. Transfer each item
+                // We loop backwards (Count - 1 down to 0) to avoid index shifting 
+                // issues when items are removed during the loop.
+                int transferCount = 0;
+                for (int i = items.Count - 1; i >= 0; i--) {
+                    // TransferItemTo returns true if successful (e.g., path is clear and dest has space)
+                    bool success = sourceInv.TransferItemTo(destInv, i, stackIfPossible: true);
+                    if (success) transferCount++;
+                }
+
+                ScriptLog.addLog("Transfer", $"Successfully moved {transferCount} item stacks.", "Info");
+                return;
+            }
+        }
+
+        private boid generalStuf
+        {
+
+        }
+        MyObjectBuilder_Ore/Cobalt
+MyObjectBuilder_Ore/Gold
+MyObjectBuilder_Ore/Ice
+MyObjectBuilder_Ore/Iron
+MyObjectBuilder_Ore/Magnesium
+MyObjectBuilder_Ore/Nickel
+MyObjectBuilder_Ore/Platinum
+MyObjectBuilder_Ore/Scrap
+MyObjectBuilder_Ore/Silicon
+MyObjectBuilder_Ore/Silver
+MyObjectBuilder_Ore/Stone
+MyObjectBuilder_Ore/Uranium
+MyObjectBuilder_Ingot/Cobalt
+MyObjectBuilder_Ingot/Gold
+MyObjectBuilder_Ingot/Stone
+MyObjectBuilder_Ingot/Iron
+MyObjectBuilder_Ingot/Magnesium
+MyObjectBuilder_Ingot/Nickel
+MyObjectBuilder_Ingot/Platinum
+MyObjectBuilder_Ingot/Silicon
+MyObjectBuilder_Ingot/Silver
+MyObjectBuilder_Ingot/Uranium
+
+
 }
 */
