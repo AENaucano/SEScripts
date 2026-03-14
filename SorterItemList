@@ -1,0 +1,37 @@
+public void Main(string argument) {
+    // Find your sorter
+    IMyConveyorSorter sorter = GridTerminalSystem.GetBlockWithName("My Sorter") as IMyConveyorSorter;
+
+    if (sorter != null) {
+        // Create a list to hold the filters
+        List<MyInventoryItemFilter> currentFilters = new List<MyInventoryItemFilter>();
+        
+        // Populate the list
+        sorter.GetFilterList(currentFilters);
+
+        // Access the items
+        foreach (var filter in currentFilters) {
+            string itemName = filter.ItemId.ToString();
+            Echo($"Filtering: {itemName}");
+        }
+    }
+}
+//////////////////////////// usable as function
+public List<MyInventoryItemFilter> GetSorterFilters(string sorterName)
+{
+    IMyConveyorSorter sorter = GridTerminalSystem.GetBlockWithName(sorterName) as IMyConveyorSorter;
+    List<MyInventoryItemFilter> filters = new List<MyInventoryItemFilter>();
+
+    // 3. If the sorter exists, populate the list using GetFilterList
+    if (sorter != null) {
+        sorter.GetFilterList(filters);
+    }
+    else
+    {
+      Echo "Sorter " + sorterName + " not found!\n"; // or any logging system
+    }
+    if (!filters.Any()) Echo sorterName + " List is Empty \n"; // or any logging system
+
+    // 4. Return the list (will be empty if sorter wasn't found or had no filters)
+    return filters;
+}
