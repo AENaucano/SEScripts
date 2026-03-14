@@ -61,5 +61,38 @@ public void Main(string argument) {
         }
     }
 }
+///////////// with mode
+public void Main(string argument) {
+    // 1. Find the sorter block
+    IMyConveyorSorter sorter = GridTerminalSystem.GetBlockWithName("My Sorter Name") as IMyConveyorSorter;
+    if (sorter == null) return;
+
+    // 2. CHANGE THE MODE HERE
+    // Options: MyConveyorSorterMode.Whitelist or MyConveyorSorterMode.Blacklist
+    sorter.Mode = MyConveyorSorterMode.Whitelist; 
+
+    // 3. Get the filters and cargo inventory
+    List<MyInventoryItemFilter> sorterFilters = new List<MyInventoryItemFilter>();
+    sorter.GetFilterList(sorterFilters);
+    
+    IMyCargoContainer cargo = GridTerminalSystem.GetBlockWithName("My Cargo") as IMyCargoContainer;
+    if (cargo == null) return;
+    IMyInventory inventory = cargo.GetInventory();
+
+    // 4. Compare items based on the NEW mode
+    List<MyInventoryItem> cargoItems = new List<MyInventoryItem>();
+    inventory.GetItems(cargoItems);
+
+    foreach (var item in cargoItems) {
+        bool isMatched = sorterFilters.Any(f => f.ItemId == item.Type);
+        
+        // Logic changes based on what the Mode is set to
+        if (sorter.Mode == MyConveyorSorterMode.Whitelist) {
+            Echo($"{item.Type.SubtypeId}: " + (isMatched ? "ALLOWED (Whitelisted)" : "BLOCKED"));
+        } else {
+            Echo($"{item.Type.SubtypeId}: " + (isMatched ? "BLOCKED (Blacklisted)" : "ALLOWED"));
+        }
+    }
+}
 
 
