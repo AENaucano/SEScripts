@@ -35,3 +35,31 @@ public List<MyInventoryItemFilter> GetSorterFilters(string sorterName)
     // 4. Return the list (will be empty if sorter wasn't found or had no filters)
     return filters;
 }
+///////////////////////////// comparing Cargo/filter
+public void Main(string argument) {
+    // 1. Get the filters from your sorter
+    List<MyInventoryItemFilter> sorterFilters = GetSorterFilters("My Sorter Name");
+    
+    // 2. Get the cargo container's inventory
+    IMyCargoContainer cargo = GridTerminalSystem.GetBlockWithName("My Cargo") as IMyCargoContainer;
+    if (cargo == null) return;
+    IMyInventory inventory = cargo.GetInventory();
+
+    // 3. Get the list of all items currently in that cargo container
+    List<MyInventoryItem> cargoItems = new List<MyInventoryItem>();
+    inventory.GetItems(cargoItems);
+
+    // 4. Compare items
+    foreach (var item in cargoItems) {
+        // Check if this item is in the sorter's filter list
+        bool isFiltered = sorterFilters.Any(f => f.ItemId == item.Type);
+        
+        if (isFiltered) {
+            Echo($"MATCH: {item.Type.SubtypeId} is in the filter list.");
+        } else {
+            Echo($"NO MATCH: {item.Type.SubtypeId} is NOT in the filter list.");
+        }
+    }
+}
+
+
