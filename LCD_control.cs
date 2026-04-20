@@ -24,3 +24,34 @@ void ShowText(string LCDname, string Tekst)
     	}
     }
 }
+///////////////////////////////////////////////////////////////////////////////////
+// List to store all found surfaces
+List<IMyTextSurface> allSurfaces = new List<IMyTextSurface>();
+
+public void Main(string argument, UpdateType updateSource)
+{
+    // Clear the list for each run
+    allSurfaces.Clear();
+    
+    // 1. Get every terminal block on the grid
+    List<IMyTerminalBlock> allBlocks = new List<IMyTerminalBlock>();
+    GridTerminalSystem.GetBlocks(allBlocks);
+
+    foreach (var block in allBlocks)
+    {
+        // 2. Check if the block is a standalone LCD Panel
+        if (block is IMyTextPanel)
+        {
+            allSurfaces.Add((IMyTextSurface)block);
+        }
+        // 3. Check if the block has internal surfaces (Cockpits, PB, etc.)
+        else if (block is IMyTextSurfaceProvider)
+        {
+            var provider = (IMyTextSurfaceProvider)block;
+            // Iterate through every surface index available on this block
+            for (int i = 0; i < provider.SurfaceCount; i++)
+            {
+                allSurfaces.Add(provider.GetSurface(i));
+            }
+        }
+    }
