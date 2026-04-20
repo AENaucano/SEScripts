@@ -55,3 +55,20 @@ public void Main(string argument, UpdateType updateSource)
             }
         }
     }
+/////////////////////////////////////////////////////////////////
+Standalone LCDs: Note that standard IMyTextPanel (LCD Panel) blocks often require a direct cast to IMyTextSurface to be treated as a screen in newer API versions.
+1. Simple Direct Cast
+IMyTextPanel panel = GridTerminalSystem.GetBlockWithName("My LCD") as IMyTextPanel;
+if (panel != null)
+{
+    IMyTextSurface surface = (IMyTextSurface)panel;
+    surface.WriteText("Direct Cast Successful!");
+}
+
+2. The as Operator (Safer)
+IMyTextSurface surface = panel as IMyTextSurface;
+if (surface != null)
+{
+    surface.WriteText("Safe Cast Successful!");
+}
+///////////////////////////////////////////////////////////////////////
