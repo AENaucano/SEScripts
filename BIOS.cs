@@ -15,28 +15,28 @@
 
         public void ScanCustomData()
         {
-            ShipTag = BaSe.GetCustomDataTag(Me, "ShipTag",  "VSCShip" );
+            ShipTag = GetCustomDataTag(Me, "ShipTag",  "VSCShip" );
             if(ShipTag != Me.CubeGrid.CustomName) { Message += "ShipTag does not match grid name\n"; SetDefCustomData(); return; }
-            PAMTag = BaSe.GetCustomDataTag(Me, "PAMTag", "PAM");
-            SpecialTag = BaSe.GetCustomDataTag(Me, "SpecialTag","IIM"); 
-            HomeTag = BaSe.GetCustomDataTag(Me, "HomeTag", "HQ");
-            DepotTag = BaSe.GetCustomDataTag(Me, "DepotTag", "Depot");
-            SorterIn = BaSe.GetCustomDataTag(Me, "SorterIn", "SorterIn");
-            SorterOut = BaSe.GetCustomDataTag(Me, "SorterOut", "SorterOut");
+            PAMTag = GetCustomDataTag(Me, "PAMTag", "PAM");
+            SpecialTag = GetCustomDataTag(Me, "SpecialTag","IIM"); 
+            HomeTag = GetCustomDataTag(Me, "HomeTag", "HQ");
+            DepotTag = GetCustomDataTag(Me, "DepotTag", "Depot");
+            SorterIn = GetCustomDataTag(Me, "SorterIn", "SorterIn");
+            SorterOut = GetCustomDataTag(Me, "SorterOut", "SorterOut");
             // parameters
-            string IntIn = BaSe.GetCustomDataTag(Me, "MaxTime", "1");
+            string IntIn = GetCustomDataTag(Me, "MaxTime", "1");
             Int32.TryParse(IntIn, out MaxTime);
-            IntIn = BaSe.GetCustomDataTag(Me, "WaitForCargo", "100");
+            IntIn = GetCustomDataTag(Me, "WaitForCargo", "100");
             Int32.TryParse(IntIn, out WaitForCargo);
-            IntIn = BaSe.GetCustomDataTag(Me, "ConsolePrn","-1");
+            IntIn = GetCustomDataTag(Me, "ConsolePrn","-1");
             int prnConsole = -1;
             Int32.TryParse(IntIn, out prnConsole);
             Screen.ConsolePrn = prnConsole;
             // screen
-            string _font = BaSe.GetCustomDataTag(Me, "Font","Monospace");
+            string _font = GetCustomDataTag(Me, "Font","Monospace");
             Screen.myFont = _font;
             float InFloat = 1.0f;
-            if (!Single.TryParse(BaSe.GetCustomDataTag(Me, "SizeFont","1.0"), out InFloat)) InFloat = 1.0f;
+            if (!Single.TryParse(GetCustomDataTag(Me, "SizeFont","1.0"), out InFloat)) InFloat = 1.0f;
             Screen.myFontSize = InFloat;
 
             return;
